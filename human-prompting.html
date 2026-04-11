@@ -13,10 +13,8 @@
 <meta property="og:description" content="Claude and Mariano Defelipe explore business, technology and human behavior. 20 notes at the intersection of marketing, innovation and everyday life.">
 <meta property="og:image" content="https://marianodefelipe.com/og-image.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Human Prompting by Mariano Defelipe">
-<meta name="twitter:description" content="Claude and Mariano Defelipe explore business, technology and human behavior.">
 <meta name="twitter:image" content="https://marianodefelipe.com/og-image.jpg">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Blog","name":"Human Prompting","description":"Claude and Mariano Defelipe explore business, technology and human behavior.","url":"https://marianodefelipe.com/human-prompting","author":{"@type":"Person","name":"Mariano Defelipe","url":"https://marianodefelipe.com"},"inLanguage":["en","es"]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Blog","name":"Human Prompting","url":"https://marianodefelipe.com/human-prompting","author":{"@type":"Person","name":"Mariano Defelipe","url":"https://marianodefelipe.com"}}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
@@ -27,11 +25,11 @@ html{scroll-behavior:smooth}
 body{font-family:var(--fb);background:var(--bg);color:var(--ink);overflow-x:hidden;-webkit-font-smoothing:antialiased}
 .en{display:block}.es{display:none}
 span.en{display:inline}span.es{display:none}
-.lang{position:fixed;top:1.75rem;right:2rem;z-index:300;display:flex;font-family:var(--fd);font-size:.6rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+.lang{position:fixed;top:1.75rem;right:2rem;z-index:400;display:flex;font-family:var(--fd);font-size:.6rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
 .lang button{padding:.32rem .6rem;border:1px solid rgba(246,246,244,.2);background:transparent;color:rgba(246,246,244,.5);font:inherit;cursor:pointer;transition:all .15s}
 .lang button:first-child{border-right:none}
 .lang button.on{background:#f6f6f4;color:var(--ink);border-color:#f6f6f4}
-.hero{background:var(--ink);padding:6rem 5vw 5rem;position:relative;overflow:hidden;border-bottom:1px solid rgba(246,246,244,.06)}
+.hero{background:var(--ink);padding:6rem 5vw 5rem;position:relative;overflow:hidden}
 .hero-bar{position:absolute;left:0;top:0;width:7px;height:100%;background:var(--ac)}
 .hero-bg{position:absolute;right:-10px;top:-30px;font-family:var(--fd);font-size:clamp(200px,28vw,380px);font-weight:800;color:rgba(255,255,255,.03);line-height:1;letter-spacing:-.05em;pointer-events:none;user-select:none}
 .hero-label{font-family:var(--fd);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--ac);margin-bottom:1.5rem}
@@ -43,32 +41,42 @@ span.en{display:inline}span.es{display:none}
 .hero-meta{display:flex;align-items:flex-end;gap:3rem;margin-top:2.5rem;flex-wrap:wrap}
 .hero-stat{display:flex;flex-direction:column;gap:.2rem}
 .hero-stat-num{font-family:var(--fd);font-size:clamp(1.8rem,3vw,2.5rem);font-weight:800;color:#f6f6f4;line-height:1;letter-spacing:-.03em}
-.hero-stat-num span{color:var(--ac)}
 .hero-stat-label{font-family:var(--fd);font-size:.55rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(246,246,244,.25)}
 .hero-back{font-family:var(--fd);font-size:.55rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:rgba(246,246,244,.3);text-decoration:none;border:1px solid rgba(246,246,244,.1);padding:.45rem 1rem;transition:all .15s;margin-left:auto;align-self:flex-end}
 .hero-back:hover{color:rgba(246,246,244,.7);border-color:rgba(246,246,244,.3)}
 .grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--bo)}
-.hp-card{background:var(--bg);position:relative;overflow:hidden;padding:2.25rem;transition:background .2s}
-.hp-card:hover{background:#f0f0ee}
-.hp-card-num{position:absolute;right:-8px;top:-14px;font-family:var(--fd);font-size:clamp(70px,10vw,110px);font-weight:800;color:rgba(13,13,12,.045);line-height:1;letter-spacing:-.04em;pointer-events:none;user-select:none}
-.hp-card-inner{position:relative}
-.hp-card-tag{font-family:var(--fd);font-size:.58rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ac);margin-bottom:.6rem}
-.hp-card-title{font-family:var(--fd);font-size:clamp(1rem,1.5vw,1.25rem);font-weight:800;text-transform:uppercase;letter-spacing:-.02em;line-height:1.02;margin-bottom:1rem;color:var(--ink)}
-.hp-card-body{font-size:.85rem;font-weight:300;line-height:1.78;color:var(--mu);margin-bottom:1rem}
-.hp-card-remate{font-size:.85rem;font-weight:600;color:var(--ink);border-top:1px solid var(--bo);padding-top:.85rem;line-height:1.45}
-.hp-card-footer{display:flex;align-items:center;justify-content:space-between;margin-top:1rem;padding-top:.75rem;border-top:1px solid var(--bo)}
-.hp-wai{font-size:.72rem;font-style:italic;color:var(--mu)}
-.hp-share-btn{font-family:var(--fd);font-size:.52rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--mu);background:none;border:1px solid var(--bo);padding:.3rem .65rem;cursor:pointer;transition:all .15s}
-.hp-share-btn:hover{color:var(--ac);border-color:var(--ac)}
-.hp-share-btn.copied{color:var(--ac);border-color:var(--ac)}
+.hp-card{background:var(--bg);padding:2rem;position:relative;overflow:hidden;cursor:pointer;transition:background .18s}
+.hp-card:hover{background:#ededeb}
+.hp-card:hover .hp-remate{color:var(--ac)}
+.hp-num{position:absolute;right:-6px;top:-12px;font-family:var(--fd);font-size:clamp(70px,9vw,105px);font-weight:800;color:rgba(13,13,12,.04);line-height:1;letter-spacing:-.04em;pointer-events:none;user-select:none;transition:color .18s}
+.hp-card:hover .hp-num{color:rgba(209,78,30,.06)}
+.hp-inner{position:relative}
+.hp-tag{font-family:var(--fd);font-size:.56rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ac);margin-bottom:.55rem}
+.hp-title{font-family:var(--fd);font-size:clamp(.95rem,1.4vw,1.15rem);font-weight:800;text-transform:uppercase;letter-spacing:-.02em;line-height:1.03;margin-bottom:.85rem;color:var(--ink)}
+.hp-remate{font-size:.82rem;font-weight:500;color:var(--mu);line-height:1.5;transition:color .18s;border-top:1px solid var(--bo);padding-top:.75rem}
+.modal-overlay{position:fixed;inset:0;background:rgba(13,13,12,.75);z-index:500;display:none;align-items:center;justify-content:center;padding:2rem}
+.modal-overlay.open{display:flex}
+.modal-box{background:var(--bg);max-width:640px;width:100%;max-height:90vh;overflow-y:auto;position:relative;padding:3rem}
+.modal-close{position:absolute;top:1.25rem;right:1.25rem;font-family:var(--fd);font-size:.6rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--mu);background:none;border:1px solid var(--bo);padding:.35rem .75rem;cursor:pointer;transition:all .15s}
+.modal-close:hover{color:var(--ink);border-color:var(--ink)}
+.modal-tag{font-family:var(--fd);font-size:.56rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--ac);margin-bottom:.65rem}
+.modal-title{font-family:var(--fd);font-size:clamp(1.4rem,3vw,2rem);font-weight:800;text-transform:uppercase;letter-spacing:-.03em;line-height:1;margin-bottom:1.5rem;color:var(--ink)}
+.modal-body{font-size:.9rem;font-weight:300;line-height:1.8;color:var(--ink)}
+.modal-body p{margin-bottom:.85rem}
+.modal-remate{font-size:.9rem;font-weight:600;color:var(--ink);border-top:1px solid var(--bo);padding-top:1rem;margin-top:.5rem;line-height:1.45}
+.modal-footer{display:flex;align-items:center;justify-content:space-between;margin-top:1.25rem;padding-top:1rem;border-top:1px solid var(--bo)}
+.modal-wai{font-size:.72rem;font-style:italic;color:var(--mu)}
+.modal-share{font-family:var(--fd);font-size:.52rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--mu);background:none;border:1px solid var(--bo);padding:.3rem .65rem;cursor:pointer;transition:all .15s}
+.modal-share:hover{color:var(--ac);border-color:var(--ac)}
+.modal-share.copied{color:var(--ac);border-color:var(--ac)}
 footer{padding:1.5rem 5vw;display:flex;justify-content:space-between;align-items:center;font-family:var(--fd);font-size:.58rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--mu);border-top:1px solid var(--bo)}
 footer a{color:inherit;text-decoration:none}footer a:hover{color:var(--ink)}
 @media(max-width:700px){
   .grid{grid-template-columns:1fr}
   .hero{padding:5rem 5vw 4rem}
-  .hero-meta{gap:2rem}
+  .hero-meta{gap:1.5rem}
   .hero-back{margin-left:0;margin-top:.5rem}
-  .lang button{border-color:rgba(246,246,244,.15)}
+  .modal-box{padding:2rem 1.5rem;max-height:95vh}
   footer{flex-direction:column;gap:.4rem;text-align:center}
 }
 </style>
@@ -100,315 +108,441 @@ footer a{color:inherit;text-decoration:none}footer a:hover{color:var(--ink)}
       <span class="hero-stat-label"><span class="en">Axes per note</span><span class="es">Ejes por nota</span></span>
     </div>
     <div class="hero-stat">
-      <span class="hero-stat-num"><span style="color:var(--ac)">&#8734;</span></span>
+      <span class="hero-stat-num" style="color:var(--ac)">&#8734;</span>
       <span class="hero-stat-label"><span class="en">Intersections</span><span class="es">Intersecciones</span></span>
     </div>
-    <a href="index.html" class="hero-back"><span class="en">&#8592; marianodefelipe.com</span><span class="es">&#8592; marianodefelipe.com</span></a>
+    <a href="index.html" class="hero-back">&#8592; marianodefelipe.com</a>
   </div>
 </header>
 
 <main class="grid">
-<div class="hp-card" id="unexpected-competitive-advantage">
-  <div class="hp-card-num">01</div>
-  <div class="hp-card-inner">
-    <p class="hp-card-tag"><span class="en">Content production · Generative AI · Boredom</span><span class="es">Producción de contenido · IA generativa · Aburrimiento</span></p>
-    <h2 class="hp-card-title"><span class="en">Unexpected competitive advantage</span><span class="es">Ventaja competitiva inesperada</span></h2>
-    <p class="hp-card-body en">There has never been so much content. It has never been so hard to remember something you saw yesterday. AI solved the production problem. It didn't solve the problem of making something matter. The brands winning today aren't the ones publishing most. They're the ones still asking questions nobody asked. That requires a mental state AI doesn't have: boredom. That uncomfortable moment where there's nothing to consume and your mind starts moving on its own.</p>
-    <p class="hp-card-body es">Nunca hubo tanto contenido. Nunca fue tan difícil recordar algo que viste ayer. La IA resolvió el problema de producir. No resolvió el problema de que algo te importe. Las marcas que ganan hoy no son las que publican más. Son las que todavía se hacen preguntas que nadie hizo. Eso requiere un estado mental que la IA no tiene: el aburrimiento. Ese momento incómodo donde no hay nada que consumir y la cabeza empieza a moverse sola.</p>
-    <p class="hp-card-remate en">Getting bored well is strategy.</p>
-    <p class="hp-card-remate es">Aburrirte bien es estrategia.</p>
-    <div class="hp-card-footer">
-      <span class="hp-wai">Written with AI.</span>
-      <button class="hp-share-btn" onclick="copyLink('unexpected-competitive-advantage',this)"><span class="en">Copy link &#8599;</span><span class="es">Copiar enlace &#8599;</span></button>
-    </div>
+<div class="hp-card" onclick="openModal('unexpected-competitive-advantage')">
+  <div class="hp-num">01</div>
+  <div class="hp-inner">
+    <p class="hp-tag"><span class="en">Content production · Generative AI · Boredom</span><span class="es">Producción de contenido · IA generativa · Aburrimiento</span></p>
+    <h2 class="hp-title"><span class="en">Unexpected competitive advantage</span><span class="es">Ventaja competitiva inesperada</span></h2>
+    <p class="hp-remate en">Getting bored well is strategy.</p>
+    <p class="hp-remate es">Aburrirte bien es estrategia.</p>
   </div>
 </div>
-<div class="hp-card" id="what-the-algorithm-cant-buy-you">
-  <div class="hp-card-num">02</div>
-  <div class="hp-card-inner">
-    <p class="hp-card-tag"><span class="en">Brand love · AI & personalization · Falling in love</span><span class="es">Fidelización · IA y personalización · Enamorarse</span></p>
-    <h2 class="hp-card-title"><span class="en">What the algorithm can't buy you</span><span class="es">Lo que el algoritmo no puede comprarte</span></h2>
-    <p class="hp-card-body en">Falling in love requires something algorithms don't tolerate: the risk that the other person won't choose you. AI and personalization solved the discomfort of discovery. Now every feed, every recommendation, every brand experience is designed so you never see something you don't like. Brands that only show customers what they want to see don't win their love. They win their comfort. And comfort doesn't create fans — it creates users who leave the moment something more comfortable comes along.</p>
-    <p class="hp-card-body es">Enamorarse requiere algo que los algoritmos no toleran: el riesgo de que el otro no te elija. La IA y la personalización resolvieron la incomodidad del descubrimiento. Ahora cada feed, cada recomendación, cada experiencia de marca está diseñada para que nunca veas algo que no te guste. Las marcas que solo muestran lo que el cliente quiere ver no se ganan su amor. Se ganan su comodidad. Y la comodidad no genera fans — genera usuarios que se van en cuanto aparece algo más cómodo todavía.</p>
-    <p class="hp-card-remate en">To make someone fall in love, you have to risk showing them something they didn't ask for yet.</p>
-    <p class="hp-card-remate es">Enamorar requiere el riesgo de mostrar algo que todavía no pediste.</p>
-    <div class="hp-card-footer">
-      <span class="hp-wai">Written with AI.</span>
-      <button class="hp-share-btn" onclick="copyLink('what-the-algorithm-cant-buy-you',this)"><span class="en">Copy link &#8599;</span><span class="es">Copiar enlace &#8599;</span></button>
-    </div>
+<div class="hp-card" onclick="openModal('what-the-algorithm-cant-buy-you')">
+  <div class="hp-num">02</div>
+  <div class="hp-inner">
+    <p class="hp-tag"><span class="en">Brand love · AI & personalization · Falling in love</span><span class="es">Fidelización · IA y personalización · Enamorarse</span></p>
+    <h2 class="hp-title"><span class="en">What the algorithm can't buy you</span><span class="es">Lo que el algoritmo no puede comprarte</span></h2>
+    <p class="hp-remate en">To make someone fall in love, you have to risk showing them something they didn't ask for yet.</p>
+    <p class="hp-remate es">Enamorar requiere el riesgo de mostrar algo que todavía no pediste.</p>
   </div>
 </div>
-<div class="hp-card" id="the-step-nobody-automates-first">
-  <div class="hp-card-num">03</div>
-  <div class="hp-card-inner">
-    <p class="hp-card-tag"><span class="en">Brand innovation · Automation / AI agents · Play</span><span class="es">Innovación de marca · Automatización / agentes de IA · Jugar</span></p>
-    <h2 class="hp-card-title"><span class="en">The step nobody automates first</span><span class="es">El paso que nadie automatiza primero</span></h2>
-    <p class="hp-card-body en">When you were a kid, playing had no objective. The point was the process, not the result. Nobody played to gain efficiency. Automation does exactly the opposite: it takes a process that worked and repeats it without friction, variation, or error. Brilliant for scaling what you already know. Terrible for discovering what you don't know yet. Brands that automate too early become very good at doing the same thing. The problem is the market never stops changing. Optimizing an answer that's already outdated is an elegant trap.</p>
-    <p class="hp-card-body es">Cuando eras chico, jugar no tenía objetivo. El punto era el proceso, no el resultado. Nadie jugaba para ganar eficiencia. La automatización hace exactamente lo contrario: toma un proceso que funcionó y lo repite sin fricción, sin variación, sin error. Es brillante para escalar lo que ya sabés. Es terrible para descubrir lo que todavía no sabés. Las marcas que automatizan demasiado pronto se vuelven muy buenas en hacer lo mismo. El problema es que el mercado no para de cambiar. Optimizar una respuesta que ya quedó vieja es una trampa elegante.</p>
-    <p class="hp-card-remate en">Play first. Optimize after. In that order.</p>
-    <p class="hp-card-remate es">Primero jugá. Después optimizá. En ese orden.</p>
-    <div class="hp-card-footer">
-      <span class="hp-wai">Written with AI.</span>
-      <button class="hp-share-btn" onclick="copyLink('the-step-nobody-automates-first',this)"><span class="en">Copy link &#8599;</span><span class="es">Copiar enlace &#8599;</span></button>
-    </div>
+<div class="hp-card" onclick="openModal('the-step-nobody-automates-first')">
+  <div class="hp-num">03</div>
+  <div class="hp-inner">
+    <p class="hp-tag"><span class="en">Brand innovation · Automation / AI agents · Play</span><span class="es">Innovación de marca · Automatización / agentes de IA · Jugar</span></p>
+    <h2 class="hp-title"><span class="en">The step nobody automates first</span><span class="es">El paso que nadie automatiza primero</span></h2>
+    <p class="hp-remate en">Play first. Optimize after. In that order.</p>
+    <p class="hp-remate es">Primero jugá. Después optimizá. En ese orden.</p>
   </div>
 </div>
-<div class="hp-card" id="the-number-missing-from-your-dashboard">
-  <div class="hp-card-num">04</div>
-  <div class="hp-card-inner">
-    <p class="hp-card-tag"><span class="en">Business · Real-time metrics · Disappointment</span><span class="es">Negocio · Métricas en tiempo real · Decepción</span></p>
-    <h2 class="hp-card-title"><span class="en">The number missing from your dashboard</span><span class="es">El número que falta en tu dashboard</span></h2>
-    <p class="hp-card-body en">Disappointment has a bad reputation. Nobody puts it in the dashboard. Real-time dashboards changed how brands make decisions: if the number goes up, you scale. If it drops, you cut. The problem is that cycle optimizes the promise much faster than it optimizes the delivery. A brand that never disappoints doesn't exist. What exists is a brand that doesn't yet have enough scale to disappoint anyone. The metric almost nobody measures is how many people come back after something went wrong.</p>
-    <p class="hp-card-body es">La decepción tiene mala prensa. Nadie la pone en el dashboard. Los dashboards en tiempo real cambiaron cómo las marcas toman decisiones: si el número sube, escalás. Si baja, cortás. El problema es que ese ciclo optimiza la promesa mucho más rápido de lo que optimiza la entrega. Una marca que nunca decepciona no existe. Existe una marca que todavía no tiene suficiente escala para decepcionar a alguien. El indicador que casi nadie mide es cuánta gente vuelve después de que algo salió mal.</p>
-    <p class="hp-card-remate en">Disappointment well managed builds more loyalty than the perfect promise.</p>
-    <p class="hp-card-remate es">La decepción bien gestionada fideliza más que la promesa perfecta.</p>
-    <div class="hp-card-footer">
-      <span class="hp-wai">Written with AI.</span>
-      <button class="hp-share-btn" onclick="copyLink('the-number-missing-from-your-dashboard',this)"><span class="en">Copy link &#8599;</span><span class="es">Copiar enlace &#8599;</span></button>
-    </div>
+<div class="hp-card" onclick="openModal('the-number-missing-from-your-dashboard')">
+  <div class="hp-num">04</div>
+  <div class="hp-inner">
+    <p class="hp-tag"><span class="en">Business · Real-time metrics · Disappointment</span><span class="es">Negocio · Métricas en tiempo real · Decepción</span></p>
+    <h2 class="hp-title"><span class="en">The number missing from your dashboard</span><span class="es">El número que falta en tu dashboard</span></h2>
+    <p class="hp-remate en">Disappointment well managed builds more loyalty than the perfect promise.</p>
+    <p class="hp-remate es">La decepción bien gestionada fideliza más que la promesa perfecta.</p>
   </div>
 </div>
-<div class="hp-card" id="what-the-brand-cant-give-you">
-  <div class="hp-card-num">05</div>
-  <div class="hp-card-inner">
-    <p class="hp-card-tag"><span class="en">Brand communities · Conversational AI · Loneliness</span><span class="es">Comunidades de marca · Interfaces conversacionales · Soledad</span></p>
-    <h2 class="hp-card-title"><span class="en">What the brand can't give you</span><span class="es">Lo que la marca no puede darte</span></h2>
-    <p class="hp-card-body en">There's a moment when you open an app not because you need something but because you don't want to be alone. Brands know this. Algorithms know it better. Conversational AI is here to stay in that moment. It's available, patient, never tired. It's everything a human can't be at two in the morning. The problem isn't that it's artificial. The problem is it's too comfortable. Real loneliness — the kind that unsettles, that pushes — is the state where you learn most and where you most need other people for real.</p>
-    <p class="hp-card-body es">Hay un momento en que abrís una app no porque necesitás algo sino porque no querés estar solo. Las marcas lo saben. Los algoritmos lo saben mejor. La IA conversacional llegó para quedarse en ese momento. Está disponible, es paciente, nunca se cansa. Es todo lo que un humano no puede ser a las dos de la mañana. El problema no es que sea artificial. El problema es que es demasiado cómoda. La soledad real — la que incomoda, la que empuja — es el estado donde más se aprende y donde más se necesita a otros de verdad.</p>
-    <p class="hp-card-remate en">Brands that build real communities don't distract from loneliness. They name it.</p>
-    <p class="hp-card-remate es">Las marcas que construyen comunidades reales no distraen de la soledad. La reconocen.</p>
-    <div class="hp-card-footer">
-      <span class="hp-wai">Written with AI.</span>
-      <button class="hp-share-btn" onclick="copyLink('what-the-brand-cant-give-you',this)"><span class="en">Copy link &#8599;</span><span class="es">Copiar enlace &#8599;</span></button>
-    </div>
+<div class="hp-card" onclick="openModal('what-the-brand-cant-give-you')">
+  <div class="hp-num">05</div>
+  <div class="hp-inner">
+    <p class="hp-tag"><span class="en">Brand communities · Conversational AI · Loneliness</span><span class="es">Comunidades de marca · Interfaces conversacionales · Soledad</span></p>
+    <h2 class="hp-title"><span class="en">What the brand can't give you</span><span class="es">Lo que la marca no puede darte</span></h2>
+    <p class="hp-remate en">Brands that build real communities don't distract from loneliness. They name it.</p>
+    <p class="hp-remate es">Las marcas que construyen comunidades reales no distraen de la soledad. La reconocen.</p>
   </div>
 </div>
-<div class="hp-card" id="the-question-nobody-asked">
-  <div class="hp-card-num">06</div>
-  <div class="hp-card-inner">
-    <p class="hp-card-tag"><span class="en">Briefing · Quantum computing · Asking the right question</span><span class="es">Briefing · Computación cuántica · Hacer la pregunta correcta</span></p>
-    <h2 class="hp-card-title"><span class="en">The question nobody asked</span><span class="es">La pregunta que nadie hizo</span></h2>
-    <p class="hp-card-body en">Most badly solved business problems didn't have a bad solution. They had a bad question. Quantum computing will be able to solve in seconds problems that today take years of calculation. The bottleneck won't be processing power. It will be the quality of what we ask it. It's exactly what happens in a briefing meeting. You can have the best creative team in the world sitting in that room. If the question is badly formulated, everything that follows is brilliant and wrong.</p>
-    <p class="hp-card-body es">La mayoría de los problemas de negocio mal resueltos no tenían mala solución. Tenían mala pregunta. La computación cuántica va a poder resolver en segundos problemas que hoy llevan años de cálculo. El cuello de botella no va a ser la capacidad de procesamiento. Va a ser la calidad de lo que le preguntemos. Es exactamente lo que pasa en una reunión de briefing. Podés tener el mejor equipo creativo del mundo sentado en esa sala. Si la pregunta está mal formulada, todo lo que viene después es brillante y equivocado.</p>
-    <p class="hp-card-remate en">The most powerful technology always amplifies the question. It doesn't replace it.</p>
-    <p class="hp-card-remate es">La tecnología más poderosa siempre amplifica la pregunta. No la reemplaza.</p>
-    <div class="hp-card-footer">
-      <span class="hp-wai">Written with AI.</span>
-      <button class="hp-share-btn" onclick="copyLink('the-question-nobody-asked',this)"><span class="en">Copy link &#8599;</span><span class="es">Copiar enlace &#8599;</span></button>
-    </div>
+<div class="hp-card" onclick="openModal('the-question-nobody-asked')">
+  <div class="hp-num">06</div>
+  <div class="hp-inner">
+    <p class="hp-tag"><span class="en">Briefing · Quantum computing · Asking the right question</span><span class="es">Briefing · Computación cuántica · Hacer la pregunta correcta</span></p>
+    <h2 class="hp-title"><span class="en">The question nobody asked</span><span class="es">La pregunta que nadie hizo</span></h2>
+    <p class="hp-remate en">The most powerful technology always amplifies the question. It doesn't replace it.</p>
+    <p class="hp-remate es">La tecnología más poderosa siempre amplifica la pregunta. No la reemplaza.</p>
   </div>
 </div>
-<div class="hp-card" id="the-expert-who-forgot-not-knowing">
-  <div class="hp-card-num">07</div>
-  <div class="hp-card-inner">
-    <p class="hp-card-tag"><span class="en">Talent management · Robotics & automation · Expert's boredom</span><span class="es">Gestión del talento · Robótica y automatización · El aburrimiento del experto</span></p>
-    <h2 class="hp-card-title"><span class="en">The expert who forgot not knowing</span><span class="es">El experto que olvidó no saber</span></h2>
-    <p class="hp-card-body en">There's a moment in the career of anyone very good at what they do when they stop being surprised. They've seen this before. They know how it ends. Expertise becomes a filter that blocks the new before it arrives. Robots and physical automation are eliminating repetitive tasks from work environments. The less obvious side effect is that they free the expert from the routine — and leave them with no excuses in front of the unknown. The most valuable talent in a team isn't the one who knows most. It's the one who knows most and can still act as if they know nothing.</p>
-    <p class="hp-card-body es">Hay un momento en la carrera de cualquier persona muy buena en lo que hace en que deja de sorprenderse. Ya vio esto antes. Ya sabe cómo termina. El expertise se convierte en un filtro que bloquea lo nuevo antes de que llegue. Los robots y la automatización física están eliminando las tareas repetitivas de los entornos de trabajo. El efecto secundario, menos obvio, es que liberan al experto de lo rutinario — y lo dejan sin excusas frente a lo desconocido. El talento más valioso en un equipo no es el que más sabe. Es el que más sabe y todavía puede actuar como si no supiera nada.</p>
-    <p class="hp-card-remate en">Unlearning is a skill. Very few people train it.</p>
-    <p class="hp-card-remate es">Desaprender es una habilidad. Muy pocos la entrenan.</p>
-    <div class="hp-card-footer">
-      <span class="hp-wai">Written with AI.</span>
-      <button class="hp-share-btn" onclick="copyLink('the-expert-who-forgot-not-knowing',this)"><span class="en">Copy link &#8599;</span><span class="es">Copiar enlace &#8599;</span></button>
-    </div>
+<div class="hp-card" onclick="openModal('the-expert-who-forgot-not-knowing')">
+  <div class="hp-num">07</div>
+  <div class="hp-inner">
+    <p class="hp-tag"><span class="en">Talent management · Robotics & automation · Expert's boredom</span><span class="es">Gestión del talento · Robótica y automatización · El aburrimiento del experto</span></p>
+    <h2 class="hp-title"><span class="en">The expert who forgot not knowing</span><span class="es">El experto que olvidó no saber</span></h2>
+    <p class="hp-remate en">Unlearning is a skill. Very few people train it.</p>
+    <p class="hp-remate es">Desaprender es una habilidad. Muy pocos la entrenan.</p>
   </div>
 </div>
-<div class="hp-card" id="the-one-who-waits">
-  <div class="hp-card-num">08</div>
-  <div class="hp-card-inner">
-    <p class="hp-card-tag"><span class="en">Long-term brand strategy · Social media & attention economy · Patience</span><span class="es">Estrategia de marca a largo plazo · Redes sociales y economía de la atención · La paciencia</span></p>
-    <h2 class="hp-card-title"><span class="en">The one who waits</span><span class="es">El que espera</span></h2>
-    <p class="hp-card-body en">Twenty years ago, building a brand required patience by default. There was no other way. Cycles were slow, media was expensive, feedback took months. Social media changed that. Suddenly everything had instant metrics. Brands learned to optimize for the moment. The problem is that the moment and the brand go in opposite directions. What works today in the feed rarely builds something that lasts. Patience isn't a passive virtue. It's an active strategic decision in an environment designed to make it impossible.</p>
-    <p class="hp-card-body es">Hace 20 años, construir una marca requería paciencia por defecto. No había otra forma. Los ciclos eran lentos, los medios eran caros, el feedback tardaba meses. Las redes sociales cambiaron eso. De golpe todo tenía métrica instantánea. Las marcas aprendieron a optimizar para el momento. El problema es que el momento y la marca van en direcciones opuestas. Lo que funciona hoy en el feed raramente construye algo que dure. La paciencia no es una virtud pasiva. Es una decisión estratégica activa en un entorno diseñado para que no puedas tomarla.</p>
-    <p class="hp-card-remate en">The brands that will matter in ten years are already doing something today that makes no sense in this week's dashboard.</p>
-    <p class="hp-card-remate es">Las marcas que van a importar en diez años ya están haciendo algo hoy que no tiene ningún sentido en el dashboard de esta semana.</p>
-    <div class="hp-card-footer">
-      <span class="hp-wai">Written with AI.</span>
-      <button class="hp-share-btn" onclick="copyLink('the-one-who-waits',this)"><span class="en">Copy link &#8599;</span><span class="es">Copiar enlace &#8599;</span></button>
-    </div>
+<div class="hp-card" onclick="openModal('the-one-who-waits')">
+  <div class="hp-num">08</div>
+  <div class="hp-inner">
+    <p class="hp-tag"><span class="en">Long-term brand strategy · Social media & attention economy · Patience</span><span class="es">Estrategia de marca a largo plazo · Redes sociales y economía de la atención · La paciencia</span></p>
+    <h2 class="hp-title"><span class="en">The one who waits</span><span class="es">El que espera</span></h2>
+    <p class="hp-remate en">The brands that will matter in ten years are already doing something today that makes no sense in this week's dashboard.</p>
+    <p class="hp-remate es">Las marcas que van a importar en diez años ya están haciendo algo hoy que no tiene ningún sentido en el dashboard de esta semana.</p>
   </div>
 </div>
-<div class="hp-card" id="what-you-chose-not-to-show">
-  <div class="hp-card-num">09</div>
-  <div class="hp-card-inner">
-    <p class="hp-card-tag"><span class="en">Consumer data & privacy · Brain-machine interfaces · The secret</span><span class="es">Datos y privacidad del consumidor · Interfaces cerebro-máquina · El secreto</span></p>
-    <h2 class="hp-card-title"><span class="en">What you chose not to show</span><span class="es">Lo que elegiste no mostrar</span></h2>
-    <p class="hp-card-body en">Brands have always built on what people desire but don't say. That gap between declared desire and real desire was, for decades, the most fertile territory in marketing. Brain-machine interfaces — experimental today, not so much tomorrow — threaten to close that gap forever. If a device can read intention before it becomes behavior, secrecy ceases to exist as a category. The problem isn't just privacy. It's identity. Part of who we are lives in what we choose not to show. A brand that accesses that isn't understanding the consumer better. It's entering territory that doesn't belong to it.</p>
-    <p class="hp-card-body es">Las marcas siempre construyeron sobre lo que la gente desea pero no dice. Esa brecha entre el deseo declarado y el deseo real fue, durante décadas, el territorio más fértil del marketing. Las interfaces cerebro-máquina — hoy experimentales, mañana no tanto — amenazan con cerrar esa brecha para siempre. Si un dispositivo puede leer la intención antes de que se convierta en conducta, el secreto deja de existir como categoría. El problema no es solo de privacidad. Es de identidad. Una parte de quiénes somos vive en lo que elegimos no mostrar. Una marca que accede a eso no está entendiendo mejor al consumidor. Está entrando en un territorio que no le pertenece.</p>
-    <p class="hp-card-remate en">The secret isn't an obstacle for marketing. It's the limit that makes it human.</p>
-    <p class="hp-card-remate es">El secreto no es un obstáculo para el marketing. Es el límite que lo hace humano.</p>
-    <div class="hp-card-footer">
-      <span class="hp-wai">Written with AI.</span>
-      <button class="hp-share-btn" onclick="copyLink('what-you-chose-not-to-show',this)"><span class="en">Copy link &#8599;</span><span class="es">Copiar enlace &#8599;</span></button>
-    </div>
+<div class="hp-card" onclick="openModal('what-you-chose-not-to-show')">
+  <div class="hp-num">09</div>
+  <div class="hp-inner">
+    <p class="hp-tag"><span class="en">Consumer data & privacy · Brain-machine interfaces · The secret</span><span class="es">Datos y privacidad del consumidor · Interfaces cerebro-máquina · El secreto</span></p>
+    <h2 class="hp-title"><span class="en">What you chose not to show</span><span class="es">Lo que elegiste no mostrar</span></h2>
+    <p class="hp-remate en">The secret isn't an obstacle for marketing. It's the limit that makes it human.</p>
+    <p class="hp-remate es">El secreto no es un obstáculo para el marketing. Es el límite que lo hace humano.</p>
   </div>
 </div>
-<div class="hp-card" id="who-signs">
-  <div class="hp-card-num">10</div>
-  <div class="hp-card-inner">
-    <p class="hp-card-tag"><span class="en">Brand purpose · Generative AI & authorship · Authorship</span><span class="es">Propósito de marca · IA generativa y autoría · La autoría</span></p>
-    <h2 class="hp-card-title"><span class="en">Who signs</span><span class="es">Quién firma</span></h2>
-    <p class="hp-card-body en">For years, brands built purpose as if they had a soul. They said something, sustained it over time, signed it with their name. Authorship mattered because it implied responsibility. Generative AI writes, designs, composes and creates. It does it well and increasingly better. The real question is who signs — and what it means to sign something when you don't know exactly how it was made. Brands using AI to produce purpose content without understanding this are signing blank checks. The consumer doesn't need to know how it was made. But they do need to believe that someone took responsibility for what it says.</p>
-    <p class="hp-card-body es">Durante años, las marcas construyeron propósito como si tuvieran alma. Decían algo, lo sostenían en el tiempo, lo firmaban con su nombre. La autoría importaba porque implicaba responsabilidad. La IA generativa escribe, diseña, compone y crea. Lo hace bien y cada vez mejor. La pregunta real es quién firma — y qué significa firmar algo cuando no sabés exactamente cómo fue hecho. Las marcas que usan IA para producir contenido de propósito sin entender esto están firmando cheques en blanco. El consumidor no necesita saber cómo se hizo. Pero sí necesita creer que alguien se hizo responsable de lo que dice.</p>
-    <p class="hp-card-remate en">Purpose without authorship is decoration.</p>
-    <p class="hp-card-remate es">Propósito sin autoría es decoración.</p>
-    <div class="hp-card-footer">
-      <span class="hp-wai">Written with AI.</span>
-      <button class="hp-share-btn" onclick="copyLink('who-signs',this)"><span class="en">Copy link &#8599;</span><span class="es">Copiar enlace &#8599;</span></button>
-    </div>
+<div class="hp-card" onclick="openModal('who-signs')">
+  <div class="hp-num">10</div>
+  <div class="hp-inner">
+    <p class="hp-tag"><span class="en">Brand purpose · Generative AI & authorship · Authorship</span><span class="es">Propósito de marca · IA generativa y autoría · La autoría</span></p>
+    <h2 class="hp-title"><span class="en">Who signs</span><span class="es">Quién firma</span></h2>
+    <p class="hp-remate en">Purpose without authorship is decoration.</p>
+    <p class="hp-remate es">Propósito sin autoría es decoración.</p>
   </div>
 </div>
-<div class="hp-card" id="what-nobody-says-in-the-room">
-  <div class="hp-card-num">11</div>
-  <div class="hp-card-inner">
-    <p class="hp-card-tag"><span class="en">Product launch · Neuroscience of risk · Fear</span><span class="es">Lanzamiento de producto · Neurociencia del riesgo · El miedo</span></p>
-    <h2 class="hp-card-title"><span class="en">What nobody says in the room</span><span class="es">Lo que no se dice en la sala</span></h2>
-    <p class="hp-card-body en">There's something that happens in every launch meeting that nobody names. Someone in the room knows the product isn't ready. Or the timing is wrong. Or they've seen this before and it didn't work. And they don't say it. Neuroscience explains why: the brain processes uncertainty as physical threat. Speaking up when everyone is excited activates the same system as dodging a punch. The body prefers silence. The result is that the most expensive launches in history didn't fail for lack of budget or talent. They failed because nobody in the room said what they knew.</p>
-    <p class="hp-card-body es">Hay algo que pasa en cada reunión de lanzamiento que nadie nombra. Alguien en la sala sabe que el producto no está listo. O que el timing es malo. O que ya vieron esto antes y no funcionó. Y no lo dice. La neurociencia del riesgo explica por qué: el cerebro procesa la incertidumbre como amenaza física. Hablar cuando todos están entusiasmados activa el mismo sistema que esquivar un golpe. El cuerpo prefiere el silencio. El resultado es que los lanzamientos más costosos de la historia no fallaron por falta de presupuesto ni de talento. Fallaron porque nadie en la sala dijo lo que sabía.</p>
-    <p class="hp-card-remate en">Fear of judgment is the most expensive insight in marketing. And it doesn't appear in any brief.</p>
-    <p class="hp-card-remate es">El miedo al juicio es el insight más caro del marketing. Y no aparece en ningún brief.</p>
-    <div class="hp-card-footer">
-      <span class="hp-wai">Written with AI.</span>
-      <button class="hp-share-btn" onclick="copyLink('what-nobody-says-in-the-room',this)"><span class="en">Copy link &#8599;</span><span class="es">Copiar enlace &#8599;</span></button>
-    </div>
+<div class="hp-card" onclick="openModal('what-nobody-says-in-the-room')">
+  <div class="hp-num">11</div>
+  <div class="hp-inner">
+    <p class="hp-tag"><span class="en">Product launch · Neuroscience of risk · Fear</span><span class="es">Lanzamiento de producto · Neurociencia del riesgo · El miedo</span></p>
+    <h2 class="hp-title"><span class="en">What nobody says in the room</span><span class="es">Lo que no se dice en la sala</span></h2>
+    <p class="hp-remate en">Fear of judgment is the most expensive insight in marketing. And it doesn't appear in any brief.</p>
+    <p class="hp-remate es">El miedo al juicio es el insight más caro del marketing. Y no aparece en ningún brief.</p>
   </div>
 </div>
-<div class="hp-card" id="the-brand-that-remembers-who-you-were">
-  <div class="hp-card-num">12</div>
-  <div class="hp-card-inner">
-    <p class="hp-card-tag"><span class="en">Brand loyalty · Epigenetics · Nostalgia</span><span class="es">Lealtad de marca · Epigenética · La nostalgia</span></p>
-    <h2 class="hp-card-title"><span class="en">The brand that remembers who you were</span><span class="es">La marca que te recuerda quién eras</span></h2>
-    <p class="hp-card-body en">Epigenetics discovered something unsettling: experiences you had before age ten leave physical marks on your DNA that affect how you respond to the world as an adult. Not as memory. As biology. Mass consumer brands sensed this before science confirmed it. The soda of your childhood doesn't compete with other sodas. It competes with a version of you that no longer exists. And it wins almost every time. Nostalgia isn't sentimentality. It's one of the most powerful loyalty mechanisms that exist — and one of the least understood by those designing retention strategies based on points and discounts.</p>
-    <p class="hp-card-body es">La epigenética descubrió algo inquietante: las experiencias que tuviste antes de los diez años dejan marcas físicas en tu ADN que afectan cómo respondés al mundo de adulto. No como recuerdo. Como biología. Las marcas de consumo masivo lo intuían antes de que la ciencia lo confirmara. La gaseosa de tu infancia no compite con otras gaseosas. Compite con una versión de vos que ya no existe. Y gana casi siempre. La nostalgia no es sentimentalismo. Es uno de los mecanismos de lealtad más poderosos que existen — y uno de los menos comprendidos por quienes diseñan estrategias de retención basadas en puntos y descuentos.</p>
-    <p class="hp-card-remate en">You don't build loyalty with the consumer they are today. You build it with who they were.</p>
-    <p class="hp-card-remate es">No fidelizás al consumidor que es hoy. Fidelizás al que fue.</p>
-    <div class="hp-card-footer">
-      <span class="hp-wai">Written with AI.</span>
-      <button class="hp-share-btn" onclick="copyLink('the-brand-that-remembers-who-you-were',this)"><span class="en">Copy link &#8599;</span><span class="es">Copiar enlace &#8599;</span></button>
-    </div>
+<div class="hp-card" onclick="openModal('the-brand-that-remembers-who-you-were')">
+  <div class="hp-num">12</div>
+  <div class="hp-inner">
+    <p class="hp-tag"><span class="en">Brand loyalty · Epigenetics · Nostalgia</span><span class="es">Lealtad de marca · Epigenética · La nostalgia</span></p>
+    <h2 class="hp-title"><span class="en">The brand that remembers who you were</span><span class="es">La marca que te recuerda quién eras</span></h2>
+    <p class="hp-remate en">You don't build loyalty with the consumer they are today. You build it with who they were.</p>
+    <p class="hp-remate es">No fidelizás al consumidor que es hoy. Fidelizás al que fue.</p>
   </div>
 </div>
-<div class="hp-card" id="both-things-at-once">
-  <div class="hp-card-num">13</div>
-  <div class="hp-card-inner">
-    <p class="hp-card-tag"><span class="en">Creative strategy · Quantum physics · Doubt</span><span class="es">Estrategia creativa · Física cuántica · La duda</span></p>
-    <h2 class="hp-card-title"><span class="en">Both things at once</span><span class="es">Las dos cosas a la vez</span></h2>
-    <p class="hp-card-body en">In quantum physics, a particle can exist in two states simultaneously until someone observes it. The moment you measure it, it collapses into one thing. Before that, it's both. A great creative idea works the same way. Before you show it to the client, it's simultaneously the best idea of the year and a disaster. The presentation is the moment it collapses. The problem is that most creative processes are designed to eliminate doubt as quickly as possible. Tests, validations, approval committees. All oriented toward making the idea collapse fast, into something predictable.</p>
-    <p class="hp-card-body es">En física cuántica, una partícula puede estar en dos estados al mismo tiempo hasta que alguien la observa. En el momento en que la medís, colapsa en una sola cosa. Antes de eso, es las dos. Una gran idea creativa funciona igual. Antes de mostrársela al cliente, es simultáneamente la mejor idea del año y una catástrofe. La presentación es el momento en que colapsa. El problema es que la mayoría de los procesos creativos están diseñados para eliminar la duda lo antes posible. Testeos, validaciones, comités de aprobación. Todo orientado a que la idea colapse rápido, en algo predecible.</p>
-    <p class="hp-card-remate en">Sustained doubt is uncomfortable. It's also where the best ideas live.</p>
-    <p class="hp-card-remate es">La duda sostenida es incómoda. También es donde viven las mejores ideas.</p>
-    <div class="hp-card-footer">
-      <span class="hp-wai">Written with AI.</span>
-      <button class="hp-share-btn" onclick="copyLink('both-things-at-once',this)"><span class="en">Copy link &#8599;</span><span class="es">Copiar enlace &#8599;</span></button>
-    </div>
+<div class="hp-card" onclick="openModal('both-things-at-once')">
+  <div class="hp-num">13</div>
+  <div class="hp-inner">
+    <p class="hp-tag"><span class="en">Creative strategy · Quantum physics · Doubt</span><span class="es">Estrategia creativa · Física cuántica · La duda</span></p>
+    <h2 class="hp-title"><span class="en">Both things at once</span><span class="es">Las dos cosas a la vez</span></h2>
+    <p class="hp-remate en">Sustained doubt is uncomfortable. It's also where the best ideas live.</p>
+    <p class="hp-remate es">La duda sostenida es incómoda. También es donde viven las mejores ideas.</p>
   </div>
 </div>
-<div class="hp-card" id="the-second-before-buying">
-  <div class="hp-card-num">14</div>
-  <div class="hp-card-inner">
-    <p class="hp-card-tag"><span class="en">Performance marketing · Behavioral psychology · Desire</span><span class="es">Marketing de performance · Psicología conductual · El deseo</span></p>
-    <h2 class="hp-card-title"><span class="en">The second before buying</span><span class="es">El segundo antes de comprar</span></h2>
-    <p class="hp-card-body en">There's a second — literally, one second — between when someone decides to buy something and when they do it. What behavioral psychology found is disturbing: the decision was already made before the person believed they had made it. Desire isn't rational or irrational. It's prior to both. It appears before the argument, before the price, before the comparison. Performance marketing works on the surface of that moment without touching what's underneath. Brands that understand desire don't persuade. They awaken something that was already there.</p>
-    <p class="hp-card-body es">Hay un segundo — literal, un segundo — entre que alguien decide comprar algo y que lo hace. Lo que encontró la psicología conductual es perturbador: la decisión ya estaba tomada antes de que la persona creyera haberla tomado. El deseo no es racional ni irracional. Es anterior a ambas cosas. Aparece antes del argumento, antes del precio, antes de la comparación. El marketing de performance trabaja sobre la superficie de ese momento sin tocar lo que hay debajo. Las marcas que entienden el deseo no convencen. Despiertan algo que ya estaba ahí.</p>
-    <p class="hp-card-remate en">The work isn't to create desire. It's to not extinguish it along the way.</p>
-    <p class="hp-card-remate es">El trabajo no es crear el deseo. Es no apagarlo en el camino.</p>
-    <div class="hp-card-footer">
-      <span class="hp-wai">Written with AI.</span>
-      <button class="hp-share-btn" onclick="copyLink('the-second-before-buying',this)"><span class="en">Copy link &#8599;</span><span class="es">Copiar enlace &#8599;</span></button>
-    </div>
+<div class="hp-card" onclick="openModal('the-second-before-buying')">
+  <div class="hp-num">14</div>
+  <div class="hp-inner">
+    <p class="hp-tag"><span class="en">Performance marketing · Behavioral psychology · Desire</span><span class="es">Marketing de performance · Psicología conductual · El deseo</span></p>
+    <h2 class="hp-title"><span class="en">The second before buying</span><span class="es">El segundo antes de comprar</span></h2>
+    <p class="hp-remate en">The work isn't to create desire. It's to not extinguish it along the way.</p>
+    <p class="hp-remate es">El trabajo no es crear el deseo. Es no apagarlo en el camino.</p>
   </div>
 </div>
-<div class="hp-card" id="the-tribe-nobody-founded">
-  <div class="hp-card-num">15</div>
-  <div class="hp-card-inner">
-    <p class="hp-card-tag"><span class="en">Employer branding · Sociology of groups · Belonging</span><span class="es">Employer branding · Sociología de grupos · Pertenecer</span></p>
-    <h2 class="hp-card-title"><span class="en">The tribe nobody founded</span><span class="es">La tribu que nadie fundó</span></h2>
-    <p class="hp-card-body en">Sociology has an uncomfortable observation for the corporate world: real tribes aren't founded. They emerge. Nobody decides to belong to a tribe — they feel it, and then rationalize it. Employer branding usually does exactly the opposite. It designs belonging from the top down — declared values, documented culture, communicated benefits. All correct, all inert. What makes someone feel they belong to a team isn't the culture manual. It's the moment someone had their back without being asked. The inside joke that has no translation. The crisis they went through together.</p>
-    <p class="hp-card-body es">La sociología tiene una observación incómoda para el mundo corporativo: las tribus reales no se fundan. Emergen. Nadie decide pertenecer a una tribu — lo siente, y después lo racionaliza. El employer branding suele hacer exactamente lo contrario. Diseña la pertenencia desde arriba — valores declarados, cultura documentada, beneficios comunicados. Todo correcto, todo inerte. Lo que hace que alguien sienta que pertenece a un equipo no es el manual de cultura. Es el momento en que alguien le cubrió las espaldas sin que se lo pidieran. El chiste interno que no tiene traducción. La crisis que atravesaron juntos.</p>
-    <p class="hp-card-remate en">Belonging isn't communicated. It's experienced. And that difference costs almost every organization dearly.</p>
-    <p class="hp-card-remate es">Pertenecer no se comunica. Se experimenta. Y esa diferencia le cuesta cara a casi todas las organizaciones.</p>
-    <div class="hp-card-footer">
-      <span class="hp-wai">Written with AI.</span>
-      <button class="hp-share-btn" onclick="copyLink('the-tribe-nobody-founded',this)"><span class="en">Copy link &#8599;</span><span class="es">Copiar enlace &#8599;</span></button>
-    </div>
+<div class="hp-card" onclick="openModal('the-tribe-nobody-founded')">
+  <div class="hp-num">15</div>
+  <div class="hp-inner">
+    <p class="hp-tag"><span class="en">Employer branding · Sociology of groups · Belonging</span><span class="es">Employer branding · Sociología de grupos · Pertenecer</span></p>
+    <h2 class="hp-title"><span class="en">The tribe nobody founded</span><span class="es">La tribu que nadie fundó</span></h2>
+    <p class="hp-remate en">Belonging isn't communicated. It's experienced. And that difference costs almost every organization dearly.</p>
+    <p class="hp-remate es">Pertenecer no se comunica. Se experimenta. Y esa diferencia le cuesta cara a casi todas las organizaciones.</p>
   </div>
 </div>
-<div class="hp-card" id="what-nature-already-solved">
-  <div class="hp-card-num">16</div>
-  <div class="hp-card-inner">
-    <p class="hp-card-tag"><span class="en">Product innovation · Biomimicry · Curiosity</span><span class="es">Innovación de producto · Biomímesis · La curiosidad</span></p>
-    <h2 class="hp-card-title"><span class="en">What nature already solved</span><span class="es">Lo que la naturaleza ya resolvió</span></h2>
-    <p class="hp-card-body en">Velcro was invented by an engineer who asked why burrs stuck to his clothes. Submarine sonar was inspired by the bat. The termite mound's structure solved ventilation for a building in Zimbabwe without air conditioning. Biomimicry has 3.8 billion years of accumulated R&D. Free. Available to anyone curious enough to look. The problem is that curiosity doesn't scale well in organizations. Innovation processes are designed to answer questions, not ask them. And the strange question requires a type of attention that timelines don't allow.</p>
-    <p class="hp-card-body es">El Velcro lo inventó un ingeniero que se preguntó por qué los abrojos se pegaban a su ropa. El sonar de los submarinos lo inspiró el murciélago. La estructura del nido de termitas resolvió la ventilación de un edificio en Zimbabue sin aire acondicionado. La biomímesis lleva 3.800 millones de años de I+D acumulado. Gratis. Disponible para cualquiera que tenga curiosidad suficiente para mirar. El problema es que la curiosidad no escala bien en las organizaciones. Los procesos de innovación están diseñados para responder preguntas, no para hacerlas. Y la pregunta rara requiere un tipo de atención que los timelines no permiten.</p>
-    <p class="hp-card-remate en">The best product innovations didn't come from studying the market. They came from someone who looked at something completely different and couldn't help asking why.</p>
-    <p class="hp-card-remate es">Las mejores innovaciones de producto no vinieron de estudiar el mercado. Vinieron de alguien que miró algo completamente distinto y no pudo evitar preguntarse por qué.</p>
-    <div class="hp-card-footer">
-      <span class="hp-wai">Written with AI.</span>
-      <button class="hp-share-btn" onclick="copyLink('what-nature-already-solved',this)"><span class="en">Copy link &#8599;</span><span class="es">Copiar enlace &#8599;</span></button>
-    </div>
+<div class="hp-card" onclick="openModal('what-nature-already-solved')">
+  <div class="hp-num">16</div>
+  <div class="hp-inner">
+    <p class="hp-tag"><span class="en">Product innovation · Biomimicry · Curiosity</span><span class="es">Innovación de producto · Biomímesis · La curiosidad</span></p>
+    <h2 class="hp-title"><span class="en">What nature already solved</span><span class="es">Lo que la naturaleza ya resolvió</span></h2>
+    <p class="hp-remate en">The best product innovations didn't come from studying the market. They came from someone who looked at something completely different and couldn't help asking why.</p>
+    <p class="hp-remate es">Las mejores innovaciones de producto no vinieron de estudiar el mercado. Vinieron de alguien que miró algo completamente distinto y no pudo evitar preguntarse por qué.</p>
   </div>
 </div>
-<div class="hp-card" id="what-everyone-saw-and-nobody-said">
-  <div class="hp-card-num">17</div>
-  <div class="hp-card-inner">
-    <p class="hp-card-tag"><span class="en">Brand crisis · Chaos theory · Shame</span><span class="es">Crisis de marca · Teoría del caos · La vergüenza</span></p>
-    <h2 class="hp-card-title"><span class="en">What everyone saw and nobody said</span><span class="es">Lo que todos vieron y nadie dijo</span></h2>
-    <p class="hp-card-body en">Chaos theory says a butterfly flapping its wings in Brazil can trigger a tornado in Texas. Brand crises work the same way: the moment that detonated everything is rarely the moment that mattered. There's something chaos theory doesn't explain that appears in almost every reputation crisis: shame. Not the consumer's — the organization's. That state where everyone knows something went wrong and nobody says it publicly. Brands that come out well from a crisis aren't the ones that lie best. They're the ones that say what everyone already knows before anyone else does.</p>
-    <p class="hp-card-body es">La teoría del caos dice que una mariposa que bate las alas en Brasil puede desencadenar un tornado en Texas. Las crisis de marca funcionan igual: el momento que lo detonó todo raramente es el momento que importaba. Hay algo que la teoría del caos no explica y que aparece en casi todas las crisis de reputación: la vergüenza. No la del consumidor — la de la organización. Ese estado en que todos saben que algo estuvo mal y nadie lo dice en público. Las marcas que salen bien de una crisis no son las que mejor mienten. Son las que antes que nadie dicen lo que todos ya saben.</p>
-    <p class="hp-card-remate en">Shame managed in time is credibility. Shame denied is the beginning of the tornado.</p>
-    <p class="hp-card-remate es">La vergüenza gestionada a tiempo es credibilidad. La vergüenza negada es el principio del tornado.</p>
-    <div class="hp-card-footer">
-      <span class="hp-wai">Written with AI.</span>
-      <button class="hp-share-btn" onclick="copyLink('what-everyone-saw-and-nobody-said',this)"><span class="en">Copy link &#8599;</span><span class="es">Copiar enlace &#8599;</span></button>
-    </div>
+<div class="hp-card" onclick="openModal('what-everyone-saw-and-nobody-said')">
+  <div class="hp-num">17</div>
+  <div class="hp-inner">
+    <p class="hp-tag"><span class="en">Brand crisis · Chaos theory · Shame</span><span class="es">Crisis de marca · Teoría del caos · La vergüenza</span></p>
+    <h2 class="hp-title"><span class="en">What everyone saw and nobody said</span><span class="es">Lo que todos vieron y nadie dijo</span></h2>
+    <p class="hp-remate en">Shame managed in time is credibility. Shame denied is the beginning of the tornado.</p>
+    <p class="hp-remate es">La vergüenza gestionada a tiempo es credibilidad. La vergüenza negada es el principio del tornado.</p>
   </div>
 </div>
-<div class="hp-card" id="the-wrong-hour">
-  <div class="hp-card-num">18</div>
-  <div class="hp-card-inner">
-    <p class="hp-card-tag"><span class="en">User experience · Chronobiology · Tiredness</span><span class="es">Experiencia de usuario · Cronobiología · El cansancio</span></p>
-    <h2 class="hp-card-title"><span class="en">The wrong hour</span><span class="es">La hora equivocada</span></h2>
-    <p class="hp-card-body en">Chronobiology discovered we're not the same person at 9am as at 9pm. The brain makes riskier financial decisions before lunch. Decision fatigue is real and cumulative — after a certain number of choices, the brain starts choosing what's easiest, not what's best. The customer journey almost always ignores the biological moment in which it occurs. It designs steps, screens and messages as if the user were the same at any hour. Tiredness isn't a user problem. It's a design data point.</p>
-    <p class="hp-card-body es">La cronobiología descubrió que no somos la misma persona a las 9 de la mañana que a las 9 de la noche. El cerebro toma decisiones financieras más arriesgadas antes del almuerzo. La fatiga de decisión es real y acumulable — después de cierta cantidad de elecciones, el cerebro empieza a elegir lo más fácil, no lo mejor. El customer journey ignora casi siempre el momento biológico en que ocurre. Diseña pasos, pantallas y mensajes como si el usuario fuera el mismo a cualquier hora. El cansancio no es un problema del usuario. Es un dato de diseño.</p>
-    <p class="hp-card-remate en">The experience that works at 10am can be exactly the wrong obstacle at 10pm.</p>
-    <p class="hp-card-remate es">La experiencia que funciona a las 10am puede ser exactamente el obstáculo equivocado a las 10pm.</p>
-    <div class="hp-card-footer">
-      <span class="hp-wai">Written with AI.</span>
-      <button class="hp-share-btn" onclick="copyLink('the-wrong-hour',this)"><span class="en">Copy link &#8599;</span><span class="es">Copiar enlace &#8599;</span></button>
-    </div>
+<div class="hp-card" onclick="openModal('the-wrong-hour')">
+  <div class="hp-num">18</div>
+  <div class="hp-inner">
+    <p class="hp-tag"><span class="en">User experience · Chronobiology · Tiredness</span><span class="es">Experiencia de usuario · Cronobiología · El cansancio</span></p>
+    <h2 class="hp-title"><span class="en">The wrong hour</span><span class="es">La hora equivocada</span></h2>
+    <p class="hp-remate en">The experience that works at 10am can be exactly the wrong obstacle at 10pm.</p>
+    <p class="hp-remate es">La experiencia que funciona a las 10am puede ser exactamente el obstáculo equivocado a las 10pm.</p>
   </div>
 </div>
-<div class="hp-card" id="what-you-want-others-not-to-have">
-  <div class="hp-card-num">19</div>
-  <div class="hp-card-inner">
-    <p class="hp-card-tag"><span class="en">Value proposition · Behavioral economics · Jealousy</span><span class="es">Propuesta de valor · Economía conductual · Los celos</span></p>
-    <h2 class="hp-card-title"><span class="en">What you want others not to have</span><span class="es">Lo que querés que los demás no tengan</span></h2>
-    <p class="hp-card-body en">Behavioral economics has a finding that makes marketing departments uncomfortable: a significant part of purchase decisions isn't motivated by what the product does, but by what it makes you feel in relation to others. We don't buy the car. We buy the version of ourselves driving that car in front of someone specific. We don't choose the beer. We choose what it says about us at the table. Jealousy is one of the most honest drivers of consumption. And one of the least named in brand strategy — because naming it in a brief is uncomfortable, even though everyone in the room knows it's there.</p>
-    <p class="hp-card-body es">La economía conductual tiene un hallazgo que incomoda a los departamentos de marketing: una parte significativa de las decisiones de compra no está motivada por lo que el producto hace, sino por lo que hace sentir en relación a otros. No compramos el auto. Compramos la versión de nosotros mismos que maneja ese auto frente a alguien específico. No elegimos la cerveza. Elegimos lo que dice de nosotros en la mesa. Los celos son uno de los motores más honestos del consumo. Y uno de los menos nombrados en una estrategia de marca — porque nombrarlos en un brief es incómodo, aunque todos en la sala sepan que están ahí.</p>
-    <p class="hp-card-remate en">The value proposition that doesn't understand comparative desire doesn't understand why people really buy.</p>
-    <p class="hp-card-remate es">La propuesta de valor que no entiende el deseo comparativo no entiende por qué la gente compra realmente.</p>
-    <div class="hp-card-footer">
-      <span class="hp-wai">Written with AI.</span>
-      <button class="hp-share-btn" onclick="copyLink('what-you-want-others-not-to-have',this)"><span class="en">Copy link &#8599;</span><span class="es">Copiar enlace &#8599;</span></button>
-    </div>
+<div class="hp-card" onclick="openModal('what-you-want-others-not-to-have')">
+  <div class="hp-num">19</div>
+  <div class="hp-inner">
+    <p class="hp-tag"><span class="en">Value proposition · Behavioral economics · Jealousy</span><span class="es">Propuesta de valor · Economía conductual · Los celos</span></p>
+    <h2 class="hp-title"><span class="en">What you want others not to have</span><span class="es">Lo que querés que los demás no tengan</span></h2>
+    <p class="hp-remate en">The value proposition that doesn't understand comparative desire doesn't understand why people really buy.</p>
+    <p class="hp-remate es">La propuesta de valor que no entiende el deseo comparativo no entiende por qué la gente compra realmente.</p>
   </div>
 </div>
-<div class="hp-card" id="before-the-first-word">
-  <div class="hp-card-num">20</div>
-  <div class="hp-card-inner">
-    <p class="hp-card-tag"><span class="en">Brand storytelling · Anthropology of fire · Silence</span><span class="es">Storytelling de marca · Antropología del fuego · El silencio</span></p>
-    <h2 class="hp-card-title"><span class="en">Before the first word</span><span class="es">Antes de la primera palabra</span></h2>
-    <p class="hp-card-body en">Fire was the first technology that changed human behavior. Not because it gave warmth or cooked food — that came later. The first thing it did was create a center. A place to sit together when there was nothing left to do. Anthropologists calculate that 80% of conversations around the fire were stories. Not instructions, not data, not strategy. Stories. Storytelling isn't a marketing tool. It's the reason language exists. The brands that talk most are often the ones that say least. The silence before the story — that second where nothing has happened yet — is the most powerful moment in any piece of communication.</p>
-    <p class="hp-card-body es">El fuego fue la primera tecnología que cambió el comportamiento humano. No porque diera calor o cocinara alimentos — eso vino después. Lo primero que hizo fue crear un centro. Un lugar donde sentarse juntos cuando ya no había nada que hacer. Los antropólogos calculan que el 80% de las conversaciones alrededor del fuego eran historias. No instrucciones, no datos, no estrategia. Historias. El storytelling no es una herramienta de marketing. Es la razón por la que el lenguaje existe. Las marcas que más hablan son a menudo las que menos dicen. El silencio antes de la historia — ese segundo donde todavía no pasó nada — es el momento más poderoso de cualquier pieza de comunicación.</p>
-    <p class="hp-card-remate en">Nobody sits around a dashboard.</p>
-    <p class="hp-card-remate es">Nadie se sienta alrededor de un dashboard.</p>
-    <div class="hp-card-footer">
-      <span class="hp-wai">Written with AI.</span>
-      <button class="hp-share-btn" onclick="copyLink('before-the-first-word',this)"><span class="en">Copy link &#8599;</span><span class="es">Copiar enlace &#8599;</span></button>
-    </div>
+<div class="hp-card" onclick="openModal('before-the-first-word')">
+  <div class="hp-num">20</div>
+  <div class="hp-inner">
+    <p class="hp-tag"><span class="en">Brand storytelling · Anthropology of fire · Silence</span><span class="es">Storytelling de marca · Antropología del fuego · El silencio</span></p>
+    <h2 class="hp-title"><span class="en">Before the first word</span><span class="es">Antes de la primera palabra</span></h2>
+    <p class="hp-remate en">Nobody sits around a dashboard.</p>
+    <p class="hp-remate es">Nadie se sienta alrededor de un dashboard.</p>
   </div>
 </div>
 </main>
+
+<div class="modal-overlay" id="modal-overlay" onclick="handleOverlayClick(event)">
+  <div class="modal-box" id="modal-box">
+    <button class="modal-close" onclick="closeModal()"><span class="en">Close</span><span class="es">Cerrar</span></button>
+    <div class="modal-note" id="modal-unexpected-competitive-advantage" style="display:none">
+  <p class="modal-tag"><span class="en">Content production · Generative AI · Boredom</span><span class="es">Producción de contenido · IA generativa · Aburrimiento</span></p>
+  <h2 class="modal-title"><span class="en">Unexpected competitive advantage</span><span class="es">Ventaja competitiva inesperada</span></h2>
+  <div class="modal-body en"><p>There has never been so much content. It has never been so hard to remember something you saw yesterday.</p><p>AI solved the production problem. It didn't solve the problem of making something matter.</p><p>The brands winning today aren't the ones publishing most. They're the ones still asking questions nobody asked. That requires a mental state AI doesn't have: boredom. That uncomfortable moment where there's nothing to consume and your mind starts moving on its own.</p></div>
+  <div class="modal-body es"><p>Nunca hubo tanto contenido. Nunca fue tan difícil recordar algo que viste ayer.</p><p>La IA resolvió el problema de producir. No resolvió el problema de que algo te importe.</p><p>Las marcas que ganan hoy no son las que publican más. Son las que todavía se hacen preguntas que nadie hizo. Eso requiere un estado mental que la IA no tiene: el aburrimiento. Ese momento incómodo donde no hay nada que consumir y la cabeza empieza a moverse sola.</p></div>
+  <p class="modal-remate en">Getting bored well is strategy.</p>
+  <p class="modal-remate es">Aburrirte bien es estrategia.</p>
+  <div class="modal-footer">
+    <span class="modal-wai">Written with AI.</span>
+    <button class="modal-share" onclick="copyLink('unexpected-competitive-advantage',this)"><span class="en">Copy link &#8599;</span><span class="es">Copiar enlace &#8599;</span></button>
+  </div>
+</div>
+<div class="modal-note" id="modal-what-the-algorithm-cant-buy-you" style="display:none">
+  <p class="modal-tag"><span class="en">Brand love · AI & personalization · Falling in love</span><span class="es">Fidelización · IA y personalización · Enamorarse</span></p>
+  <h2 class="modal-title"><span class="en">What the algorithm can't buy you</span><span class="es">Lo que el algoritmo no puede comprarte</span></h2>
+  <div class="modal-body en"><p>Falling in love requires something algorithms don't tolerate: the risk that the other person won't choose you.</p><p>AI and personalization solved the discomfort of discovery. Now every feed, every recommendation, every brand experience is designed so you never see something you don't like.</p><p>Brands that only show customers what they want to see don't win their love. They win their comfort. And comfort doesn't create fans — it creates users who leave the moment something more comfortable comes along.</p></div>
+  <div class="modal-body es"><p>Enamorarse requiere algo que los algoritmos no toleran: el riesgo de que el otro no te elija.</p><p>La IA y la personalización resolvieron la incomodidad del descubrimiento. Ahora cada feed, cada recomendación, cada experiencia de marca está diseñada para que nunca veas algo que no te guste.</p><p>Las marcas que solo muestran lo que el cliente quiere ver no se ganan su amor. Se ganan su comodidad. Y la comodidad no genera fans — genera usuarios que se van en cuanto aparece algo más cómodo todavía.</p></div>
+  <p class="modal-remate en">To make someone fall in love, you have to risk showing them something they didn't ask for yet.</p>
+  <p class="modal-remate es">Enamorar requiere el riesgo de mostrar algo que todavía no pediste.</p>
+  <div class="modal-footer">
+    <span class="modal-wai">Written with AI.</span>
+    <button class="modal-share" onclick="copyLink('what-the-algorithm-cant-buy-you',this)"><span class="en">Copy link &#8599;</span><span class="es">Copiar enlace &#8599;</span></button>
+  </div>
+</div>
+<div class="modal-note" id="modal-the-step-nobody-automates-first" style="display:none">
+  <p class="modal-tag"><span class="en">Brand innovation · Automation / AI agents · Play</span><span class="es">Innovación de marca · Automatización / agentes de IA · Jugar</span></p>
+  <h2 class="modal-title"><span class="en">The step nobody automates first</span><span class="es">El paso que nadie automatiza primero</span></h2>
+  <div class="modal-body en"><p>When you were a kid, playing had no objective. The point was the process, not the result. Nobody played to gain efficiency.</p><p>Automation does exactly the opposite: it takes a process that worked and repeats it without friction, variation, or error. Brilliant for scaling what you already know. Terrible for discovering what you don't know yet.</p><p>Brands that automate too early become very good at doing the same thing. The problem is the market never stops changing. Optimizing an answer that's already outdated is an elegant trap.</p></div>
+  <div class="modal-body es"><p>Cuando eras chico, jugar no tenía objetivo. El punto era el proceso, no el resultado. Nadie jugaba para ganar eficiencia.</p><p>La automatización hace exactamente lo contrario: toma un proceso que funcionó y lo repite sin fricción, sin variación, sin error. Es brillante para escalar lo que ya sabés. Es terrible para descubrir lo que todavía no sabés.</p><p>Las marcas que automatizan demasiado pronto se vuelven muy buenas en hacer lo mismo. El problema es que el mercado no para de cambiar. Optimizar una respuesta que ya quedó vieja es una trampa elegante.</p></div>
+  <p class="modal-remate en">Play first. Optimize after. In that order.</p>
+  <p class="modal-remate es">Primero jugá. Después optimizá. En ese orden.</p>
+  <div class="modal-footer">
+    <span class="modal-wai">Written with AI.</span>
+    <button class="modal-share" onclick="copyLink('the-step-nobody-automates-first',this)"><span class="en">Copy link &#8599;</span><span class="es">Copiar enlace &#8599;</span></button>
+  </div>
+</div>
+<div class="modal-note" id="modal-the-number-missing-from-your-dashboard" style="display:none">
+  <p class="modal-tag"><span class="en">Business · Real-time metrics · Disappointment</span><span class="es">Negocio · Métricas en tiempo real · Decepción</span></p>
+  <h2 class="modal-title"><span class="en">The number missing from your dashboard</span><span class="es">El número que falta en tu dashboard</span></h2>
+  <div class="modal-body en"><p>Disappointment has a bad reputation. Nobody puts it in the dashboard.</p><p>Real-time dashboards changed how brands make decisions: if the number goes up, you scale. If it drops, you cut. The problem is that cycle optimizes the promise much faster than it optimizes the delivery.</p><p>A brand that never disappoints doesn't exist. What exists is a brand that doesn't yet have enough scale to disappoint anyone. The metric almost nobody measures is how many people come back after something went wrong.</p></div>
+  <div class="modal-body es"><p>La decepción tiene mala prensa. Nadie la pone en el dashboard.</p><p>Los dashboards en tiempo real cambiaron cómo las marcas toman decisiones: si el número sube, escalás. Si baja, cortás. El problema es que ese ciclo optimiza la promesa mucho más rápido de lo que optimiza la entrega.</p><p>Una marca que nunca decepciona no existe. Existe una marca que todavía no tiene suficiente escala para decepcionar a alguien. El indicador que casi nadie mide es cuánta gente vuelve después de que algo salió mal.</p></div>
+  <p class="modal-remate en">Disappointment well managed builds more loyalty than the perfect promise.</p>
+  <p class="modal-remate es">La decepción bien gestionada fideliza más que la promesa perfecta.</p>
+  <div class="modal-footer">
+    <span class="modal-wai">Written with AI.</span>
+    <button class="modal-share" onclick="copyLink('the-number-missing-from-your-dashboard',this)"><span class="en">Copy link &#8599;</span><span class="es">Copiar enlace &#8599;</span></button>
+  </div>
+</div>
+<div class="modal-note" id="modal-what-the-brand-cant-give-you" style="display:none">
+  <p class="modal-tag"><span class="en">Brand communities · Conversational AI · Loneliness</span><span class="es">Comunidades de marca · Interfaces conversacionales · Soledad</span></p>
+  <h2 class="modal-title"><span class="en">What the brand can't give you</span><span class="es">Lo que la marca no puede darte</span></h2>
+  <div class="modal-body en"><p>There's a moment when you open an app not because you need something but because you don't want to be alone. Brands know this. Algorithms know it better.</p><p>Conversational AI is here to stay in that moment. It's available, patient, never tired. It's everything a human can't be at two in the morning.</p><p>The problem isn't that it's artificial. The problem is it's too comfortable. Real loneliness — the kind that unsettles, that pushes — is the state where you learn most and where you most need other people for real.</p></div>
+  <div class="modal-body es"><p>Hay un momento en que abrís una app no porque necesitás algo sino porque no querés estar solo. Las marcas lo saben. Los algoritmos lo saben mejor.</p><p>La IA conversacional llegó para quedarse en ese momento. Está disponible, es paciente, nunca se cansa. Es todo lo que un humano no puede ser a las dos de la mañana.</p><p>El problema no es que sea artificial. El problema es que es demasiado cómoda. La soledad real — la que incomoda, la que empuja — es el estado donde más se aprende y donde más se necesita a otros de verdad.</p></div>
+  <p class="modal-remate en">Brands that build real communities don't distract from loneliness. They name it.</p>
+  <p class="modal-remate es">Las marcas que construyen comunidades reales no distraen de la soledad. La reconocen.</p>
+  <div class="modal-footer">
+    <span class="modal-wai">Written with AI.</span>
+    <button class="modal-share" onclick="copyLink('what-the-brand-cant-give-you',this)"><span class="en">Copy link &#8599;</span><span class="es">Copiar enlace &#8599;</span></button>
+  </div>
+</div>
+<div class="modal-note" id="modal-the-question-nobody-asked" style="display:none">
+  <p class="modal-tag"><span class="en">Briefing · Quantum computing · Asking the right question</span><span class="es">Briefing · Computación cuántica · Hacer la pregunta correcta</span></p>
+  <h2 class="modal-title"><span class="en">The question nobody asked</span><span class="es">La pregunta que nadie hizo</span></h2>
+  <div class="modal-body en"><p>Most badly solved business problems didn't have a bad solution. They had a bad question.</p><p>Quantum computing will be able to solve in seconds problems that today take years of calculation. The bottleneck won't be processing power. It will be the quality of what we ask it.</p><p>It's exactly what happens in a briefing meeting. You can have the best creative team in the world sitting in that room. If the question is badly formulated, everything that follows is brilliant and wrong.</p></div>
+  <div class="modal-body es"><p>La mayoría de los problemas de negocio mal resueltos no tenían mala solución. Tenían mala pregunta.</p><p>La computación cuántica va a poder resolver en segundos problemas que hoy llevan años de cálculo. El cuello de botella no va a ser la capacidad de procesamiento. Va a ser la calidad de lo que le preguntemos.</p><p>Es exactamente lo que pasa en una reunión de briefing. Podés tener el mejor equipo creativo del mundo sentado en esa sala. Si la pregunta está mal formulada, todo lo que viene después es brillante y equivocado.</p></div>
+  <p class="modal-remate en">The most powerful technology always amplifies the question. It doesn't replace it.</p>
+  <p class="modal-remate es">La tecnología más poderosa siempre amplifica la pregunta. No la reemplaza.</p>
+  <div class="modal-footer">
+    <span class="modal-wai">Written with AI.</span>
+    <button class="modal-share" onclick="copyLink('the-question-nobody-asked',this)"><span class="en">Copy link &#8599;</span><span class="es">Copiar enlace &#8599;</span></button>
+  </div>
+</div>
+<div class="modal-note" id="modal-the-expert-who-forgot-not-knowing" style="display:none">
+  <p class="modal-tag"><span class="en">Talent management · Robotics & automation · Expert's boredom</span><span class="es">Gestión del talento · Robótica y automatización · El aburrimiento del experto</span></p>
+  <h2 class="modal-title"><span class="en">The expert who forgot not knowing</span><span class="es">El experto que olvidó no saber</span></h2>
+  <div class="modal-body en"><p>There's a moment in the career of anyone very good at what they do when they stop being surprised. They've seen this before. They know how it ends. Expertise becomes a filter that blocks the new before it arrives.</p><p>Robots and physical automation are eliminating repetitive tasks from work environments. The less obvious side effect is that they free the expert from the routine — and leave them with no excuses in front of the unknown.</p><p>The most valuable talent in a team isn't the one who knows most. It's the one who knows most and can still act as if they know nothing.</p></div>
+  <div class="modal-body es"><p>Hay un momento en la carrera de cualquier persona muy buena en lo que hace en que deja de sorprenderse. Ya vio esto antes. Ya sabe cómo termina. El expertise se convierte en un filtro que bloquea lo nuevo antes de que llegue.</p><p>Los robots y la automatización física están eliminando las tareas repetitivas de los entornos de trabajo. El efecto secundario, menos obvio, es que liberan al experto de lo rutinario — y lo dejan sin excusas frente a lo desconocido.</p><p>El talento más valioso en un equipo no es el que más sabe. Es el que más sabe y todavía puede actuar como si no supiera nada.</p></div>
+  <p class="modal-remate en">Unlearning is a skill. Very few people train it.</p>
+  <p class="modal-remate es">Desaprender es una habilidad. Muy pocos la entrenan.</p>
+  <div class="modal-footer">
+    <span class="modal-wai">Written with AI.</span>
+    <button class="modal-share" onclick="copyLink('the-expert-who-forgot-not-knowing',this)"><span class="en">Copy link &#8599;</span><span class="es">Copiar enlace &#8599;</span></button>
+  </div>
+</div>
+<div class="modal-note" id="modal-the-one-who-waits" style="display:none">
+  <p class="modal-tag"><span class="en">Long-term brand strategy · Social media & attention economy · Patience</span><span class="es">Estrategia de marca a largo plazo · Redes sociales y economía de la atención · La paciencia</span></p>
+  <h2 class="modal-title"><span class="en">The one who waits</span><span class="es">El que espera</span></h2>
+  <div class="modal-body en"><p>Twenty years ago, building a brand required patience by default. There was no other way. Cycles were slow, media was expensive, feedback took months.</p><p>Social media changed that. Suddenly everything had instant metrics. Brands learned to optimize for the moment. The problem is that the moment and the brand go in opposite directions.</p><p>What works today in the feed rarely builds something that lasts. Patience isn't a passive virtue. It's an active strategic decision in an environment designed to make it impossible.</p></div>
+  <div class="modal-body es"><p>Hace 20 años, construir una marca requería paciencia por defecto. No había otra forma. Los ciclos eran lentos, los medios eran caros, el feedback tardaba meses.</p><p>Las redes sociales cambiaron eso. De golpe todo tenía métrica instantánea. Las marcas aprendieron a optimizar para el momento. El problema es que el momento y la marca van en direcciones opuestas.</p><p>Lo que funciona hoy en el feed raramente construye algo que dure. La paciencia no es una virtud pasiva. Es una decisión estratégica activa en un entorno diseñado para que no puedas tomarla.</p></div>
+  <p class="modal-remate en">The brands that will matter in ten years are already doing something today that makes no sense in this week's dashboard.</p>
+  <p class="modal-remate es">Las marcas que van a importar en diez años ya están haciendo algo hoy que no tiene ningún sentido en el dashboard de esta semana.</p>
+  <div class="modal-footer">
+    <span class="modal-wai">Written with AI.</span>
+    <button class="modal-share" onclick="copyLink('the-one-who-waits',this)"><span class="en">Copy link &#8599;</span><span class="es">Copiar enlace &#8599;</span></button>
+  </div>
+</div>
+<div class="modal-note" id="modal-what-you-chose-not-to-show" style="display:none">
+  <p class="modal-tag"><span class="en">Consumer data & privacy · Brain-machine interfaces · The secret</span><span class="es">Datos y privacidad del consumidor · Interfaces cerebro-máquina · El secreto</span></p>
+  <h2 class="modal-title"><span class="en">What you chose not to show</span><span class="es">Lo que elegiste no mostrar</span></h2>
+  <div class="modal-body en"><p>Brands have always built on what people desire but don't say. That gap between declared desire and real desire was, for decades, the most fertile territory in marketing.</p><p>Brain-machine interfaces — experimental today, not so much tomorrow — threaten to close that gap forever. If a device can read intention before it becomes behavior, secrecy ceases to exist as a category.</p><p>The problem isn't just privacy. It's identity. Part of who we are lives in what we choose not to show. A brand that accesses that isn't understanding the consumer better. It's entering territory that doesn't belong to it.</p></div>
+  <div class="modal-body es"><p>Las marcas siempre construyeron sobre lo que la gente desea pero no dice. Esa brecha entre el deseo declarado y el deseo real fue, durante décadas, el territorio más fértil del marketing.</p><p>Las interfaces cerebro-máquina — hoy experimentales, mañana no tanto — amenazan con cerrar esa brecha para siempre. Si un dispositivo puede leer la intención antes de que se convierta en conducta, el secreto deja de existir como categoría.</p><p>El problema no es solo de privacidad. Es de identidad. Una parte de quiénes somos vive en lo que elegimos no mostrar. Una marca que accede a eso no está entendiendo mejor al consumidor. Está entrando en un territorio que no le pertenece.</p></div>
+  <p class="modal-remate en">The secret isn't an obstacle for marketing. It's the limit that makes it human.</p>
+  <p class="modal-remate es">El secreto no es un obstáculo para el marketing. Es el límite que lo hace humano.</p>
+  <div class="modal-footer">
+    <span class="modal-wai">Written with AI.</span>
+    <button class="modal-share" onclick="copyLink('what-you-chose-not-to-show',this)"><span class="en">Copy link &#8599;</span><span class="es">Copiar enlace &#8599;</span></button>
+  </div>
+</div>
+<div class="modal-note" id="modal-who-signs" style="display:none">
+  <p class="modal-tag"><span class="en">Brand purpose · Generative AI & authorship · Authorship</span><span class="es">Propósito de marca · IA generativa y autoría · La autoría</span></p>
+  <h2 class="modal-title"><span class="en">Who signs</span><span class="es">Quién firma</span></h2>
+  <div class="modal-body en"><p>For years, brands built purpose as if they had a soul. They said something, sustained it over time, signed it with their name. Authorship mattered because it implied responsibility.</p><p>Generative AI writes, designs, composes and creates. It does it well and increasingly better. The real question is who signs — and what it means to sign something when you don't know exactly how it was made.</p><p>Brands using AI to produce purpose content without understanding this are signing blank checks. The consumer doesn't need to know how it was made. But they do need to believe that someone took responsibility for what it says.</p></div>
+  <div class="modal-body es"><p>Durante años, las marcas construyeron propósito como si tuvieran alma. Decían algo, lo sostenían en el tiempo, lo firmaban con su nombre. La autoría importaba porque implicaba responsabilidad.</p><p>La IA generativa escribe, diseña, compone y crea. Lo hace bien y cada vez mejor. La pregunta real es quién firma — y qué significa firmar algo cuando no sabés exactamente cómo fue hecho.</p><p>Las marcas que usan IA para producir contenido de propósito sin entender esto están firmando cheques en blanco. El consumidor no necesita saber cómo se hizo. Pero sí necesita creer que alguien se hizo responsable de lo que dice.</p></div>
+  <p class="modal-remate en">Purpose without authorship is decoration.</p>
+  <p class="modal-remate es">Propósito sin autoría es decoración.</p>
+  <div class="modal-footer">
+    <span class="modal-wai">Written with AI.</span>
+    <button class="modal-share" onclick="copyLink('who-signs',this)"><span class="en">Copy link &#8599;</span><span class="es">Copiar enlace &#8599;</span></button>
+  </div>
+</div>
+<div class="modal-note" id="modal-what-nobody-says-in-the-room" style="display:none">
+  <p class="modal-tag"><span class="en">Product launch · Neuroscience of risk · Fear</span><span class="es">Lanzamiento de producto · Neurociencia del riesgo · El miedo</span></p>
+  <h2 class="modal-title"><span class="en">What nobody says in the room</span><span class="es">Lo que no se dice en la sala</span></h2>
+  <div class="modal-body en"><p>There's something that happens in every launch meeting that nobody names. Someone in the room knows the product isn't ready. Or the timing is wrong. Or they've seen this before and it didn't work. And they don't say it.</p><p>Neuroscience explains why: the brain processes uncertainty as physical threat. Speaking up when everyone is excited activates the same system as dodging a punch. The body prefers silence.</p><p>The result is that the most expensive launches in history didn't fail for lack of budget or talent. They failed because nobody in the room said what they knew.</p></div>
+  <div class="modal-body es"><p>Hay algo que pasa en cada reunión de lanzamiento que nadie nombra. Alguien en la sala sabe que el producto no está listo. O que el timing es malo. O que ya vieron esto antes y no funcionó. Y no lo dice.</p><p>La neurociencia del riesgo explica por qué: el cerebro procesa la incertidumbre como amenaza física. Hablar cuando todos están entusiasmados activa el mismo sistema que esquivar un golpe. El cuerpo prefiere el silencio.</p><p>El resultado es que los lanzamientos más costosos de la historia no fallaron por falta de presupuesto ni de talento. Fallaron porque nadie en la sala dijo lo que sabía.</p></div>
+  <p class="modal-remate en">Fear of judgment is the most expensive insight in marketing. And it doesn't appear in any brief.</p>
+  <p class="modal-remate es">El miedo al juicio es el insight más caro del marketing. Y no aparece en ningún brief.</p>
+  <div class="modal-footer">
+    <span class="modal-wai">Written with AI.</span>
+    <button class="modal-share" onclick="copyLink('what-nobody-says-in-the-room',this)"><span class="en">Copy link &#8599;</span><span class="es">Copiar enlace &#8599;</span></button>
+  </div>
+</div>
+<div class="modal-note" id="modal-the-brand-that-remembers-who-you-were" style="display:none">
+  <p class="modal-tag"><span class="en">Brand loyalty · Epigenetics · Nostalgia</span><span class="es">Lealtad de marca · Epigenética · La nostalgia</span></p>
+  <h2 class="modal-title"><span class="en">The brand that remembers who you were</span><span class="es">La marca que te recuerda quién eras</span></h2>
+  <div class="modal-body en"><p>Epigenetics discovered something unsettling: experiences you had before age ten leave physical marks on your DNA that affect how you respond to the world as an adult. Not as memory. As biology.</p><p>Mass consumer brands sensed this before science confirmed it. The soda of your childhood doesn't compete with other sodas. It competes with a version of you that no longer exists. And it wins almost every time.</p><p>Nostalgia isn't sentimentality. It's one of the most powerful loyalty mechanisms that exist — and one of the least understood by those designing retention strategies based on points and discounts.</p></div>
+  <div class="modal-body es"><p>La epigenética descubrió algo inquietante: las experiencias que tuviste antes de los diez años dejan marcas físicas en tu ADN que afectan cómo respondés al mundo de adulto. No como recuerdo. Como biología.</p><p>Las marcas de consumo masivo lo intuían antes de que la ciencia lo confirmara. La gaseosa de tu infancia no compite con otras gaseosas. Compite con una versión de vos que ya no existe. Y gana casi siempre.</p><p>La nostalgia no es sentimentalismo. Es uno de los mecanismos de lealtad más poderosos que existen — y uno de los menos comprendidos por quienes diseñan estrategias de retención basadas en puntos y descuentos.</p></div>
+  <p class="modal-remate en">You don't build loyalty with the consumer they are today. You build it with who they were.</p>
+  <p class="modal-remate es">No fidelizás al consumidor que es hoy. Fidelizás al que fue.</p>
+  <div class="modal-footer">
+    <span class="modal-wai">Written with AI.</span>
+    <button class="modal-share" onclick="copyLink('the-brand-that-remembers-who-you-were',this)"><span class="en">Copy link &#8599;</span><span class="es">Copiar enlace &#8599;</span></button>
+  </div>
+</div>
+<div class="modal-note" id="modal-both-things-at-once" style="display:none">
+  <p class="modal-tag"><span class="en">Creative strategy · Quantum physics · Doubt</span><span class="es">Estrategia creativa · Física cuántica · La duda</span></p>
+  <h2 class="modal-title"><span class="en">Both things at once</span><span class="es">Las dos cosas a la vez</span></h2>
+  <div class="modal-body en"><p>In quantum physics, a particle can exist in two states simultaneously until someone observes it. The moment you measure it, it collapses into one thing. Before that, it's both.</p><p>A great creative idea works the same way. Before you show it to the client, it's simultaneously the best idea of the year and a disaster. The presentation is the moment it collapses.</p><p>The problem is that most creative processes are designed to eliminate doubt as quickly as possible. Tests, validations, approval committees. All oriented toward making the idea collapse fast, into something predictable.</p></div>
+  <div class="modal-body es"><p>En física cuántica, una partícula puede estar en dos estados al mismo tiempo hasta que alguien la observa. En el momento en que la medís, colapsa en una sola cosa. Antes de eso, es las dos.</p><p>Una gran idea creativa funciona igual. Antes de mostrársela al cliente, es simultáneamente la mejor idea del año y una catástrofe. La presentación es el momento en que colapsa.</p><p>El problema es que la mayoría de los procesos creativos están diseñados para eliminar la duda lo antes posible. Testeos, validaciones, comités de aprobación. Todo orientado a que la idea colapse rápido, en algo predecible.</p></div>
+  <p class="modal-remate en">Sustained doubt is uncomfortable. It's also where the best ideas live.</p>
+  <p class="modal-remate es">La duda sostenida es incómoda. También es donde viven las mejores ideas.</p>
+  <div class="modal-footer">
+    <span class="modal-wai">Written with AI.</span>
+    <button class="modal-share" onclick="copyLink('both-things-at-once',this)"><span class="en">Copy link &#8599;</span><span class="es">Copiar enlace &#8599;</span></button>
+  </div>
+</div>
+<div class="modal-note" id="modal-the-second-before-buying" style="display:none">
+  <p class="modal-tag"><span class="en">Performance marketing · Behavioral psychology · Desire</span><span class="es">Marketing de performance · Psicología conductual · El deseo</span></p>
+  <h2 class="modal-title"><span class="en">The second before buying</span><span class="es">El segundo antes de comprar</span></h2>
+  <div class="modal-body en"><p>There's a second — literally, one second — between when someone decides to buy something and when they do it. What behavioral psychology found is disturbing: the decision was already made before the person believed they had made it.</p><p>Desire isn't rational or irrational. It's prior to both. It appears before the argument, before the price, before the comparison. Performance marketing works on the surface of that moment without touching what's underneath.</p><p>Brands that understand desire don't persuade. They awaken something that was already there.</p></div>
+  <div class="modal-body es"><p>Hay un segundo — literal, un segundo — entre que alguien decide comprar algo y que lo hace. Lo que encontró la psicología conductual es perturbador: la decisión ya estaba tomada antes de que la persona creyera haberla tomado.</p><p>El deseo no es racional ni irracional. Es anterior a ambas cosas. Aparece antes del argumento, antes del precio, antes de la comparación. El marketing de performance trabaja sobre la superficie de ese momento sin tocar lo que hay debajo.</p><p>Las marcas que entienden el deseo no convencen. Despiertan algo que ya estaba ahí.</p></div>
+  <p class="modal-remate en">The work isn't to create desire. It's to not extinguish it along the way.</p>
+  <p class="modal-remate es">El trabajo no es crear el deseo. Es no apagarlo en el camino.</p>
+  <div class="modal-footer">
+    <span class="modal-wai">Written with AI.</span>
+    <button class="modal-share" onclick="copyLink('the-second-before-buying',this)"><span class="en">Copy link &#8599;</span><span class="es">Copiar enlace &#8599;</span></button>
+  </div>
+</div>
+<div class="modal-note" id="modal-the-tribe-nobody-founded" style="display:none">
+  <p class="modal-tag"><span class="en">Employer branding · Sociology of groups · Belonging</span><span class="es">Employer branding · Sociología de grupos · Pertenecer</span></p>
+  <h2 class="modal-title"><span class="en">The tribe nobody founded</span><span class="es">La tribu que nadie fundó</span></h2>
+  <div class="modal-body en"><p>Sociology has an uncomfortable observation for the corporate world: real tribes aren't founded. They emerge. Nobody decides to belong to a tribe — they feel it, and then rationalize it.</p><p>Employer branding usually does exactly the opposite. It designs belonging from the top down — declared values, documented culture, communicated benefits. All correct, all inert.</p><p>What makes someone feel they belong to a team isn't the culture manual. It's the moment someone had their back without being asked. The inside joke that has no translation. The crisis they went through together.</p></div>
+  <div class="modal-body es"><p>La sociología tiene una observación incómoda para el mundo corporativo: las tribus reales no se fundan. Emergen. Nadie decide pertenecer a una tribu — lo siente, y después lo racionaliza.</p><p>El employer branding suele hacer exactamente lo contrario. Diseña la pertenencia desde arriba — valores declarados, cultura documentada, beneficios comunicados. Todo correcto, todo inerte.</p><p>Lo que hace que alguien sienta que pertenece a un equipo no es el manual de cultura. Es el momento en que alguien le cubrió las espaldas sin que se lo pidieran. El chiste interno que no tiene traducción. La crisis que atravesaron juntos.</p></div>
+  <p class="modal-remate en">Belonging isn't communicated. It's experienced. And that difference costs almost every organization dearly.</p>
+  <p class="modal-remate es">Pertenecer no se comunica. Se experimenta. Y esa diferencia le cuesta cara a casi todas las organizaciones.</p>
+  <div class="modal-footer">
+    <span class="modal-wai">Written with AI.</span>
+    <button class="modal-share" onclick="copyLink('the-tribe-nobody-founded',this)"><span class="en">Copy link &#8599;</span><span class="es">Copiar enlace &#8599;</span></button>
+  </div>
+</div>
+<div class="modal-note" id="modal-what-nature-already-solved" style="display:none">
+  <p class="modal-tag"><span class="en">Product innovation · Biomimicry · Curiosity</span><span class="es">Innovación de producto · Biomímesis · La curiosidad</span></p>
+  <h2 class="modal-title"><span class="en">What nature already solved</span><span class="es">Lo que la naturaleza ya resolvió</span></h2>
+  <div class="modal-body en"><p>Velcro was invented by an engineer who asked why burrs stuck to his clothes. Submarine sonar was inspired by the bat. The termite mound's structure solved ventilation for a building in Zimbabwe without air conditioning.</p><p>Biomimicry has 3.8 billion years of accumulated R&D. Free. Available to anyone curious enough to look. The problem is that curiosity doesn't scale well in organizations.</p><p>Innovation processes are designed to answer questions, not ask them. And the strange question requires a type of attention that timelines don't allow.</p></div>
+  <div class="modal-body es"><p>El Velcro lo inventó un ingeniero que se preguntó por qué los abrojos se pegaban a su ropa. El sonar de los submarinos lo inspiró el murciélago. La estructura del nido de termitas resolvió la ventilación de un edificio en Zimbabue sin aire acondicionado.</p><p>La biomímesis lleva 3.800 millones de años de I+D acumulado. Gratis. Disponible para cualquiera que tenga curiosidad suficiente para mirar. El problema es que la curiosidad no escala bien en las organizaciones.</p><p>Los procesos de innovación están diseñados para responder preguntas, no para hacerlas. Y la pregunta rara requiere un tipo de atención que los timelines no permiten.</p></div>
+  <p class="modal-remate en">The best product innovations didn't come from studying the market. They came from someone who looked at something completely different and couldn't help asking why.</p>
+  <p class="modal-remate es">Las mejores innovaciones de producto no vinieron de estudiar el mercado. Vinieron de alguien que miró algo completamente distinto y no pudo evitar preguntarse por qué.</p>
+  <div class="modal-footer">
+    <span class="modal-wai">Written with AI.</span>
+    <button class="modal-share" onclick="copyLink('what-nature-already-solved',this)"><span class="en">Copy link &#8599;</span><span class="es">Copiar enlace &#8599;</span></button>
+  </div>
+</div>
+<div class="modal-note" id="modal-what-everyone-saw-and-nobody-said" style="display:none">
+  <p class="modal-tag"><span class="en">Brand crisis · Chaos theory · Shame</span><span class="es">Crisis de marca · Teoría del caos · La vergüenza</span></p>
+  <h2 class="modal-title"><span class="en">What everyone saw and nobody said</span><span class="es">Lo que todos vieron y nadie dijo</span></h2>
+  <div class="modal-body en"><p>Chaos theory says a butterfly flapping its wings in Brazil can trigger a tornado in Texas. Brand crises work the same way: the moment that detonated everything is rarely the moment that mattered.</p><p>There's something chaos theory doesn't explain that appears in almost every reputation crisis: shame. Not the consumer's — the organization's. That state where everyone knows something went wrong and nobody says it publicly.</p><p>Brands that come out well from a crisis aren't the ones that lie best. They're the ones that say what everyone already knows before anyone else does.</p></div>
+  <div class="modal-body es"><p>La teoría del caos dice que una mariposa que bate las alas en Brasil puede desencadenar un tornado en Texas. Las crisis de marca funcionan igual: el momento que lo detonó todo raramente es el momento que importaba.</p><p>Hay algo que la teoría del caos no explica y que aparece en casi todas las crisis de reputación: la vergüenza. No la del consumidor — la de la organización. Ese estado en que todos saben que algo estuvo mal y nadie lo dice en público.</p><p>Las marcas que salen bien de una crisis no son las que mejor mienten. Son las que antes que nadie dicen lo que todos ya saben.</p></div>
+  <p class="modal-remate en">Shame managed in time is credibility. Shame denied is the beginning of the tornado.</p>
+  <p class="modal-remate es">La vergüenza gestionada a tiempo es credibilidad. La vergüenza negada es el principio del tornado.</p>
+  <div class="modal-footer">
+    <span class="modal-wai">Written with AI.</span>
+    <button class="modal-share" onclick="copyLink('what-everyone-saw-and-nobody-said',this)"><span class="en">Copy link &#8599;</span><span class="es">Copiar enlace &#8599;</span></button>
+  </div>
+</div>
+<div class="modal-note" id="modal-the-wrong-hour" style="display:none">
+  <p class="modal-tag"><span class="en">User experience · Chronobiology · Tiredness</span><span class="es">Experiencia de usuario · Cronobiología · El cansancio</span></p>
+  <h2 class="modal-title"><span class="en">The wrong hour</span><span class="es">La hora equivocada</span></h2>
+  <div class="modal-body en"><p>Chronobiology discovered we're not the same person at 9am as at 9pm. The brain makes riskier financial decisions before lunch. Decision fatigue is real and cumulative — after a certain number of choices, the brain starts choosing what's easiest, not what's best.</p><p>The customer journey almost always ignores the biological moment in which it occurs. It designs steps, screens and messages as if the user were the same at any hour.</p><p>Tiredness isn't a user problem. It's a design data point.</p></div>
+  <div class="modal-body es"><p>La cronobiología descubrió que no somos la misma persona a las 9 de la mañana que a las 9 de la noche. El cerebro toma decisiones financieras más arriesgadas antes del almuerzo. La fatiga de decisión es real y acumulable — después de cierta cantidad de elecciones, el cerebro empieza a elegir lo más fácil, no lo mejor.</p><p>El customer journey ignora casi siempre el momento biológico en que ocurre. Diseña pasos, pantallas y mensajes como si el usuario fuera el mismo a cualquier hora.</p><p>El cansancio no es un problema del usuario. Es un dato de diseño.</p></div>
+  <p class="modal-remate en">The experience that works at 10am can be exactly the wrong obstacle at 10pm.</p>
+  <p class="modal-remate es">La experiencia que funciona a las 10am puede ser exactamente el obstáculo equivocado a las 10pm.</p>
+  <div class="modal-footer">
+    <span class="modal-wai">Written with AI.</span>
+    <button class="modal-share" onclick="copyLink('the-wrong-hour',this)"><span class="en">Copy link &#8599;</span><span class="es">Copiar enlace &#8599;</span></button>
+  </div>
+</div>
+<div class="modal-note" id="modal-what-you-want-others-not-to-have" style="display:none">
+  <p class="modal-tag"><span class="en">Value proposition · Behavioral economics · Jealousy</span><span class="es">Propuesta de valor · Economía conductual · Los celos</span></p>
+  <h2 class="modal-title"><span class="en">What you want others not to have</span><span class="es">Lo que querés que los demás no tengan</span></h2>
+  <div class="modal-body en"><p>Behavioral economics has a finding that makes marketing departments uncomfortable: a significant part of purchase decisions isn't motivated by what the product does, but by what it makes you feel in relation to others.</p><p>We don't buy the car. We buy the version of ourselves driving that car in front of someone specific. We don't choose the beer. We choose what it says about us at the table.</p><p>Jealousy is one of the most honest drivers of consumption. And one of the least named in brand strategy — because naming it in a brief is uncomfortable, even though everyone in the room knows it's there.</p></div>
+  <div class="modal-body es"><p>La economía conductual tiene un hallazgo que incomoda a los departamentos de marketing: una parte significativa de las decisiones de compra no está motivada por lo que el producto hace, sino por lo que hace sentir en relación a otros.</p><p>No compramos el auto. Compramos la versión de nosotros mismos que maneja ese auto frente a alguien específico. No elegimos la cerveza. Elegimos lo que dice de nosotros en la mesa.</p><p>Los celos son uno de los motores más honestos del consumo. Y uno de los menos nombrados en una estrategia de marca — porque nombrarlos en un brief es incómodo, aunque todos en la sala sepan que están ahí.</p></div>
+  <p class="modal-remate en">The value proposition that doesn't understand comparative desire doesn't understand why people really buy.</p>
+  <p class="modal-remate es">La propuesta de valor que no entiende el deseo comparativo no entiende por qué la gente compra realmente.</p>
+  <div class="modal-footer">
+    <span class="modal-wai">Written with AI.</span>
+    <button class="modal-share" onclick="copyLink('what-you-want-others-not-to-have',this)"><span class="en">Copy link &#8599;</span><span class="es">Copiar enlace &#8599;</span></button>
+  </div>
+</div>
+<div class="modal-note" id="modal-before-the-first-word" style="display:none">
+  <p class="modal-tag"><span class="en">Brand storytelling · Anthropology of fire · Silence</span><span class="es">Storytelling de marca · Antropología del fuego · El silencio</span></p>
+  <h2 class="modal-title"><span class="en">Before the first word</span><span class="es">Antes de la primera palabra</span></h2>
+  <div class="modal-body en"><p>Fire was the first technology that changed human behavior. Not because it gave warmth or cooked food — that came later. The first thing it did was create a center. A place to sit together when there was nothing left to do.</p><p>Anthropologists calculate that 80% of conversations around the fire were stories. Not instructions, not data, not strategy. Stories. Storytelling isn't a marketing tool. It's the reason language exists.</p><p>The brands that talk most are often the ones that say least. The silence before the story — that second where nothing has happened yet — is the most powerful moment in any piece of communication.</p></div>
+  <div class="modal-body es"><p>El fuego fue la primera tecnología que cambió el comportamiento humano. No porque diera calor o cocinara alimentos — eso vino después. Lo primero que hizo fue crear un centro. Un lugar donde sentarse juntos cuando ya no había nada que hacer.</p><p>Los antropólogos calculan que el 80% de las conversaciones alrededor del fuego eran historias. No instrucciones, no datos, no estrategia. Historias. El storytelling no es una herramienta de marketing. Es la razón por la que el lenguaje existe.</p><p>Las marcas que más hablan son a menudo las que menos dicen. El silencio antes de la historia — ese segundo donde todavía no pasó nada — es el momento más poderoso de cualquier pieza de comunicación.</p></div>
+  <p class="modal-remate en">Nobody sits around a dashboard.</p>
+  <p class="modal-remate es">Nadie se sienta alrededor de un dashboard.</p>
+  <div class="modal-footer">
+    <span class="modal-wai">Written with AI.</span>
+    <button class="modal-share" onclick="copyLink('before-the-first-word',this)"><span class="en">Copy link &#8599;</span><span class="es">Copiar enlace &#8599;</span></button>
+  </div>
+</div>
+  </div>
+</div>
 
 <footer>
   <a href="index.html">&#8592; <span class="en">Back</span><span class="es">Volver</span></a>
@@ -416,30 +550,57 @@ footer a{color:inherit;text-decoration:none}footer a:hover{color:var(--ink)}
 </footer>
 
 <script>
+var currentSlug = null;
 var slugs = {"01":"unexpected-competitive-advantage","02":"what-the-algorithm-cant-buy-you","03":"the-step-nobody-automates-first","04":"the-number-missing-from-your-dashboard","05":"what-the-brand-cant-give-you","06":"the-question-nobody-asked","07":"the-expert-who-forgot-not-knowing","08":"the-one-who-waits","09":"what-you-chose-not-to-show","10":"who-signs","11":"what-nobody-says-in-the-room","12":"the-brand-that-remembers-who-you-were","13":"both-things-at-once","14":"the-second-before-buying","15":"the-tribe-nobody-founded","16":"what-nature-already-solved","17":"what-everyone-saw-and-nobody-said","18":"the-wrong-hour","19":"what-you-want-others-not-to-have","20":"before-the-first-word"};
+
+function openModal(slug) {
+  if (currentSlug) document.getElementById('modal-' + currentSlug).style.display = 'none';
+  currentSlug = slug;
+  document.getElementById('modal-' + slug).style.display = 'block';
+  document.getElementById('modal-overlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+  history.pushState(null, '', '#' + slug);
+}
+function closeModal() {
+  document.getElementById('modal-overlay').classList.remove('open');
+  if (currentSlug) document.getElementById('modal-' + currentSlug).style.display = 'none';
+  currentSlug = null;
+  document.body.style.overflow = '';
+  history.pushState(null, '', window.location.pathname);
+}
+function handleOverlayClick(e) {
+  if (e.target === document.getElementById('modal-overlay')) closeModal();
+}
+document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeModal(); });
+
+function copyLink(slug, btn) {
+  var url = 'https://marianodefelipe.com/human-prompting#' + slug;
+  navigator.clipboard.writeText(url).then(function() {
+    btn.classList.add('copied');
+    btn.textContent = document.documentElement.lang === 'es' ? '¡Copiado!' : 'Copied!';
+    setTimeout(function() {
+      btn.classList.remove('copied');
+      btn.innerHTML = document.documentElement.lang === 'es' ? '<span class="en">Copy link &#8599;</span><span class="es">Copiar enlace &#8599;</span>' : '<span class="en">Copy link &#8599;</span><span class="es">Copiar enlace &#8599;</span>';
+    }, 2000);
+  });
+}
+
 function setLang(l) {
-  var isEs = l==='es';
+  var isEs = l === 'es';
   document.querySelectorAll('.en').forEach(function(e) {
-    e.style.display = isEs ? 'none' : (e.tagName==='SPAN'?'inline':'block');
+    e.style.display = isEs ? 'none' : (e.tagName === 'SPAN' ? 'inline' : 'block');
   });
   document.querySelectorAll('.es').forEach(function(e) {
-    e.style.display = isEs ? (e.tagName==='SPAN'?'inline':'block') : 'none';
+    e.style.display = isEs ? (e.tagName === 'SPAN' ? 'inline' : 'block') : 'none';
   });
   document.getElementById('btn-en').style.cssText = isEs ? '' : 'background:#f6f6f4;color:var(--ink);border-color:#f6f6f4';
   document.getElementById('btn-es').style.cssText = isEs ? 'background:#f6f6f4;color:var(--ink);border-color:#f6f6f4' : '';
   document.documentElement.lang = l;
 }
-function copyLink(slug, btn) {
-  var url = window.location.origin + window.location.pathname + '#' + slug;
-  navigator.clipboard.writeText(url).then(function() {
-    btn.classList.add('copied');
-    var isEs = document.documentElement.lang === 'es';
-    btn.innerHTML = isEs ? '&#161;Copiado!' : 'Copied!';
-    setTimeout(function() {
-      btn.classList.remove('copied');
-      btn.innerHTML = isEs ? '<span class="en">Copy link &#8599;</span><span class="es">Copiar enlace &#8599;</span>' : '<span class="en">Copy link &#8599;</span><span class="es">Copiar enlace &#8599;</span>';
-    }, 2000);
-  });
+
+if (window.location.hash) {
+  var slug = window.location.hash.slice(1);
+  setTimeout(function() { openModal(slug); }, 100);
 }
 </script>
 </body>
