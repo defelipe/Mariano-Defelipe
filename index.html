@@ -173,6 +173,11 @@ footer a:hover{color:var(--ink)}
 .hp-all{margin-top:1.25rem}
 .hp-all-link{font-family:var(--fd);font-size:.6rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--mu);text-decoration:none;transition:color .15s}
 .hp-all-link:hover{color:var(--ac)}
+
+.press-hidden{display:none}
+.press-hidden.open{display:block}
+.press-toggle{font-family:var(--fd);font-size:.58rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--mu);background:none;border:none;padding:.75rem 0 0;cursor:pointer;transition:color .15s}
+.press-toggle:hover{color:var(--ac)}
 </style>
 <link rel="canonical" href="https://marianodefelipe.com">
 <link rel="sitemap" type="application/xml" href="https://marianodefelipe.com/sitemap.xml">
@@ -306,18 +311,25 @@ footer a:hover{color:var(--ink)}
 <section class="sec" id="press">
   <p class="lbl sr"><span class="en">Press</span><span class="es">Prensa</span></p>
   <h2 class="sh sr d1"><span class="en">In the <span class="a">press.</span></span><span class="es">En los <span class="a">medios.</span></span></h2>
-  <div class="pl sr d2">
+    <div class="pl sr d2">
+    <a class="pi" href="https://www.adlatina.com/publicidad/the-pub-presenta-su-modelo-de-contenido-inteligente" target="_blank" rel="noopener"><span class="ps">Adlatina</span><span class="pt en">The Pub presents its intelligent content model</span><span class="pt es">The Pub presenta su modelo de contenido inteligente</span><span class="pa">&#8599;</span></a>
+    <a class="pi" href="https://dossiernet.com/articulo/the-pub-el-hub-de-produccion-de-publicis-groupe-presenta-su-modelo-de-contenido-inteligente/38690" target="_blank" rel="noopener"><span class="ps">Dossiernet</span><span class="pt en">The Pub — Publicis Groupe's production hub presents its intelligent content model</span><span class="pt es">The Pub: el hub de producci&oacute;n de Publicis Groupe presenta su modelo de contenido inteligente</span><span class="pa">&#8599;</span></a>
     <a class="pi" href="https://www.latinspots.com/noticia/publicis-groupe-lanza-the-pub/94426" target="_blank" rel="noopener"><span class="ps">LatinSpots</span><span class="pt en">Publicis Groupe launches The Pub</span><span class="pt es">Publicis Groupe lanza The Pub</span><span class="pa">&#8599;</span></a>
-    <a class="pi" href="https://www.latinspots.com/noticia/leo-burnett-argentina-nuevos-desafos-para-una-nueva-era/55358" target="_blank" rel="noopener"><span class="ps">LatinSpots</span><span class="pt en">Leo Burnett Argentina: new challenges for a new era</span><span class="pt es">Leo Burnett Argentina: nuevos desaf&iacute;os para una nueva era</span><span class="pa">&#8599;</span></a>
-    <a class="pi" href="https://www.totalmedios.com/nota/44893/leo-burnett-argentina-y-arc-empezaron-a-trabajar-juntos" target="_blank" rel="noopener"><span class="ps">TotalMedios</span><span class="pt en">Leo Burnett and Arc &mdash; taking ideas to the next level</span><span class="pt es">Leo Burnett y Arc &mdash; llevando las ideas al siguiente nivel</span><span class="pa">&#8599;</span></a>
-    <a class="pi" href="http://www.adlatina.com/publicidad/mariano-defelipe-es-el-nuevo-director-de-negocios-integrados-de-publicis-argentina" target="_blank" rel="noopener"><span class="ps">Adlatina</span><span class="pt en">Mariano Defelipe named Integrated Business Director at Publicis</span><span class="pt es">Mariano Defelipe, nuevo Director de Negocios Integrados de Publicis</span><span class="pa">&#8599;</span></a>
-    <a class="pi" href="https://www.adlatina.com/publicidad/sosa-gim%C3%A9nez-y-brotons-y-defelipe:-%E2%80%9Clos-clientes-sienten-el-empuje-de-esta-nueva-etapa-de-leo%E2%80%9D" target="_blank" rel="noopener"><span class="ps">Adlatina</span><span class="pt en">Sosa, Gim&eacute;nez y Brotons y Defelipe: &ldquo;Los clientes sienten el empuje de esta nueva etapa de Leo&rdquo;</span><span class="pt es">Sosa, Gim&eacute;nez y Brotons y Defelipe: &ldquo;Los clientes sienten el empuje de esta nueva etapa de Leo&rdquo;</span><span class="pa">&#8599;</span></a>
-    <a class="pi" href="https://www.latinspots.com/noticia/la-nueva-visin-de-leo-burnett-argentina/54783" target="_blank" rel="noopener"><span class="ps">LatinSpots</span><span class="pt en">Leo Burnett Argentina: the new vision</span><span class="pt es">Leo Burnett Argentina: la nueva visi&oacute;n</span><span class="pa">&#8599;</span></a>
     <a class="pi" href="https://www.latinspots.com/noticia/leo-burnett-argentina-flexibilidad-para-la-adaptacin/59515" target="_blank" rel="noopener"><span class="ps">LatinSpots</span><span class="pt en">Leo Burnett Argentina: flexibility for adaptation</span><span class="pt es">Leo Burnett Argentina: flexibilidad para la adaptaci&oacute;n</span><span class="pa">&#8599;</span></a>
-    <a class="pi" href="https://www.reasonwhy.es/actualidad/movimiento-sector-marketing-argentina-the-juju-gut-publicis-arcor-oxl" target="_blank" rel="noopener"><span class="ps">Reason Why</span><span class="pt en">Defelipe joins Publicis Argentina</span><span class="pt es">Defelipe se suma al equipo de Publicis Argentina</span><span class="pa">&#8599;</span></a>
+    <a class="pi" href="https://www.latinspots.com/noticia/la-nueva-visin-de-leo-burnett-argentina/54783" target="_blank" rel="noopener"><span class="ps">LatinSpots</span><span class="pt en">Leo Burnett Argentina: the new vision</span><span class="pt es">Leo Burnett Argentina: la nueva visi&oacute;n</span><span class="pa">&#8599;</span></a>
+    <div class="press-hidden" id="press-hidden">
+      <a class="pi" href="https://www.latinspots.com/noticia/leo-burnett-argentina-nuevos-desafos-para-una-nueva-era/55358" target="_blank" rel="noopener"><span class="ps">LatinSpots</span><span class="pt en">Leo Burnett Argentina: new challenges for a new era</span><span class="pt es">Leo Burnett Argentina: nuevos desaf&iacute;os para una nueva era</span><span class="pa">&#8599;</span></a>
+      <a class="pi" href="https://www.totalmedios.com/nota/44893/leo-burnett-argentina-y-arc-empezaron-a-trabajar-juntos" target="_blank" rel="noopener"><span class="ps">TotalMedios</span><span class="pt en">Leo Burnett and Arc &mdash; taking ideas to the next level</span><span class="pt es">Leo Burnett y Arc &mdash; llevando las ideas al siguiente nivel</span><span class="pa">&#8599;</span></a>
+      <a class="pi" href="https://www.adlatina.com/publicidad/sosa-gim%C3%A9nez-y-brotons-y-defelipe:-%E2%80%9Clos-clientes-sienten-el-empuje-de-esta-nueva-etapa-de-leo%E2%80%9D" target="_blank" rel="noopener"><span class="ps">Adlatina</span><span class="pt en">Sosa, Gim&eacute;nez y Brotons y Defelipe: &ldquo;Clients feel the momentum of this new Leo era&rdquo;</span><span class="pt es">Sosa, Gim&eacute;nez y Brotons y Defelipe: &ldquo;Los clientes sienten el empuje de esta nueva etapa de Leo&rdquo;</span><span class="pa">&#8599;</span></a>
+      <a class="pi" href="http://www.adlatina.com/publicidad/mariano-defelipe-es-el-nuevo-director-de-negocios-integrados-de-publicis-argentina" target="_blank" rel="noopener"><span class="ps">Adlatina</span><span class="pt en">Mariano Defelipe named Integrated Business Director at Publicis</span><span class="pt es">Mariano Defelipe, nuevo Director de Negocios Integrados de Publicis</span><span class="pa">&#8599;</span></a>
+      <a class="pi" href="https://www.reasonwhy.es/actualidad/movimiento-sector-marketing-argentina-the-juju-gut-publicis-arcor-oxl" target="_blank" rel="noopener"><span class="ps">Reason Why</span><span class="pt en">Defelipe joins Publicis Argentina</span><span class="pt es">Defelipe se suma al equipo de Publicis Argentina</span><span class="pa">&#8599;</span></a>
+      <a class="pi" href="https://roastbrief.com.mx/2019/01/mariano-defelipe-es-el-nuevo-director-de-negocios-integrados-de-publicis-argentina/" target="_blank" rel="noopener"><span class="ps">Roastbrief</span><span class="pt en">Mariano Defelipe named Integrated Business Director at Publicis Argentina</span><span class="pt es">Mariano Defelipe es el nuevo Director de Negocios Integrados de Publicis Argentina</span><span class="pa">&#8599;</span></a>
+    </div>
+    <button class="press-toggle" id="press-toggle" onclick="togglePress()">
+      <span class="en">View all (11) &#8595;</span><span class="es">Ver todas (11) &#8595;</span>
+    </button>
   </div>
 </section>
-
 
 <section class="hp" id="human-prompting">
   <p class="lbl sr">Human Prompting</p>
@@ -493,6 +505,18 @@ footer a:hover{color:var(--ink)}
 </footer>
 
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+
+function togglePress() {
+  var hidden = document.getElementById('press-hidden');
+  var btn = document.getElementById('press-toggle');
+  var isOpen = hidden.classList.toggle('open');
+  var isEs = document.documentElement.lang === 'es';
+  if (isOpen) {
+    btn.innerHTML = isEs ? '<span class="en">View less &#8593;</span><span class="es">Ver menos &#8593;</span>' : '<span class="en">View less &#8593;</span><span class="es">Ver menos &#8593;</span>';
+  } else {
+    btn.innerHTML = isEs ? '<span class="en">View all (11) &#8595;</span><span class="es">Ver todas (11) &#8595;</span>' : '<span class="en">View all (11) &#8595;</span><span class="es">Ver todas (11) &#8595;</span>';
+  }
+}
 function setLang(l) {
   var isEs = l === 'es';
   document.querySelectorAll('.en').forEach(function(e) {
