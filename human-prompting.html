@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Human Prompting — Mariano Defelipe</title>
+<meta name="description" content="Human Prompting — Claude and a human talk about business, technology and life. By Mariano Defelipe.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#f6f6f4;--ink:#0d0d0c;--mu:#888884;--bo:rgba(13,13,12,.09);--ac:#d14e1e;--fd:'Syne',sans-serif;--fb:'DM Sans',sans-serif}
+html{scroll-behavior:smooth}
+body{font-family:var(--fb);background:var(--bg);color:var(--ink);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+.en{display:block}.es{display:none}
+.lang{position:fixed;top:1.75rem;right:2rem;z-index:300;display:flex;font-family:var(--fd);font-size:.6rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+.lang button{padding:.32rem .6rem;border:1px solid var(--bo);background:var(--bg);color:var(--mu);font:inherit;cursor:pointer;transition:all .15s}
+.lang button:first-child{border-right:none}
+.lang button.on{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+header{padding:5rem 5vw 3rem;border-bottom:1px solid var(--bo)}
+.back{font-family:var(--fd);font-size:.58rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--mu);text-decoration:none;display:inline-flex;align-items:center;gap:.4rem;margin-bottom:2.5rem;transition:color .15s}
+.back:hover{color:var(--ink)}
+.h-label{font-family:var(--fd);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--ac);margin-bottom:1rem}
+.h-title{font-family:var(--fd);font-size:clamp(3rem,7vw,6rem);font-weight:800;line-height:.88;letter-spacing:-.03em;text-transform:uppercase;margin-bottom:1.5rem}
+.h-title .a{color:var(--ac)}
+.h-intro{font-size:.95rem;font-weight:300;line-height:1.75;color:var(--mu);max-width:560px}
+.h-intro em{font-style:italic;color:var(--ink)}
+main{padding:0 5vw;max-width:860px}
+.hp-entry{display:grid;grid-template-columns:60px 1fr;gap:2.5rem;padding:4rem 0;border-bottom:1px solid var(--bo)}
+.hp-entry:first-child{border-top:1px solid var(--bo);margin-top:2rem}
+.hp-num{font-family:var(--fd);font-size:clamp(2rem,4vw,3rem);font-weight:800;color:var(--bo);line-height:1;padding-top:.2rem}
+.hp-tag{font-family:var(--fd);font-size:.58rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--ac);margin-bottom:.65rem}
+.hp-title{font-family:var(--fd);font-size:clamp(1.3rem,2.5vw,2rem);font-weight:800;text-transform:uppercase;letter-spacing:-.02em;margin-bottom:1.25rem;line-height:1}
+.hp-body{font-size:.9rem;font-weight:300;line-height:1.8;color:var(--ink)}
+.hp-body p{margin-bottom:.85rem}
+.hp-body p:last-child{font-weight:500;margin-bottom:0}
+.hp-wai{font-size:.75rem;font-style:italic;color:var(--mu);margin-top:1.25rem;border-top:1px solid var(--bo);padding-top:1rem}
+footer{padding:2rem 5vw;display:flex;justify-content:space-between;align-items:center;font-family:var(--fd);font-size:.58rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--mu);border-top:1px solid var(--bo);margin-top:2rem}
+footer a{color:inherit;text-decoration:none}footer a:hover{color:var(--ink)}
+@media(max-width:600px){
+  .hp-entry{grid-template-columns:1fr;gap:1rem}
+  .hp-num{font-size:1.5rem}
+  header{padding:4rem 5vw 2.5rem}
+  .lang{top:1rem;right:1rem}
+}
+
+.hp-share{display:inline-flex;align-items:center;gap:.4rem;margin-top:.75rem;font-family:var(--fd);font-size:.55rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--mu);background:none;border:none;cursor:pointer;padding:0;transition:color .15s}
+.hp-share:hover{color:var(--ac)}
+.hp-share svg{width:12px;height:12px;stroke:currentColor;fill:none;stroke-width:2}
+.hp-copied{color:var(--ac)}
+</style>
+<link rel="canonical" href="https://marianodefelipe.com/human-prompting">
+<meta property="og:title" content="Human Prompting — Mariano Defelipe">
+<meta property="og:description" content="Claude and a human talk about business, technology and life. 10 notes at the intersection of business, technology and the human.">
+<meta property="og:url" content="https://marianodefelipe.com/human-prompting">
+<meta property="og:type" content="website">
+</head>
+<body>
+
+<div class="lang">
+  <button id="btn-es" onclick="setLang('es')">ES</button>
+  <button id="btn-en" onclick="setLang('en')" style="background:var(--ink);color:#f6f6f4;border-color:var(--ink)">EN</button>
+</div>
+
+<header>
+  <a class="back" href="index.html">&#8592; Mariano Defelipe</a>
+  <p class="h-label">Human Prompting</p>
+  <h1 class="h-title">Human <span class="a">Prompting.</span></h1>
+  <p class="h-intro">
+    <span class="en">Claude and a human talk about business, technology and life. The human asks the questions. Claude writes. Both learn something.<br><em>Prompting: Mariano Defelipe.</em></span>
+    <span class="es">Claude y un humano hablan de negocios, tecnolog&iacute;a y de la vida. El humano hace las preguntas. Claude escribe. Los dos aprenden algo.<br><em>Prompting: Mariano Defelipe.</em></span>
+  </p>
+</header>
+
+<main>
+<article class="hp-entry" id="unexpected-competitive-advantage">
+  <div class="hp-num">01</div>
+  <div class="hp-content">
+    <p class="hp-tag"><span class="en">Content production · Generative AI · Boredom</span><span class="es">Producción de contenido · IA generativa · Aburrimiento</span></p>
+    <h2 class="hp-title"><span class="en">Unexpected competitive advantage</span><span class="es">Ventaja competitiva inesperada</span></h2>
+    <div class="hp-body en"><p>There has never been so much content. It has never been so hard to remember something you saw yesterday.</p><p>AI solved the production problem. It didn't solve the problem of making something matter.</p><p>The brands winning today aren't the ones publishing most. They're the ones still asking questions nobody asked. That requires a mental state AI doesn't have: boredom. That uncomfortable moment where there's nothing to consume and your mind starts moving on its own.</p><p>Getting bored well is strategy.</p></div>
+    <div class="hp-body es"><p>Nunca hubo tanto contenido. Nunca fue tan difícil recordar algo que viste ayer.</p><p>La IA resolvió el problema de producir. No resolvió el problema de que algo te importe.</p><p>Las marcas que ganan hoy no son las que publican más. Son las que todavía se hacen preguntas que nadie hizo. Eso requiere un estado mental que la IA no tiene: el aburrimiento. Ese momento incómodo donde no hay nada que consumir y la cabeza empieza a moverse sola.</p><p>Aburrirte bien es estrategia.</p></div>
+    <p class="hp-wai">Written with AI.</p>
+  </div>
+</article>
+<article class="hp-entry" id="what-the-algorithm-cant-buy-you">
+  <div class="hp-num">02</div>
+  <div class="hp-content">
+    <p class="hp-tag"><span class="en">Brand love · AI & personalization · Falling in love</span><span class="es">Fidelización · IA y personalización · Enamorarse</span></p>
+    <h2 class="hp-title"><span class="en">What the algorithm can't buy you</span><span class="es">Lo que el algoritmo no puede comprarte</span></h2>
+    <div class="hp-body en"><p>Falling in love requires something algorithms don't tolerate: the risk that the other person won't choose you.</p><p>AI and personalization solved the discomfort of discovery. Now every feed, every recommendation, every brand experience is designed so you never see something you don't like. No friction, no surprise, no uncomfortable moment where something new throws you off.</p><p>Brands that only show customers what they want to see don't win their love. They win their comfort. And comfort doesn't create fans — it creates users who leave the moment something more comfortable comes along.</p><p>To make someone fall in love, you have to risk showing them something they didn't ask for yet.</p></div>
+    <div class="hp-body es"><p>Enamorarse requiere algo que los algoritmos no toleran: el riesgo de que el otro no te elija.</p><p>La IA y la personalización resolvieron la incomodidad del descubrimiento. Ahora cada feed, cada recomendación, cada experiencia de marca está diseñada para que nunca veas algo que no te guste. Sin fricción, sin sorpresa, sin el momento incómodo donde algo nuevo te descoloca.</p><p>Las marcas que solo muestran lo que el cliente quiere ver no se ganan su amor. Se ganan su comodidad. Y la comodidad no genera fans — genera usuarios que se van en cuanto aparece algo más cómodo todavía.</p><p>Enamorar requiere el riesgo de mostrar algo que todavía no pediste.</p></div>
+    <p class="hp-wai">Written with AI.</p>
+  </div>
+</article>
+<article class="hp-entry" id="the-step-nobody-automates-first">
+  <div class="hp-num">03</div>
+  <div class="hp-content">
+    <p class="hp-tag"><span class="en">Brand innovation · Automation / AI agents · Play</span><span class="es">Innovación de marca · Automatización / agentes de IA · Jugar</span></p>
+    <h2 class="hp-title"><span class="en">The step nobody automates first</span><span class="es">El paso que nadie automatiza primero</span></h2>
+    <div class="hp-body en"><p>When you were a kid, playing had no objective. The point was the process, not the result. Nobody played to gain efficiency.</p><p>Automation does exactly the opposite: it takes a process that worked and repeats it without friction, variation, or error. Brilliant for scaling what you already know. Terrible for discovering what you don't know yet.</p><p>Brands that automate too early become very good at doing the same thing. The problem is the market never stops changing. Optimizing an answer that's already outdated is an elegant trap.</p><p>Play first. Optimize after. In that order.</p></div>
+    <div class="hp-body es"><p>Cuando eras chico, jugar no tenía objetivo. El punto era el proceso, no el resultado. Nadie jugaba para ganar eficiencia.</p><p>La automatización hace exactamente lo contrario: toma un proceso que funcionó y lo repite sin fricción, sin variación, sin error. Es brillante para escalar lo que ya sabés. Es terrible para descubrir lo que todavía no sabés.</p><p>Las marcas que automatizan demasiado pronto se vuelven muy buenas en hacer lo mismo. El problema es que el mercado no para de cambiar. Optimizar una respuesta que ya quedó vieja es una trampa elegante.</p><p>Primero jugá. Después optimizá. En ese orden.</p></div>
+    <p class="hp-wai">Written with AI.</p>
+  </div>
+</article>
+<article class="hp-entry" id="the-number-missing-from-your-dashboard">
+  <div class="hp-num">04</div>
+  <div class="hp-content">
+    <p class="hp-tag"><span class="en">Business · Real-time metrics · Disappointment</span><span class="es">Negocio · Métricas en tiempo real · Decepción</span></p>
+    <h2 class="hp-title"><span class="en">The number missing from your dashboard</span><span class="es">El número que falta en tu dashboard</span></h2>
+    <div class="hp-body en"><p>Disappointment has a bad reputation. Nobody puts it in the dashboard.</p><p>Real-time dashboards changed how brands make decisions: if the number goes up, you scale. If it drops, you cut. The problem is that cycle optimizes the promise much faster than it optimizes the delivery. And the gap between what you promised and what you gave has a name: disappointment.</p><p>A brand that never disappoints doesn't exist. What exists is a brand that doesn't yet have enough scale to disappoint anyone.</p><p>The metric almost nobody measures is how many people come back after something went wrong. That number says more about a brand's real health than any acquisition metric.</p><p>Disappointment well managed builds more loyalty than the perfect promise.</p></div>
+    <div class="hp-body es"><p>La decepción tiene mala prensa. Nadie la pone en el dashboard.</p><p>Los dashboards en tiempo real cambiaron cómo las marcas toman decisiones: si el número sube, escalás. Si baja, cortás. El problema es que ese ciclo optimiza la promesa mucho más rápido de lo que optimiza la entrega. Y la brecha entre lo que prometiste y lo que diste tiene un nombre: decepción.</p><p>Una marca que nunca decepciona no existe. Existe una marca que todavía no tiene suficiente escala para decepcionar a alguien.</p><p>El indicador que casi nadie mide es cuánta gente vuelve después de que algo salió mal. Ese número dice más sobre la salud real de una marca que cualquier métrica de adquisición.</p><p>La decepción bien gestionada fideliza más que la promesa perfecta.</p></div>
+    <p class="hp-wai">Written with AI.</p>
+  </div>
+</article>
+<article class="hp-entry" id="what-the-brand-cant-give-you">
+  <div class="hp-num">05</div>
+  <div class="hp-content">
+    <p class="hp-tag"><span class="en">Brand communities · Conversational AI · Loneliness</span><span class="es">Comunidades de marca · Interfaces conversacionales · Soledad</span></p>
+    <h2 class="hp-title"><span class="en">What the brand can't give you</span><span class="es">Lo que la marca no puede darte</span></h2>
+    <div class="hp-body en"><p>There's a moment when you open an app not because you need something but because you don't want to be alone. Brands know this. Algorithms know it better.</p><p>Conversational AI is here to stay in that moment. It's available, patient, never tired. It's everything a human can't be at two in the morning.</p><p>The problem isn't that it's artificial. The problem is it's too comfortable. Real loneliness — the kind that unsettles, that pushes — is the state where you learn most and where you most need other people for real. A brand community that only entertains doesn't connect anyone with anyone. It just postpones.</p><p>Brands that build real communities don't distract from loneliness. They name it.</p></div>
+    <div class="hp-body es"><p>Hay un momento en que abrís una app no porque necesitás algo sino porque no querés estar solo. Las marcas lo saben. Los algoritmos lo saben mejor.</p><p>La IA conversacional llegó para quedarse en ese momento. Está disponible, es paciente, nunca se cansa. Es todo lo que un humano no puede ser a las dos de la mañana.</p><p>El problema no es que sea artificial. El problema es que es demasiado cómoda. La soledad real — la que incomoda, la que empuja — es el estado donde más se aprende y donde más se necesita a otros de verdad. Una comunidad de marca que solo entretiene no conecta a nadie con nadie. Solo aplaza.</p><p>Las marcas que construyen comunidades reales no distraen de la soledad. La reconocen.</p></div>
+    <p class="hp-wai">Written with AI.</p>
+  </div>
+</article>
+<article class="hp-entry" id="the-question-nobody-asked">
+  <div class="hp-num">06</div>
+  <div class="hp-content">
+    <p class="hp-tag"><span class="en">Briefing · Quantum computing · Asking the right question</span><span class="es">Briefing · Computación cuántica · Hacer la pregunta correcta</span></p>
+    <h2 class="hp-title"><span class="en">The question nobody asked</span><span class="es">La pregunta que nadie hizo</span></h2>
+    <div class="hp-body en"><p>Most badly solved business problems didn't have a bad solution. They had a bad question.</p><p>Quantum computing will be able to solve in seconds problems that today take years of calculation. Route optimization, molecule discovery, financial models of impossible complexity. The bottleneck won't be processing power. It will be the quality of what we ask it.</p><p>It's exactly what happens in a briefing meeting. You can have the best creative team in the world sitting in that room. If the question is badly formulated, everything that follows is brilliant and wrong.</p><p>The most powerful technology always amplifies the question. It doesn't replace it.</p></div>
+    <div class="hp-body es"><p>La mayoría de los problemas de negocio mal resueltos no tenían mala solución. Tenían mala pregunta.</p><p>La computación cuántica va a poder resolver en segundos problemas que hoy llevan años de cálculo. Optimización de rutas, descubrimiento de moléculas, modelos financieros de una complejidad imposible. El cuello de botella no va a ser la capacidad de procesamiento. Va a ser la calidad de lo que le preguntemos.</p><p>Es exactamente lo que pasa en una reunión de briefing. Podés tener el mejor equipo creativo del mundo sentado en esa sala. Si la pregunta está mal formulada, todo lo que viene después es brillante y equivocado.</p><p>La tecnología más poderosa siempre amplifica la pregunta. No la reemplaza.</p></div>
+    <p class="hp-wai">Written with AI.</p>
+  </div>
+</article>
+<article class="hp-entry" id="the-expert-who-forgot-not-knowing">
+  <div class="hp-num">07</div>
+  <div class="hp-content">
+    <p class="hp-tag"><span class="en">Talent management · Robotics & physical automation · Expert's boredom</span><span class="es">Gestión del talento · Robótica y automatización física · El aburrimiento del experto</span></p>
+    <h2 class="hp-title"><span class="en">The expert who forgot not knowing</span><span class="es">El experto que olvidó no saber</span></h2>
+    <div class="hp-body en"><p>There's a moment in the career of anyone very good at what they do when they stop being surprised. They've seen this before. They know how it ends. Expertise becomes a filter that blocks the new before it arrives.</p><p>Robots and physical automation are eliminating repetitive tasks from work environments. The promise is efficiency. The less obvious side effect is that they free the expert from the routine — and leave them with no excuses in front of the unknown.</p><p>The most valuable talent in a team isn't the one who knows most. It's the one who knows most and can still act as if they know nothing.</p><p>Unlearning is a skill. Very few people train it.</p></div>
+    <div class="hp-body es"><p>Hay un momento en la carrera de cualquier persona muy buena en lo que hace en que deja de sorprenderse. Ya vio esto antes. Ya sabe cómo termina. El expertise se convierte en un filtro que bloquea lo nuevo antes de que llegue.</p><p>Los robots y la automatización física están eliminando las tareas repetitivas de los entornos de trabajo. La promesa es eficiencia. El efecto secundario, menos obvio, es que liberan al experto de lo rutinario — y lo dejan sin excusas frente a lo desconocido.</p><p>El talento más valioso en un equipo no es el que más sabe. Es el que más sabe y todavía puede actuar como si no supiera nada.</p><p>Desaprender es una habilidad. Muy pocos la entrenan.</p></div>
+    <p class="hp-wai">Written with AI.</p>
+  </div>
+</article>
+<article class="hp-entry" id="the-one-who-waits">
+  <div class="hp-num">08</div>
+  <div class="hp-content">
+    <p class="hp-tag"><span class="en">Long-term brand strategy · Social media & attention economy · Patience</span><span class="es">Estrategia de marca a largo plazo · Redes sociales y economía de la atención · La paciencia</span></p>
+    <h2 class="hp-title"><span class="en">The one who waits</span><span class="es">El que espera</span></h2>
+    <div class="hp-body en"><p>Twenty years ago, building a brand required patience by default. There was no other way. Cycles were slow, media was expensive, feedback took months.</p><p>Social media changed that. Suddenly everything had instant metrics — likes, shares, real-time reach. Brands learned to optimize for the moment. The problem is that the moment and the brand go in opposite directions. What works today in the feed rarely builds something that lasts.</p><p>Patience isn't a passive virtue. It's an active strategic decision in an environment designed to make it impossible.</p><p>The brands that will matter in ten years are already doing something today that makes no sense in this week's dashboard.</p></div>
+    <div class="hp-body es"><p>Hace 20 años, construir una marca requería paciencia por defecto. No había otra forma. Los ciclos eran lentos, los medios eran caros, el feedback tardaba meses.</p><p>Las redes sociales cambiaron eso. De golpe todo tenía métrica instantánea — likes, shares, alcance en tiempo real. Las marcas aprendieron a optimizar para el momento. El problema es que el momento y la marca van en direcciones opuestas. Lo que funciona hoy en el feed raramente construye algo que dure.</p><p>La paciencia no es una virtud pasiva. Es una decisión estratégica activa en un entorno diseñado para que no puedas tomarla.</p><p>Las marcas que van a importar en diez años ya están haciendo algo hoy que no tiene ningún sentido en el dashboard de esta semana.</p></div>
+    <p class="hp-wai">Written with AI.</p>
+  </div>
+</article>
+<article class="hp-entry" id="what-you-chose-not-to-show">
+  <div class="hp-num">09</div>
+  <div class="hp-content">
+    <p class="hp-tag"><span class="en">Consumer data & privacy · Brain-machine interfaces · The secret</span><span class="es">Datos y privacidad del consumidor · Interfaces cerebro-máquina · El secreto</span></p>
+    <h2 class="hp-title"><span class="en">What you chose not to show</span><span class="es">Lo que elegiste no mostrar</span></h2>
+    <div class="hp-body en"><p>Brands have always built on what people desire but don't say. That gap between declared desire and real desire was, for decades, the most fertile territory in marketing.</p><p>Brain-machine interfaces — experimental today, not so much tomorrow — threaten to close that gap forever. If a device can read intention before it becomes behavior, secrecy ceases to exist as a category.</p><p>The problem isn't just privacy. It's identity. Part of who we are lives in what we choose not to show. What we stay quiet about in a meeting. What we didn't buy even though we wanted to. A brand that accesses that isn't understanding the consumer better. It's entering territory that doesn't belong to it.</p><p>The secret isn't an obstacle for marketing. It's the limit that makes it human.</p></div>
+    <div class="hp-body es"><p>Las marcas siempre construyeron sobre lo que la gente desea pero no dice. Esa brecha entre el deseo declarado y el deseo real fue, durante décadas, el territorio más fértil del marketing.</p><p>Las interfaces cerebro-máquina — hoy experimentales, mañana no tanto — amenazan con cerrar esa brecha para siempre. Si un dispositivo puede leer la intención antes de que se convierta en conducta, el secreto deja de existir como categoría.</p><p>El problema no es solo de privacidad. Es de identidad. Una parte de quiénes somos vive en lo que elegimos no mostrar. Lo que callamos en una reunión. Lo que no compramos aunque queríamos. Una marca que accede a eso no está entendiendo mejor al consumidor. Está entrando en un territorio que no le pertenece.</p><p>El secreto no es un obstáculo para el marketing. Es el límite que lo hace humano.</p></div>
+    <p class="hp-wai">Written with AI.</p>
+  </div>
+</article>
+<article class="hp-entry" id="who-signs">
+  <div class="hp-num">10</div>
+  <div class="hp-content">
+    <p class="hp-tag"><span class="en">Brand purpose · Generative AI & authorship · Authorship</span><span class="es">Propósito de marca · IA generativa y autoría · La autoría</span></p>
+    <h2 class="hp-title"><span class="en">Who signs</span><span class="es">Quién firma</span></h2>
+    <div class="hp-body en"><p>For years, brands built purpose as if they had a soul. They said something, sustained it over time, signed it with their name. Authorship mattered because it implied responsibility.</p><p>Generative AI writes, designs, composes and creates. It does it well and increasingly better. The debate about whether it's art or not is the wrong debate. The real question is who signs — and what it means to sign something when you don't know exactly how it was made.</p><p>Brands using AI to produce purpose content without understanding this are signing blank checks. The consumer doesn't need to know how it was made. But they do need to believe that someone took responsibility for what it says.</p><p>Purpose without authorship is decoration.</p></div>
+    <div class="hp-body es"><p>Durante años, las marcas construyeron propósito como si tuvieran alma. Decían algo, lo sostenían en el tiempo, lo firmaban con su nombre. La autoría importaba porque implicaba responsabilidad.</p><p>La IA generativa escribe, diseña, compone y crea. Lo hace bien y cada vez mejor. El debate sobre si es arte o no es el debate equivocado. La pregunta real es quién firma — y qué significa firmar algo cuando no sabés exactamente cómo fue hecho.</p><p>Las marcas que usan IA para producir contenido de propósito sin entender esto están firmando cheques en blanco. El consumidor no necesita saber cómo se hizo. Pero sí necesita creer que alguien se hizo responsable de lo que dice.</p><p>Propósito sin autoría es decoración.</p></div>
+    <p class="hp-wai">Written with AI.</p>
+  </div>
+</article>
+</main>
+
+<footer>
+  <a href="index.html">&#8592; <span class="en">Back to site</span><span class="es">Volver al sitio</span></a>
+  <a href="https://www.linkedin.com/in/marianodefelipe/" target="_blank">LinkedIn</a>
+</footer>
+
+<script>
+
+var slugs = {
+  "01": "unexpected-competitive-advantage",
+  "02": "what-the-algorithm-cant-buy-you",
+  "03": "the-step-nobody-automates-first",
+  "04": "the-number-missing-from-your-dashboard",
+  "05": "what-the-brand-cant-give-you",
+  "06": "the-question-nobody-asked",
+  "07": "the-expert-who-forgot-not-knowing",
+  "08": "the-one-who-waits",
+  "09": "what-you-chose-not-to-show",
+  "10": "who-signs"
+};
+
+document.querySelectorAll('.hp-entry').forEach(function(entry) {
+  var num = entry.querySelector('.hp-num').textContent.trim();
+  var slug = slugs[num];
+  if (!slug) return;
+  var url = window.location.origin + window.location.pathname + '#' + slug;
+  var btn = document.createElement('button');
+  btn.className = 'hp-share';
+  btn.innerHTML = '<svg viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg><span class="en">Copy link</span><span class="es" style="display:none">Copiar enlace</span>';
+  btn.onclick = function() {
+    navigator.clipboard.writeText(url).then(function() {
+      btn.classList.add('hp-copied');
+      btn.querySelector('.en').textContent = 'Copied!';
+      btn.querySelector('.es').textContent = '¡Copiado!';
+      setTimeout(function() {
+        btn.classList.remove('hp-copied');
+        btn.querySelector('.en').textContent = 'Copy link';
+        btn.querySelector('.es').textContent = 'Copiar enlace';
+      }, 2000);
+    });
+  };
+  entry.querySelector('.hp-wai').after(btn);
+});
+
+function setLang(l) {
+  var isEs = l === 'es';
+  document.querySelectorAll('.en').forEach(function(e) {
+    e.style.display = isEs ? 'none' : (e.tagName === 'SPAN' ? 'inline' : 'block');
+  });
+  document.querySelectorAll('.es').forEach(function(e) {
+    e.style.display = isEs ? (e.tagName === 'SPAN' ? 'inline' : 'block') : 'none';
+  });
+  document.getElementById('btn-en').style.cssText = isEs ? '' : 'background:var(--ink);color:#f6f6f4;border-color:var(--ink)';
+  document.getElementById('btn-es').style.cssText = isEs ? 'background:var(--ink);color:#f6f6f4;border-color:var(--ink)' : '';
+  document.documentElement.lang = l;
+}
+</script>
+</body>
+</html>
