@@ -516,8 +516,21 @@ footer a{color:inherit;text-decoration:none}footer a:hover{color:var(--ink)}
 ]
 }
 </script>
-<!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-F9765ZTCWP"></script>
+<!-- Google Analytics — deferred -->
+<script>
+  window.addEventListener('load', function() {
+    var s = document.createElement('script');
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=G-F9765ZTCWP';
+    s.async = true;
+    document.head.appendChild(s);
+    s.onload = function() {
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-F9765ZTCWP', {'send_page_view': true});
+    };
+  });
+</script>
 <script>
 
 (function() {
