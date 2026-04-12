@@ -6,6 +6,8 @@
 <title>Human Prompting by Mariano Defelipe</title>
 <meta name="description" content="Human Prompting — Claude and Mariano Defelipe explore business, technology and human behavior. 20 notes at the intersection of marketing, innovation and everyday life.">
 <meta name="robots" content="index, follow">
+<link rel="alternate" hreflang="en" href="https://marianodefelipe.com/human-prompting">
+<link rel="alternate" hreflang="es" href="https://marianodefelipe.com/human-prompting-es">
 <link rel="canonical" href="https://marianodefelipe.com/human-prompting">
 <link rel="sitemap" type="application/xml" href="https://marianodefelipe.com/sitemap.xml">
 <meta property="og:type" content="website">
@@ -515,6 +517,16 @@ footer a{color:inherit;text-decoration:none}footer a:hover{color:var(--ink)}
 <!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-F9765ZTCWP"></script>
 <script>
+
+(function() {
+  var params = new URLSearchParams(window.location.search);
+  var lang = params.get('lang');
+  if (lang === 'es') {
+    document.addEventListener('DOMContentLoaded', function() {
+      setLang('es');
+    });
+  }
+})();
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
@@ -551,7 +563,7 @@ footer a{color:inherit;text-decoration:none}footer a:hover{color:var(--ink)}
       <span class="hero-stat-num" style="color:var(--ac)">&#8734;</span>
       <span class="hero-stat-label"><span class="en">Intersections</span><span class="es">Intersecciones</span></span>
     </div>
-    <a href="index.html" class="hero-back">&#8592; marianodefelipe.com</a>
+    <a href="human-prompting-es.html" class="hero-back" style="margin-left:0">ES</a><a href="index.html" class="hero-back">&#8592; marianodefelipe.com</a>
   </div>
 </header>
 
@@ -1246,7 +1258,8 @@ function handleOverlayClick(e) {
 document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeModal(); });
 
 function copyLink(slug, btn) {
-  var url = 'https://marianodefelipe.com/human-prompting#' + slug;
+  var isEs = document.documentElement.lang === 'es';
+  var url = 'https://marianodefelipe.com/human-prompting' + (isEs ? '?lang=es' : '') + '#' + slug;
   navigator.clipboard.writeText(url).then(function() {
     btn.classList.add('copied');
     btn.textContent = document.documentElement.lang === 'es' ? '¡Copiado!' : 'Copied!';

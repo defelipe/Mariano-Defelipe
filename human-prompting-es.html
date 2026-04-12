@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Human Prompting — Mariano Defelipe</title>
+<meta name="description" content="Human Prompting — Claude y Mariano Defelipe exploran negocios, tecnología y comportamiento humano. 30 notas en la intersección del marketing, la innovación y la vida cotidiana.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://marianodefelipe.com/human-prompting-es">
+<link rel="alternate" hreflang="en" href="https://marianodefelipe.com/human-prompting">
+<link rel="alternate" hreflang="es" href="https://marianodefelipe.com/human-prompting-es">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://marianodefelipe.com/human-prompting-es">
+<meta property="og:title" content="Human Prompting — Mariano Defelipe">
+<meta property="og:description" content="Claude y Mariano Defelipe exploran negocios, tecnología y comportamiento humano. 30 notas en la intersección del marketing, la innovación y la vida cotidiana.">
+<meta property="og:image" content="https://marianodefelipe.com/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://marianodefelipe.com/og-image.jpg">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Blog","name":"Human Prompting","description":"Claude y Mariano Defelipe exploran negocios, tecnología y comportamiento humano.","url":"https://marianodefelipe.com/human-prompting-es","author":{"@type":"Person","name":"Mariano Defelipe","url":"https://marianodefelipe.com"},"inLanguage":"es"}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#f6f6f4;--ink:#0d0d0c;--mu:#888884;--bo:rgba(13,13,12,.09);--ac:#d14e1e;--fd:'Syne',sans-serif;--fb:'DM Sans',sans-serif}
+html{scroll-behavior:smooth}
+body{font-family:var(--fb);background:var(--bg);color:var(--ink);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+.lang-switch{position:fixed;top:1.75rem;right:2rem;z-index:400;font-family:var(--fd);font-size:.6rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+.lang-switch a{padding:.32rem .6rem;border:1px solid rgba(246,246,244,.2);background:transparent;color:rgba(246,246,244,.5);text-decoration:none;transition:all .15s}
+.lang-switch a.on{background:#f6f6f4;color:var(--ink);border-color:#f6f6f4}
+.hero{background:var(--ink);padding:6rem 5vw 5rem;position:relative;overflow:hidden}
+.hero-bar{position:absolute;left:0;top:0;width:7px;height:100%;background:var(--ac)}
+.hero-bg{position:absolute;right:-10px;top:-30px;font-family:var(--fd);font-size:clamp(200px,28vw,380px);font-weight:800;color:rgba(255,255,255,.03);line-height:1;letter-spacing:-.05em;pointer-events:none;user-select:none}
+.hero-label{font-family:var(--fd);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--ac);margin-bottom:1.5rem}
+.hero-title{font-family:var(--fd);font-size:clamp(3.5rem,9vw,7rem);font-weight:800;line-height:.88;letter-spacing:-.04em;text-transform:uppercase;color:#f6f6f4;margin-bottom:2rem}
+.hero-title .sl{color:var(--ac)}
+.hero-rule{width:100%;height:1px;background:rgba(246,246,244,.08);margin-bottom:2rem}
+.hero-intro{font-size:.95rem;font-weight:300;line-height:1.78;color:rgba(246,246,244,.5);max-width:580px}
+.hero-intro em{font-style:italic;color:rgba(246,246,244,.75)}
+.hero-meta{display:flex;align-items:flex-end;gap:3rem;margin-top:2.5rem;flex-wrap:wrap}
+.hero-stat{display:flex;flex-direction:column;gap:.2rem}
+.hero-stat-num{font-family:var(--fd);font-size:clamp(1.8rem,3vw,2.5rem);font-weight:800;color:#f6f6f4;line-height:1;letter-spacing:-.03em}
+.hero-stat-label{font-family:var(--fd);font-size:.55rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(246,246,244,.25)}
+.hero-back{font-family:var(--fd);font-size:.55rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:rgba(246,246,244,.3);text-decoration:none;border:1px solid rgba(246,246,244,.1);padding:.45rem 1rem;transition:all .15s;margin-left:auto;align-self:flex-end}
+.hero-back:hover{color:rgba(246,246,244,.7);border-color:rgba(246,246,244,.3)}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--bo)}
+.hp-card{background:var(--bg);padding:2rem;position:relative;overflow:hidden;cursor:pointer;transition:background .18s}
+.hp-card:hover{background:#ededeb}
+.hp-card:hover .hp-remate{color:var(--ac)}
+.hp-num{position:absolute;right:-6px;top:-12px;font-family:var(--fd);font-size:clamp(70px,9vw,105px);font-weight:800;color:rgba(13,13,12,.04);line-height:1;letter-spacing:-.04em;pointer-events:none;user-select:none;transition:color .18s}
+.hp-card:hover .hp-num{color:rgba(209,78,30,.06)}
+.hp-inner{position:relative}
+.hp-tag{font-family:var(--fd);font-size:.56rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ac);margin-bottom:.55rem}
+.hp-title{font-family:var(--fd);font-size:clamp(.95rem,1.4vw,1.15rem);font-weight:800;text-transform:uppercase;letter-spacing:-.02em;line-height:1.03;margin-bottom:.85rem;color:var(--ink)}
+.hp-remate{font-size:.82rem;font-weight:500;color:var(--mu);line-height:1.5;transition:color .18s;border-top:1px solid var(--bo);padding-top:.75rem}
+.modal-overlay{position:fixed;inset:0;background:rgba(13,13,12,.75);z-index:500;display:none;align-items:center;justify-content:center;padding:2rem}
+.modal-overlay.open{display:flex}
+.modal-box{background:var(--bg);max-width:640px;width:100%;max-height:90vh;overflow-y:auto;position:relative;padding:3rem}
+.modal-close{position:absolute;top:1.25rem;right:1.25rem;font-family:var(--fd);font-size:.6rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--mu);background:none;border:1px solid var(--bo);padding:.35rem .75rem;cursor:pointer;transition:all .15s}
+.modal-close:hover{color:var(--ink);border-color:var(--ink)}
+.modal-tag{font-family:var(--fd);font-size:.56rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--ac);margin-bottom:.65rem}
+.modal-title{font-family:var(--fd);font-size:clamp(1.4rem,3vw,2rem);font-weight:800;text-transform:uppercase;letter-spacing:-.03em;line-height:1;margin-bottom:1.5rem;color:var(--ink)}
+.modal-body{font-size:.9rem;font-weight:300;line-height:1.8;color:var(--ink)}
+.modal-body p{margin-bottom:.85rem}
+.modal-remate{font-size:.9rem;font-weight:600;color:var(--ink);border-top:1px solid var(--bo);padding-top:1rem;margin-top:.5rem;line-height:1.45}
+.modal-footer{display:flex;align-items:center;justify-content:space-between;margin-top:1.25rem;padding-top:1rem;border-top:1px solid var(--bo)}
+.modal-wai{font-size:.72rem;font-style:italic;color:var(--mu)}
+.modal-share{font-family:var(--fd);font-size:.52rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--mu);background:none;border:1px solid var(--bo);padding:.3rem .65rem;cursor:pointer;transition:all .15s}
+.modal-share:hover{color:var(--ac);border-color:var(--ac)}
+.modal-share.copied{color:var(--ac);border-color:var(--ac)}
+footer{padding:1.5rem 5vw;display:flex;justify-content:space-between;align-items:center;font-family:var(--fd);font-size:.58rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--mu);border-top:1px solid var(--bo)}
+footer a{color:inherit;text-decoration:none}footer a:hover{color:var(--ink)}
+@media(max-width:700px){
+  .grid{grid-template-columns:1fr}
+  .hero{padding:5rem 5vw 4rem}
+  .hero-meta{gap:1.5rem}
+  .hero-back{margin-left:0;margin-top:.5rem}
+  .modal-box{padding:2rem 1.5rem;max-height:95vh}
+  footer{flex-direction:column;gap:.4rem;text-align:center}
+}
+</style>
+</head>
+<body>
+
+<div class="lang-switch">
+  <a href="human-prompting.html">EN</a>
+  <a href="human-prompting-es.html" class="on">ES</a>
+</div>
+
+<header class="hero">
+  <div class="hero-bar"></div>
+  <div class="hero-bg">HP</div>
+  <p class="hero-label">Mariano Defelipe</p>
+  <h1 class="hero-title">Human<br><span class="sl">/</span>Prompting.</h1>
+  <div class="hero-rule"></div>
+  <p class="hero-intro">Claude y un humano hablan de negocios, tecnolog&iacute;a y de la vida. El humano hace las preguntas. Claude escribe. Los dos aprenden algo.<br><br><em>Prompting: Mariano Defelipe.</em></p>
+  <div class="hero-meta">
+    <div class="hero-stat"><span class="hero-stat-num">30</span><span class="hero-stat-label">Notas</span></div>
+    <div class="hero-stat"><span class="hero-stat-num">3</span><span class="hero-stat-label">Ejes por nota</span></div>
+    <div class="hero-stat"><span class="hero-stat-num" style="color:var(--ac)">&#8734;</span><span class="hero-stat-label">Intersecciones</span></div>
+    <a href="index.html" class="hero-back">&#8592; marianodefelipe.com</a>
+  </div>
+</header>
+
+<main class="grid">
+<div class="hp-card" onclick="openModal('ventaja-competitiva-inesperada')">
+  <div class="hp-num">01</div>
+  <div class="hp-inner">
+    <p class="hp-tag">Producción de contenido · IA generativa · Aburrimiento</p>
+    <h2 class="hp-title">Ventaja competitiva inesperada</h2>
+    <p class="hp-remate">Aburrirte bien es estrategia.</p>
+  </div>
+</div>
+<div class="hp-card" onclick="openModal('lo-que-el-algoritmo-no-puede-comprarte')">
+  <div class="hp-num">02</div>
+  <div class="hp-inner">
+    <p class="hp-tag">Fidelización · IA y personalización · Enamorarse</p>
+    <h2 class="hp-title">Lo que el algoritmo no puede comprarte</h2>
+    <p class="hp-remate">Enamorar requiere el riesgo de mostrar algo que todavía no pediste.</p>
+  </div>
+</div>
+<div class="hp-card" onclick="openModal('el-paso-que-nadie-automatiza-primero')">
+  <div class="hp-num">03</div>
+  <div class="hp-inner">
+    <p class="hp-tag">Innovación de marca · Automatización / agentes de IA · Jugar</p>
+    <h2 class="hp-title">El paso que nadie automatiza primero</h2>
+    <p class="hp-remate">Primero jugá. Después optimizá. En ese orden.</p>
+  </div>
+</div>
+<div class="hp-card" onclick="openModal('el-numero-que-falta-en-tu-dashboard')">
+  <div class="hp-num">04</div>
+  <div class="hp-inner">
+    <p class="hp-tag">Negocio · Métricas en tiempo real · Decepción</p>
+    <h2 class="hp-title">El número que falta en tu dashboard</h2>
+    <p class="hp-remate">La decepción bien gestionada fideliza más que la promesa perfecta.</p>
+  </div>
+</div>
+<div class="hp-card" onclick="openModal('lo-que-la-marca-no-puede-darte')">
+  <div class="hp-num">05</div>
+  <div class="hp-inner">
+    <p class="hp-tag">Comunidades de marca · Interfaces conversacionales · Soledad</p>
+    <h2 class="hp-title">Lo que la marca no puede darte</h2>
+    <p class="hp-remate">Las marcas que construyen comunidades reales no distraen de la soledad. La reconocen.</p>
+  </div>
+</div>
+<div class="hp-card" onclick="openModal('la-pregunta-que-nadie-hizo')">
+  <div class="hp-num">06</div>
+  <div class="hp-inner">
+    <p class="hp-tag">Briefing · Computación cuántica · Hacer la pregunta correcta</p>
+    <h2 class="hp-title">La pregunta que nadie hizo</h2>
+    <p class="hp-remate">La tecnología más poderosa siempre amplifica la pregunta. No la reemplaza.</p>
+  </div>
+</div>
+<div class="hp-card" onclick="openModal('el-experto-que-olvido-no-saber')">
+  <div class="hp-num">07</div>
+  <div class="hp-inner">
+    <p class="hp-tag">Gestión del talento · Robótica y automatización · El aburrimiento del experto</p>
+    <h2 class="hp-title">El experto que olvidó no saber</h2>
+    <p class="hp-remate">Desaprender es una habilidad. Muy pocos la entrenan.</p>
+  </div>
+</div>
+<div class="hp-card" onclick="openModal('el-que-espera')">
+  <div class="hp-num">08</div>
+  <div class="hp-inner">
+    <p class="hp-tag">Estrategia de marca a largo plazo · Redes sociales y economía de la atención · La paciencia</p>
+    <h2 class="hp-title">El que espera</h2>
+    <p class="hp-remate">Las marcas que van a importar en diez años ya están haciendo algo hoy que no tiene ningún sentido en el dashboard de esta semana.</p>
+  </div>
+</div>
+<div class="hp-card" onclick="openModal('lo-que-elegiste-no-mostrar')">
+  <div class="hp-num">09</div>
+  <div class="hp-inner">
+    <p class="hp-tag">Datos y privacidad del consumidor · Interfaces cerebro-máquina · El secreto</p>
+    <h2 class="hp-title">Lo que elegiste no mostrar</h2>
+    <p class="hp-remate">El secreto no es un obstáculo para el marketing. Es el límite que lo hace humano.</p>
+  </div>
+</div>
+<div class="hp-card" onclick="openModal('quien-firma')">
+  <div class="hp-num">10</div>
+  <div class="hp-inner">
+    <p class="hp-tag">Propósito de marca · IA generativa y autoría · La autoría</p>
+    <h2 class="hp-title">Quién firma</h2>
+    <p class="hp-remate">Propósito sin autoría es decoración.</p>
+  </div>
+</div>
+<div class="hp-card" onclick="openModal('lo-que-no-se-dice-en-la-sala')">
+  <div class="hp-num">11</div>
+  <div class="hp-inner">
+    <p class="hp-tag">Lanzamiento de producto · Neurociencia del riesgo · El miedo</p>
+    <h2 class="hp-title">Lo que no se dice en la sala</h2>
+    <p class="hp-remate">El miedo al juicio es el insight más caro del marketing. Y no aparece en ningún brief.</p>
+  </div>
+</div>
+<div class="hp-card" onclick="openModal('la-marca-que-te-recuerda-quien-eras')">
+  <div class="hp-num">12</div>
+  <div class="hp-inner">
+    <p class="hp-tag">Lealtad de marca · Epigenética · La nostalgia</p>
+    <h2 class="hp-title">La marca que te recuerda quién eras</h2>
+    <p class="hp-remate">No fidelizás al consumidor que es hoy. Fidelizás al que fue.</p>
+  </div>
+</div>
+<div class="hp-card" onclick="openModal('las-dos-cosas-a-la-vez')">
+  <div class="hp-num">13</div>
+  <div class="hp-inner">
+    <p class="hp-tag">Estrategia creativa · Física cuántica · La duda</p>
+    <h2 class="hp-title">Las dos cosas a la vez</h2>
+    <p class="hp-remate">La duda sostenida es incómoda. También es donde viven las mejores ideas.</p>
+  </div>
+</div>
+<div class="hp-card" onclick="openModal('el-segundo-antes-de-comprar')">
+  <div class="hp-num">14</div>
+  <div class="hp-inner">
+    <p class="hp-tag">Marketing de performance · Psicología conductual · El deseo</p>
+    <h2 class="hp-title">El segundo antes de comprar</h2>
+    <p class="hp-remate">El trabajo no es crear el deseo. Es no apagarlo en el camino.</p>
+  </div>
+</div>
+<div class="hp-card" onclick="openModal('la-tribu-que-nadie-fundo')">
+  <div class="hp-num">15</div>
+  <div class="hp-inner">
+    <p class="hp-tag">Employer branding · Sociología de grupos · Pertenecer</p>
+    <h2 class="hp-title">La tribu que nadie fundó</h2>
+    <p class="hp-remate">Pertenecer no se comunica. Se experimenta. Y esa diferencia le cuesta cara a casi todas las organizaciones.</p>
+  </div>
+</div>
+<div class="hp-card" onclick="openModal('lo-que-la-naturaleza-ya-resolvio')">
+  <div class="hp-num">16</div>
+  <div class="hp-inner">
+    <p class="hp-tag">Innovación de producto · Biomímesis · La curiosidad</p>
+    <h2 class="hp-title">Lo que la naturaleza ya resolvió</h2>
+    <p class="hp-remate">Las mejores innovaciones de producto no vinieron de estudiar el mercado. Vinieron de alguien que miró algo completamente distinto y no pudo evitar preguntarse por qué.</p>
+  </div>
+</div>
+<div class="hp-card" onclick="openModal('lo-que-todos-vieron-y-nadie-dijo')">
+  <div class="hp-num">17</div>
+  <div class="hp-inner">
+    <p class="hp-tag">Crisis de marca · Teoría del caos · La vergüenza</p>
+    <h2 class="hp-title">Lo que todos vieron y nadie dijo</h2>
+    <p class="hp-remate">La vergüenza gestionada a tiempo es credibilidad. La vergüenza negada es el principio del tornado.</p>
+  </div>
+</div>
+<div class="hp-card" onclick="openModal('la-hora-equivocada')">
+  <div class="hp-num">18</div>
+  <div class="hp-inner">
+    <p class="hp-tag">Experiencia de usuario · Cronobiología · El cansancio</p>
+    <h2 class="hp-title">La hora equivocada</h2>
+    <p class="hp-remate">La experiencia que funciona a las 10am puede ser exactamente el obstáculo equivocado a las 10pm.</p>
+  </div>
+</div>
+<div class="hp-card" onclick="openModal('lo-que-queres-que-los-demas-no-tengan')">
+  <div class="hp-num">19</div>
+  <div class="hp-inner">
+    <p class="hp-tag">Propuesta de valor · Economía conductual · Los celos</p>
+    <h2 class="hp-title">Lo que querés que los demás no tengan</h2>
+    <p class="hp-remate">La propuesta de valor que no entiende el deseo comparativo no entiende por qué la gente compra realmente.</p>
+  </div>
+</div>
+<div class="hp-card" onclick="openModal('antes-de-la-primera-palabra')">
+  <div class="hp-num">20</div>
+  <div class="hp-inner">
+    <p class="hp-tag">Storytelling de marca · Antropología del fuego · El silencio</p>
+    <h2 class="hp-title">Antes de la primera palabra</h2>
+    <p class="hp-remate">Nadie se sienta alrededor de un dashboard.</p>
+  </div>
+</div>
+<div class="hp-card" onclick="openModal('demasiadas-opciones-ninguna-direccion')">
+  <div class="hp-num">21</div>
+  <div class="hp-inner">
+    <p class="hp-tag">Estrategia de marca · Proliferación de plataformas · La confusión</p>
+    <h2 class="hp-title">Demasiadas opciones, ninguna dirección</h2>
+    <p class="hp-remate">La claridad no llega antes de la confusión. Llega después.</p>
+  </div>
+</div>
+<div class="hp-card" onclick="openModal('lo-que-admiras-dice-mas-de-vos')">
+  <div class="hp-num">22</div>
+  <div class="hp-inner">
+    <p class="hp-tag">Marca aspiracional · Realidad aumentada e identidades digitales · La admiración</p>
+    <h2 class="hp-title">Lo que admirás dice más de vos que de la otra persona</h2>
+    <p class="hp-remate">Lo que admirás es un mapa de lo que querés ser. Las marcas que entienden eso no construyen ídolos. Construyen espejos.</p>
+  </div>
+</div>
+<div class="hp-card" onclick="openModal('la-ansiedad-como-senal')">
+  <div class="hp-num">23</div>
+  <div class="hp-inner">
+    <p class="hp-tag">Velocidad de producción · Algoritmos de urgencia · La ansiedad</p>
+    <h2 class="hp-title">La ansiedad como señal</h2>
+    <p class="hp-remate">Si no te genera ansiedad, probablemente no importa lo suficiente.</p>
+  </div>
+</div>
+<div class="hp-card" onclick="openModal('las-marcas-que-eligen-bando')">
+  <div class="hp-num">24</div>
+  <div class="hp-inner">
+    <p class="hp-tag">Decisiones de marca que polarizan · Cancelación y amplificación · La valentía</p>
+    <h2 class="hp-title">Las marcas que eligen bando</h2>
+    <p class="hp-remate">Las marcas valientes no evitan la controversia. Eligen cuál vale la pena.</p>
+  </div>
+</div>
+<div class="hp-card" onclick="openModal('el-placer-que-no-se-admite')">
+  <div class="hp-num">25</div>
+  <div class="hp-inner">
+    <p class="hp-tag">Experiencia de usuario · Dopamina por diseño · El placer</p>
+    <h2 class="hp-title">El placer que no se admite</h2>
+    <p class="hp-remate">El placer que no se admite es el que más fideliza.</p>
+  </div>
+</div>
+<div class="hp-card" onclick="openModal('lo-que-sabes-sin-saber-que-lo-sabes')">
+  <div class="hp-num">26</div>
+  <div class="hp-inner">
+    <p class="hp-tag">Decisiones estratégicas bajo incertidumbre · IA como sistema de recomendación · La intuición</p>
+    <h2 class="hp-title">Lo que sabés sin saber que lo sabés</h2>
+    <p class="hp-remate">El problema no es confiar en la intuición. Es no saber cuándo confiar en ella y cuándo no.</p>
+  </div>
+</div>
+<div class="hp-card" onclick="openModal('la-marca-que-prometio-demasiado')">
+  <div class="hp-num">27</div>
+  <div class="hp-inner">
+    <p class="hp-tag">Posicionamiento de marca · Deepfakes y desinformación · La certeza</p>
+    <h2 class="hp-title">La marca que prometió demasiado</h2>
+    <p class="hp-remate">Las marcas que prometen certeza mienten. Las que acompañan la incertidumbre, perduran.</p>
+  </div>
+</div>
+<div class="hp-card" onclick="openModal('la-ilusion-de-controlar-la-narrativa')">
+  <div class="hp-num">28</div>
+  <div class="hp-inner">
+    <p class="hp-tag">Gestión de crisis y reputación · Viralidad y redes sociales · El control</p>
+    <h2 class="hp-title">La ilusión de controlar la narrativa</h2>
+    <p class="hp-remate">Las marcas que más controlan su imagen son las que menos la controlan.</p>
+  </div>
+</div>
+<div class="hp-card" onclick="openModal('lo-que-el-cuerpo-sabe-antes-que-la-mente')">
+  <div class="hp-num">29</div>
+  <div class="hp-inner">
+    <p class="hp-tag">Cambio organizacional · Adopción tecnológica · La resistencia</p>
+    <h2 class="hp-title">Lo que el cuerpo sabe antes que la mente</h2>
+    <p class="hp-remate">La resistencia no es el problema. Es la información más honesta que tiene una organización.</p>
+  </div>
+</div>
+<div class="hp-card" onclick="openModal('romper-lo-que-funciono')">
+  <div class="hp-num">30</div>
+  <div class="hp-inner">
+    <p class="hp-tag">Rebranding y reinvención de marca · Disrupción tecnológica · La ruptura</p>
+    <h2 class="hp-title">Romper lo que funcionó</h2>
+    <p class="hp-remate">Ninguna marca se reinventó sin primero romper algo que le costaba romper.</p>
+  </div>
+</div>
+</main>
+
+<div class="modal-overlay" id="modal-overlay" onclick="handleOverlayClick(event)">
+  <div class="modal-box" id="modal-box">
+    <button class="modal-close" onclick="closeModal()">Cerrar</button>
+    <div class="modal-note" id="modal-ventaja-competitiva-inesperada" style="display:none">
+  <p class="modal-tag">Producción de contenido · IA generativa · Aburrimiento</p>
+  <h2 class="modal-title">Ventaja competitiva inesperada</h2>
+  <div class="modal-body"><p>Nunca hubo tanto contenido. Nunca fue tan difícil recordar algo que viste ayer.</p><p>La IA resolvió el problema de producir. No resolvió el problema de que algo te importe.</p><p>Las marcas que ganan hoy no son las que publican más. Son las que todavía se hacen preguntas que nadie hizo. Eso requiere un estado mental que la IA no tiene: el aburrimiento. Ese momento incómodo donde no hay nada que consumir y la cabeza empieza a moverse sola.</p></div>
+  <p class="modal-remate">Aburrirte bien es estrategia.</p>
+  <div class="modal-footer">
+    <span class="modal-wai">Escrito con IA.</span>
+    <button class="modal-share" onclick="copyLink('ventaja-competitiva-inesperada',this)">Copiar enlace &#8599;</button>
+  </div>
+</div>
+<div class="modal-note" id="modal-lo-que-el-algoritmo-no-puede-comprarte" style="display:none">
+  <p class="modal-tag">Fidelización · IA y personalización · Enamorarse</p>
+  <h2 class="modal-title">Lo que el algoritmo no puede comprarte</h2>
+  <div class="modal-body"><p>Enamorarse requiere algo que los algoritmos no toleran: el riesgo de que el otro no te elija.</p><p>La IA y la personalización resolvieron la incomodidad del descubrimiento. Ahora cada feed, cada recomendación, cada experiencia de marca está diseñada para que nunca veas algo que no te guste.</p><p>Las marcas que solo muestran lo que el cliente quiere ver no se ganan su amor. Se ganan su comodidad. Y la comodidad no genera fans — genera usuarios que se van en cuanto aparece algo más cómodo todavía.</p></div>
+  <p class="modal-remate">Enamorar requiere el riesgo de mostrar algo que todavía no pediste.</p>
+  <div class="modal-footer">
+    <span class="modal-wai">Escrito con IA.</span>
+    <button class="modal-share" onclick="copyLink('lo-que-el-algoritmo-no-puede-comprarte',this)">Copiar enlace &#8599;</button>
+  </div>
+</div>
+<div class="modal-note" id="modal-el-paso-que-nadie-automatiza-primero" style="display:none">
+  <p class="modal-tag">Innovación de marca · Automatización / agentes de IA · Jugar</p>
+  <h2 class="modal-title">El paso que nadie automatiza primero</h2>
+  <div class="modal-body"><p>Cuando eras chico, jugar no tenía objetivo. El punto era el proceso, no el resultado. Nadie jugaba para ganar eficiencia.</p><p>La automatización hace exactamente lo contrario: toma un proceso que funcionó y lo repite sin fricción, sin variación, sin error. Es brillante para escalar lo que ya sabés. Es terrible para descubrir lo que todavía no sabés.</p><p>Las marcas que automatizan demasiado pronto se vuelven muy buenas en hacer lo mismo. El problema es que el mercado no para de cambiar. Optimizar una respuesta que ya quedó vieja es una trampa elegante.</p></div>
+  <p class="modal-remate">Primero jugá. Después optimizá. En ese orden.</p>
+  <div class="modal-footer">
+    <span class="modal-wai">Escrito con IA.</span>
+    <button class="modal-share" onclick="copyLink('el-paso-que-nadie-automatiza-primero',this)">Copiar enlace &#8599;</button>
+  </div>
+</div>
+<div class="modal-note" id="modal-el-numero-que-falta-en-tu-dashboard" style="display:none">
+  <p class="modal-tag">Negocio · Métricas en tiempo real · Decepción</p>
+  <h2 class="modal-title">El número que falta en tu dashboard</h2>
+  <div class="modal-body"><p>La decepción tiene mala prensa. Nadie la pone en el dashboard.</p><p>Los dashboards en tiempo real cambiaron cómo las marcas toman decisiones: si el número sube, escalás. Si baja, cortás. El problema es que ese ciclo optimiza la promesa mucho más rápido de lo que optimiza la entrega.</p><p>Una marca que nunca decepciona no existe. Existe una marca que todavía no tiene suficiente escala para decepcionar a alguien. El indicador que casi nadie mide es cuánta gente vuelve después de que algo salió mal.</p></div>
+  <p class="modal-remate">La decepción bien gestionada fideliza más que la promesa perfecta.</p>
+  <div class="modal-footer">
+    <span class="modal-wai">Escrito con IA.</span>
+    <button class="modal-share" onclick="copyLink('el-numero-que-falta-en-tu-dashboard',this)">Copiar enlace &#8599;</button>
+  </div>
+</div>
+<div class="modal-note" id="modal-lo-que-la-marca-no-puede-darte" style="display:none">
+  <p class="modal-tag">Comunidades de marca · Interfaces conversacionales · Soledad</p>
+  <h2 class="modal-title">Lo que la marca no puede darte</h2>
+  <div class="modal-body"><p>Hay un momento en que abrís una app no porque necesitás algo sino porque no querés estar solo. Las marcas lo saben. Los algoritmos lo saben mejor.</p><p>La IA conversacional llegó para quedarse en ese momento. Está disponible, es paciente, nunca se cansa. Es todo lo que un humano no puede ser a las dos de la mañana.</p><p>El problema no es que sea artificial. El problema es que es demasiado cómoda. La soledad real — la que incomoda, la que empuja — es el estado donde más se aprende y donde más se necesita a otros de verdad.</p></div>
+  <p class="modal-remate">Las marcas que construyen comunidades reales no distraen de la soledad. La reconocen.</p>
+  <div class="modal-footer">
+    <span class="modal-wai">Escrito con IA.</span>
+    <button class="modal-share" onclick="copyLink('lo-que-la-marca-no-puede-darte',this)">Copiar enlace &#8599;</button>
+  </div>
+</div>
+<div class="modal-note" id="modal-la-pregunta-que-nadie-hizo" style="display:none">
+  <p class="modal-tag">Briefing · Computación cuántica · Hacer la pregunta correcta</p>
+  <h2 class="modal-title">La pregunta que nadie hizo</h2>
+  <div class="modal-body"><p>La mayoría de los problemas de negocio mal resueltos no tenían mala solución. Tenían mala pregunta.</p><p>La computación cuántica va a poder resolver en segundos problemas que hoy llevan años de cálculo. El cuello de botella no va a ser la capacidad de procesamiento. Va a ser la calidad de lo que le preguntemos.</p><p>Es exactamente lo que pasa en una reunión de briefing. Podés tener el mejor equipo creativo del mundo sentado en esa sala. Si la pregunta está mal formulada, todo lo que viene después es brillante y equivocado.</p></div>
+  <p class="modal-remate">La tecnología más poderosa siempre amplifica la pregunta. No la reemplaza.</p>
+  <div class="modal-footer">
+    <span class="modal-wai">Escrito con IA.</span>
+    <button class="modal-share" onclick="copyLink('la-pregunta-que-nadie-hizo',this)">Copiar enlace &#8599;</button>
+  </div>
+</div>
+<div class="modal-note" id="modal-el-experto-que-olvido-no-saber" style="display:none">
+  <p class="modal-tag">Gestión del talento · Robótica y automatización · El aburrimiento del experto</p>
+  <h2 class="modal-title">El experto que olvidó no saber</h2>
+  <div class="modal-body"><p>Hay un momento en la carrera de cualquier persona muy buena en lo que hace en que deja de sorprenderse. Ya vio esto antes. Ya sabe cómo termina. El expertise se convierte en un filtro que bloquea lo nuevo antes de que llegue.</p><p>Los robots y la automatización física están eliminando las tareas repetitivas de los entornos de trabajo. El efecto secundario, menos obvio, es que liberan al experto de lo rutinario — y lo dejan sin excusas frente a lo desconocido.</p><p>El talento más valioso en un equipo no es el que más sabe. Es el que más sabe y todavía puede actuar como si no supiera nada.</p></div>
+  <p class="modal-remate">Desaprender es una habilidad. Muy pocos la entrenan.</p>
+  <div class="modal-footer">
+    <span class="modal-wai">Escrito con IA.</span>
+    <button class="modal-share" onclick="copyLink('el-experto-que-olvido-no-saber',this)">Copiar enlace &#8599;</button>
+  </div>
+</div>
+<div class="modal-note" id="modal-el-que-espera" style="display:none">
+  <p class="modal-tag">Estrategia de marca a largo plazo · Redes sociales y economía de la atención · La paciencia</p>
+  <h2 class="modal-title">El que espera</h2>
+  <div class="modal-body"><p>Hace 20 años, construir una marca requería paciencia por defecto. No había otra forma. Los ciclos eran lentos, los medios eran caros, el feedback tardaba meses.</p><p>Las redes sociales cambiaron eso. De golpe todo tenía métrica instantánea. Las marcas aprendieron a optimizar para el momento. El problema es que el momento y la marca van en direcciones opuestas.</p><p>Lo que funciona hoy en el feed raramente construye algo que dure. La paciencia no es una virtud pasiva. Es una decisión estratégica activa en un entorno diseñado para que no puedas tomarla.</p></div>
+  <p class="modal-remate">Las marcas que van a importar en diez años ya están haciendo algo hoy que no tiene ningún sentido en el dashboard de esta semana.</p>
+  <div class="modal-footer">
+    <span class="modal-wai">Escrito con IA.</span>
+    <button class="modal-share" onclick="copyLink('el-que-espera',this)">Copiar enlace &#8599;</button>
+  </div>
+</div>
+<div class="modal-note" id="modal-lo-que-elegiste-no-mostrar" style="display:none">
+  <p class="modal-tag">Datos y privacidad del consumidor · Interfaces cerebro-máquina · El secreto</p>
+  <h2 class="modal-title">Lo que elegiste no mostrar</h2>
+  <div class="modal-body"><p>Las marcas siempre construyeron sobre lo que la gente desea pero no dice. Esa brecha entre el deseo declarado y el deseo real fue, durante décadas, el territorio más fértil del marketing.</p><p>Las interfaces cerebro-máquina — hoy experimentales, mañana no tanto — amenazan con cerrar esa brecha para siempre. Si un dispositivo puede leer la intención antes de que se convierta en conducta, el secreto deja de existir como categoría.</p><p>El problema no es solo de privacidad. Es de identidad. Una parte de quiénes somos vive en lo que elegimos no mostrar.</p></div>
+  <p class="modal-remate">El secreto no es un obstáculo para el marketing. Es el límite que lo hace humano.</p>
+  <div class="modal-footer">
+    <span class="modal-wai">Escrito con IA.</span>
+    <button class="modal-share" onclick="copyLink('lo-que-elegiste-no-mostrar',this)">Copiar enlace &#8599;</button>
+  </div>
+</div>
+<div class="modal-note" id="modal-quien-firma" style="display:none">
+  <p class="modal-tag">Propósito de marca · IA generativa y autoría · La autoría</p>
+  <h2 class="modal-title">Quién firma</h2>
+  <div class="modal-body"><p>Durante años, las marcas construyeron propósito como si tuvieran alma. Decían algo, lo sostenían en el tiempo, lo firmaban con su nombre. La autoría importaba porque implicaba responsabilidad.</p><p>La IA generativa escribe, diseña, compone y crea. Lo hace bien y cada vez mejor. La pregunta real es quién firma — y qué significa firmar algo cuando no sabés exactamente cómo fue hecho.</p><p>Las marcas que usan IA para producir contenido de propósito sin entender esto están firmando cheques en blanco. El consumidor no necesita saber cómo se hizo. Pero sí necesita creer que alguien se hizo responsable de lo que dice.</p></div>
+  <p class="modal-remate">Propósito sin autoría es decoración.</p>
+  <div class="modal-footer">
+    <span class="modal-wai">Escrito con IA.</span>
+    <button class="modal-share" onclick="copyLink('quien-firma',this)">Copiar enlace &#8599;</button>
+  </div>
+</div>
+<div class="modal-note" id="modal-lo-que-no-se-dice-en-la-sala" style="display:none">
+  <p class="modal-tag">Lanzamiento de producto · Neurociencia del riesgo · El miedo</p>
+  <h2 class="modal-title">Lo que no se dice en la sala</h2>
+  <div class="modal-body"><p>Hay algo que pasa en cada reunión de lanzamiento que nadie nombra. Alguien en la sala sabe que el producto no está listo. O que el timing es malo. O que ya vieron esto antes y no funcionó. Y no lo dice.</p><p>La neurociencia del riesgo explica por qué: el cerebro procesa la incertidumbre como amenaza física. Hablar cuando todos están entusiasmados activa el mismo sistema que esquivar un golpe. El cuerpo prefiere el silencio.</p><p>El resultado es que los lanzamientos más costosos de la historia no fallaron por falta de presupuesto ni de talento. Fallaron porque nadie en la sala dijo lo que sabía.</p></div>
+  <p class="modal-remate">El miedo al juicio es el insight más caro del marketing. Y no aparece en ningún brief.</p>
+  <div class="modal-footer">
+    <span class="modal-wai">Escrito con IA.</span>
+    <button class="modal-share" onclick="copyLink('lo-que-no-se-dice-en-la-sala',this)">Copiar enlace &#8599;</button>
+  </div>
+</div>
+<div class="modal-note" id="modal-la-marca-que-te-recuerda-quien-eras" style="display:none">
+  <p class="modal-tag">Lealtad de marca · Epigenética · La nostalgia</p>
+  <h2 class="modal-title">La marca que te recuerda quién eras</h2>
+  <div class="modal-body"><p>La epigenética descubrió algo inquietante: las experiencias que tuviste antes de los diez años dejan marcas físicas en tu ADN que afectan cómo respondés al mundo de adulto. No como recuerdo. Como biología.</p><p>Las marcas de consumo masivo lo intuían antes de que la ciencia lo confirmara. La gaseosa de tu infancia no compite con otras gaseosas. Compite con una versión de vos que ya no existe. Y gana casi siempre.</p><p>La nostalgia no es sentimentalismo. Es uno de los mecanismos de lealtad más poderosos que existen — y uno de los menos comprendidos por quienes diseñan estrategias de retención basadas en puntos y descuentos.</p></div>
+  <p class="modal-remate">No fidelizás al consumidor que es hoy. Fidelizás al que fue.</p>
+  <div class="modal-footer">
+    <span class="modal-wai">Escrito con IA.</span>
+    <button class="modal-share" onclick="copyLink('la-marca-que-te-recuerda-quien-eras',this)">Copiar enlace &#8599;</button>
+  </div>
+</div>
+<div class="modal-note" id="modal-las-dos-cosas-a-la-vez" style="display:none">
+  <p class="modal-tag">Estrategia creativa · Física cuántica · La duda</p>
+  <h2 class="modal-title">Las dos cosas a la vez</h2>
+  <div class="modal-body"><p>En física cuántica, una partícula puede estar en dos estados al mismo tiempo hasta que alguien la observa. En el momento en que la medís, colapsa en una sola cosa. Antes de eso, es las dos.</p><p>Una gran idea creativa funciona igual. Antes de mostrársela al cliente, es simultáneamente la mejor idea del año y una catástrofe. La presentación es el momento en que colapsa.</p><p>El problema es que la mayoría de los procesos creativos están diseñados para eliminar la duda lo antes posible. Testeos, validaciones, comités de aprobación. Todo orientado a que la idea colapse rápido, en algo predecible.</p></div>
+  <p class="modal-remate">La duda sostenida es incómoda. También es donde viven las mejores ideas.</p>
+  <div class="modal-footer">
+    <span class="modal-wai">Escrito con IA.</span>
+    <button class="modal-share" onclick="copyLink('las-dos-cosas-a-la-vez',this)">Copiar enlace &#8599;</button>
+  </div>
+</div>
+<div class="modal-note" id="modal-el-segundo-antes-de-comprar" style="display:none">
+  <p class="modal-tag">Marketing de performance · Psicología conductual · El deseo</p>
+  <h2 class="modal-title">El segundo antes de comprar</h2>
+  <div class="modal-body"><p>Hay un segundo — literal, un segundo — entre que alguien decide comprar algo y que lo hace. Lo que encontró la psicología conductual es perturbador: la decisión ya estaba tomada antes de que la persona creyera haberla tomado.</p><p>El deseo no es racional ni irracional. Es anterior a ambas cosas. Aparece antes del argumento, antes del precio, antes de la comparación. El marketing de performance trabaja sobre la superficie de ese momento sin tocar lo que hay debajo.</p><p>Las marcas que entienden el deseo no convencen. Despiertan algo que ya estaba ahí.</p></div>
+  <p class="modal-remate">El trabajo no es crear el deseo. Es no apagarlo en el camino.</p>
+  <div class="modal-footer">
+    <span class="modal-wai">Escrito con IA.</span>
+    <button class="modal-share" onclick="copyLink('el-segundo-antes-de-comprar',this)">Copiar enlace &#8599;</button>
+  </div>
+</div>
+<div class="modal-note" id="modal-la-tribu-que-nadie-fundo" style="display:none">
+  <p class="modal-tag">Employer branding · Sociología de grupos · Pertenecer</p>
+  <h2 class="modal-title">La tribu que nadie fundó</h2>
+  <div class="modal-body"><p>La sociología tiene una observación incómoda para el mundo corporativo: las tribus reales no se fundan. Emergen. Nadie decide pertenecer a una tribu — lo siente, y después lo racionaliza.</p><p>El employer branding suele hacer exactamente lo contrario. Diseña la pertenencia desde arriba — valores declarados, cultura documentada, beneficios comunicados. Todo correcto, todo inerte.</p><p>Lo que hace que alguien sienta que pertenece a un equipo no es el manual de cultura. Es el momento en que alguien le cubrió las espaldas sin que se lo pidieran. El chiste interno que no tiene traducción. La crisis que atravesaron juntos.</p></div>
+  <p class="modal-remate">Pertenecer no se comunica. Se experimenta. Y esa diferencia le cuesta cara a casi todas las organizaciones.</p>
+  <div class="modal-footer">
+    <span class="modal-wai">Escrito con IA.</span>
+    <button class="modal-share" onclick="copyLink('la-tribu-que-nadie-fundo',this)">Copiar enlace &#8599;</button>
+  </div>
+</div>
+<div class="modal-note" id="modal-lo-que-la-naturaleza-ya-resolvio" style="display:none">
+  <p class="modal-tag">Innovación de producto · Biomímesis · La curiosidad</p>
+  <h2 class="modal-title">Lo que la naturaleza ya resolvió</h2>
+  <div class="modal-body"><p>El Velcro lo inventó un ingeniero que se preguntó por qué los abrojos se pegaban a su ropa. El sonar de los submarinos lo inspiró el murciélago. La estructura del nido de termitas resolvió la ventilación de un edificio en Zimbabue sin aire acondicionado.</p><p>La biomímesis lleva 3.800 millones de años de I+D acumulado. Gratis. Disponible para cualquiera que tenga curiosidad suficiente para mirar. El problema es que la curiosidad no escala bien en las organizaciones.</p><p>Los procesos de innovación están diseñados para responder preguntas, no para hacerlas. Y la pregunta rara requiere un tipo de atención que los timelines no permiten.</p></div>
+  <p class="modal-remate">Las mejores innovaciones de producto no vinieron de estudiar el mercado. Vinieron de alguien que miró algo completamente distinto y no pudo evitar preguntarse por qué.</p>
+  <div class="modal-footer">
+    <span class="modal-wai">Escrito con IA.</span>
+    <button class="modal-share" onclick="copyLink('lo-que-la-naturaleza-ya-resolvio',this)">Copiar enlace &#8599;</button>
+  </div>
+</div>
+<div class="modal-note" id="modal-lo-que-todos-vieron-y-nadie-dijo" style="display:none">
+  <p class="modal-tag">Crisis de marca · Teoría del caos · La vergüenza</p>
+  <h2 class="modal-title">Lo que todos vieron y nadie dijo</h2>
+  <div class="modal-body"><p>La teoría del caos dice que una mariposa que bate las alas en Brasil puede desencadenar un tornado en Texas. Las crisis de marca funcionan igual: el momento que lo detonó todo raramente es el momento que importaba.</p><p>Hay algo que la teoría del caos no explica y que aparece en casi todas las crisis de reputación: la vergüenza. No la del consumidor — la de la organización. Ese estado en que todos saben que algo estuvo mal y nadie lo dice en público.</p><p>Las marcas que salen bien de una crisis no son las que mejor mienten. Son las que antes que nadie dicen lo que todos ya saben.</p></div>
+  <p class="modal-remate">La vergüenza gestionada a tiempo es credibilidad. La vergüenza negada es el principio del tornado.</p>
+  <div class="modal-footer">
+    <span class="modal-wai">Escrito con IA.</span>
+    <button class="modal-share" onclick="copyLink('lo-que-todos-vieron-y-nadie-dijo',this)">Copiar enlace &#8599;</button>
+  </div>
+</div>
+<div class="modal-note" id="modal-la-hora-equivocada" style="display:none">
+  <p class="modal-tag">Experiencia de usuario · Cronobiología · El cansancio</p>
+  <h2 class="modal-title">La hora equivocada</h2>
+  <div class="modal-body"><p>La cronobiología descubrió que no somos la misma persona a las 9 de la mañana que a las 9 de la noche. El cerebro toma decisiones financieras más arriesgadas antes del almuerzo. La fatiga de decisión es real y acumulable — después de cierta cantidad de elecciones, el cerebro empieza a elegir lo más fácil, no lo mejor.</p><p>El customer journey ignora casi siempre el momento biológico en que ocurre. Diseña pasos, pantallas y mensajes como si el usuario fuera el mismo a cualquier hora.</p><p>El cansancio no es un problema del usuario. Es un dato de diseño.</p></div>
+  <p class="modal-remate">La experiencia que funciona a las 10am puede ser exactamente el obstáculo equivocado a las 10pm.</p>
+  <div class="modal-footer">
+    <span class="modal-wai">Escrito con IA.</span>
+    <button class="modal-share" onclick="copyLink('la-hora-equivocada',this)">Copiar enlace &#8599;</button>
+  </div>
+</div>
+<div class="modal-note" id="modal-lo-que-queres-que-los-demas-no-tengan" style="display:none">
+  <p class="modal-tag">Propuesta de valor · Economía conductual · Los celos</p>
+  <h2 class="modal-title">Lo que querés que los demás no tengan</h2>
+  <div class="modal-body"><p>La economía conductual tiene un hallazgo que incomoda a los departamentos de marketing: una parte significativa de las decisiones de compra no está motivada por lo que el producto hace, sino por lo que hace sentir en relación a otros.</p><p>No compramos el auto. Compramos la versión de nosotros mismos que maneja ese auto frente a alguien específico. No elegimos la cerveza. Elegimos lo que dice de nosotros en la mesa.</p><p>Los celos son uno de los motores más honestos del consumo. Y uno de los menos nombrados en una estrategia de marca — porque nombrarlos en un brief es incómodo, aunque todos en la sala sepan que están ahí.</p></div>
+  <p class="modal-remate">La propuesta de valor que no entiende el deseo comparativo no entiende por qué la gente compra realmente.</p>
+  <div class="modal-footer">
+    <span class="modal-wai">Escrito con IA.</span>
+    <button class="modal-share" onclick="copyLink('lo-que-queres-que-los-demas-no-tengan',this)">Copiar enlace &#8599;</button>
+  </div>
+</div>
+<div class="modal-note" id="modal-antes-de-la-primera-palabra" style="display:none">
+  <p class="modal-tag">Storytelling de marca · Antropología del fuego · El silencio</p>
+  <h2 class="modal-title">Antes de la primera palabra</h2>
+  <div class="modal-body"><p>El fuego fue la primera tecnología que cambió el comportamiento humano. No porque diera calor o cocinara alimentos — eso vino después. Lo primero que hizo fue crear un centro. Un lugar donde sentarse juntos cuando ya no había nada que hacer.</p><p>Los antropólogos calculan que el 80% de las conversaciones alrededor del fuego eran historias. No instrucciones, no datos, no estrategia. Historias. El storytelling no es una herramienta de marketing. Es la razón por la que el lenguaje existe.</p><p>Las marcas que más hablan son a menudo las que menos dicen. El silencio antes de la historia — ese segundo donde todavía no pasó nada — es el momento más poderoso de cualquier pieza de comunicación.</p></div>
+  <p class="modal-remate">Nadie se sienta alrededor de un dashboard.</p>
+  <div class="modal-footer">
+    <span class="modal-wai">Escrito con IA.</span>
+    <button class="modal-share" onclick="copyLink('antes-de-la-primera-palabra',this)">Copiar enlace &#8599;</button>
+  </div>
+</div>
+<div class="modal-note" id="modal-demasiadas-opciones-ninguna-direccion" style="display:none">
+  <p class="modal-tag">Estrategia de marca · Proliferación de plataformas · La confusión</p>
+  <h2 class="modal-title">Demasiadas opciones, ninguna dirección</h2>
+  <div class="modal-body"><p>Nunca hubo tantos canales, tantos formatos, tantas métricas, tantas herramientas. Cada año aparece una plataforma nueva que promete ser la siguiente gran cosa. Cada trimestre cambia el algoritmo. Cada mes hay un nuevo estudio que contradice el anterior.</p><p>Las marcas respondieron a esa proliferación de dos maneras. Algunas intentaron estar en todos lados — y terminaron siendo invisibles en todos lados. Otras se paralizaron esperando claridad que nunca llegó.</p><p>La confusión no es el enemigo de la estrategia. Es su punto de partida. Las marcas con criterio claro navegan la confusión mejor no porque tengan más información — sino porque saben qué ignorar.</p></div>
+  <p class="modal-remate">La claridad no llega antes de la confusión. Llega después.</p>
+  <div class="modal-footer">
+    <span class="modal-wai">Escrito con IA.</span>
+    <button class="modal-share" onclick="copyLink('demasiadas-opciones-ninguna-direccion',this)">Copiar enlace &#8599;</button>
+  </div>
+</div>
+<div class="modal-note" id="modal-lo-que-admiras-dice-mas-de-vos" style="display:none">
+  <p class="modal-tag">Marca aspiracional · Realidad aumentada e identidades digitales · La admiración</p>
+  <h2 class="modal-title">Lo que admirás dice más de vos que de la otra persona</h2>
+  <div class="modal-body"><p>Las identidades digitales cambiaron la naturaleza de la admiración. Ahora admirás una versión curada, filtrada y optimizada de otra persona — o de un personaje que no existe en absoluto. La realidad aumentada hace posible que una marca construya un ícono aspiracional que nunca envejece, nunca falla, nunca decepciona.</p><p>El problema es que la admiración real no funciona así. No admirás a alguien porque sea perfecto. Lo admirás porque en algo que hace o dice reconocés algo que vos querés ser — y que todavía no sos.</p><p>Eso requiere imperfección. Requiere que la distancia entre vos y esa persona sea real pero atravesable.</p></div>
+  <p class="modal-remate">Lo que admirás es un mapa de lo que querés ser. Las marcas que entienden eso no construyen ídolos. Construyen espejos.</p>
+  <div class="modal-footer">
+    <span class="modal-wai">Escrito con IA.</span>
+    <button class="modal-share" onclick="copyLink('lo-que-admiras-dice-mas-de-vos',this)">Copiar enlace &#8599;</button>
+  </div>
+</div>
+<div class="modal-note" id="modal-la-ansiedad-como-senal" style="display:none">
+  <p class="modal-tag">Velocidad de producción · Algoritmos de urgencia · La ansiedad</p>
+  <h2 class="modal-title">La ansiedad como señal</h2>
+  <div class="modal-body"><p>La economía de la atención está construida sobre la ansiedad. Notificaciones diseñadas para interrumpir, métricas que se actualizan en tiempo real, feeds que nunca terminan. Las plataformas aprendieron que la ansiedad mantiene a la gente conectada — y la usaron.</p><p>Las marcas absorbieron esa lógica. Publicar todos los días. Responder en minutos. Estar siempre presentes. La presión por producir a esa velocidad genera equipos creativos que trabajan con la adrenalina como combustible permanente.</p><p>Pero la ansiedad también es información. Cuando algo te genera ansiedad es porque importa — porque hay algo en juego que valorás. El problema no es la ansiedad. Es no saber leerla.</p></div>
+  <p class="modal-remate">Si no te genera ansiedad, probablemente no importa lo suficiente.</p>
+  <div class="modal-footer">
+    <span class="modal-wai">Escrito con IA.</span>
+    <button class="modal-share" onclick="copyLink('la-ansiedad-como-senal',this)">Copiar enlace &#8599;</button>
+  </div>
+</div>
+<div class="modal-note" id="modal-las-marcas-que-eligen-bando" style="display:none">
+  <p class="modal-tag">Decisiones de marca que polarizan · Cancelación y amplificación · La valentía</p>
+  <h2 class="modal-title">Las marcas que eligen bando</h2>
+  <div class="modal-body"><p>Las redes sociales crearon una trampa perfecta para las marcas. Tomar posición sobre cualquier tema relevante genera riesgo de cancelación. No tomar posición genera acusaciones de indiferencia. El espacio neutral se achica cada año.</p><p>Algunas marcas respondieron con silencio estratégico — comunicar solo lo seguro, evitar todo lo que pueda dividir. El resultado es comunicación perfectamente inofensiva que nadie recuerda.</p><p>La valentía no es tomar partido en todo. Es saber con claridad en qué cosas la marca tiene algo real para decir — y decirlo aunque incomode. Eso requiere conocer los propios valores antes de que la situación obligue a mostrarlos.</p></div>
+  <p class="modal-remate">Las marcas valientes no evitan la controversia. Eligen cuál vale la pena.</p>
+  <div class="modal-footer">
+    <span class="modal-wai">Escrito con IA.</span>
+    <button class="modal-share" onclick="copyLink('las-marcas-que-eligen-bando',this)">Copiar enlace &#8599;</button>
+  </div>
+</div>
+<div class="modal-note" id="modal-el-placer-que-no-se-admite" style="display:none">
+  <p class="modal-tag">Experiencia de usuario · Dopamina por diseño · El placer</p>
+  <h2 class="modal-title">El placer que no se admite</h2>
+  <div class="modal-body"><p>Las apps más usadas del mundo están diseñadas para generar placer. Cada scroll, cada notificación, cada like activa el mismo circuito de recompensa que el juego o el azúcar. No es accidental — es ingeniería aplicada al comportamiento humano.</p><p>Las marcas de consumo llevan décadas sabiendo que el placer vende. Lo que cambió es la precisión con la que ahora se puede diseñar. El color de un botón, el sonido de una notificación, la velocidad de una animación — todo calibrado para maximizar la respuesta dopaminérgica.</p><p>Lo que ningún diseño puede fabricar es el placer que da vergüenza admitir. Ese que no contás pero que volvés a buscar. Ese es el que más fideliza — porque no depende de la experiencia diseñada.</p></div>
+  <p class="modal-remate">El placer que no se admite es el que más fideliza.</p>
+  <div class="modal-footer">
+    <span class="modal-wai">Escrito con IA.</span>
+    <button class="modal-share" onclick="copyLink('el-placer-que-no-se-admite',this)">Copiar enlace &#8599;</button>
+  </div>
+</div>
+<div class="modal-note" id="modal-lo-que-sabes-sin-saber-que-lo-sabes" style="display:none">
+  <p class="modal-tag">Decisiones estratégicas bajo incertidumbre · IA como sistema de recomendación · La intuición</p>
+  <h2 class="modal-title">Lo que sabés sin saber que lo sabés</h2>
+  <div class="modal-body"><p>Los sistemas de recomendación de IA procesan millones de variables para sugerir la mejor decisión posible. Son más rápidos que cualquier humano, más consistentes, menos afectados por el estado de ánimo del día. En muchos contextos, son mejores tomando decisiones.</p><p>Y sin embargo, los mejores estrategas tienen algo que ningún sistema puede replicar todavía: la capacidad de saber cuándo no seguir la recomendación. De sentir que algo está mal antes de poder explicar por qué. De actuar sobre una señal que todavía no es un dato.</p><p>La intuición no es lo opuesto a los datos. Es datos acumulados durante años que el cerebro procesa más rápido de lo que la conciencia puede seguir.</p></div>
+  <p class="modal-remate">El problema no es confiar en la intuición. Es no saber cuándo confiar en ella y cuándo no.</p>
+  <div class="modal-footer">
+    <span class="modal-wai">Escrito con IA.</span>
+    <button class="modal-share" onclick="copyLink('lo-que-sabes-sin-saber-que-lo-sabes',this)">Copiar enlace &#8599;</button>
+  </div>
+</div>
+<div class="modal-note" id="modal-la-marca-que-prometio-demasiado" style="display:none">
+  <p class="modal-tag">Posicionamiento de marca · Deepfakes y desinformación · La certeza</p>
+  <h2 class="modal-title">La marca que prometió demasiado</h2>
+  <div class="modal-body"><p>Vivimos en un momento donde verificar la verdad requiere esfuerzo activo. Los deepfakes son cada vez más convincentes. La desinformación se distribuye más rápido que la corrección. La desconfianza como postura por defecto es una respuesta racional a un entorno que la justifica.</p><p>En ese contexto, las marcas que prometen certeza — 'el mejor', 'el único', 'garantizado' — suenan cada vez más vacías. No porque la gente no quiera certeza. Sino porque aprendió que quien la promete fácil generalmente no la puede cumplir.</p><p>Las marcas que están construyendo autoridad real en este entorno no prometen certeza. Muestran proceso, admiten limitaciones, hablan de lo que no saben tanto como de lo que saben.</p></div>
+  <p class="modal-remate">Las marcas que prometen certeza mienten. Las que acompañan la incertidumbre, perduran.</p>
+  <div class="modal-footer">
+    <span class="modal-wai">Escrito con IA.</span>
+    <button class="modal-share" onclick="copyLink('la-marca-que-prometio-demasiado',this)">Copiar enlace &#8599;</button>
+  </div>
+</div>
+<div class="modal-note" id="modal-la-ilusion-de-controlar-la-narrativa" style="display:none">
+  <p class="modal-tag">Gestión de crisis y reputación · Viralidad y redes sociales · El control</p>
+  <h2 class="modal-title">La ilusión de controlar la narrativa</h2>
+  <div class="modal-body"><p>Hubo una época en que las marcas controlaban la narrativa. Tres canales de televisión, algunos diarios, una agencia de relaciones públicas. El flujo de información era manejable. Un buen comunicado podía contener casi cualquier crisis.</p><p>Eso terminó. Hoy cualquier empleado, cualquier cliente, cualquier persona que estuvo en el lugar equivocado en el momento equivocado puede cambiar la conversación en minutos. La viralidad no avisa. Y el intento de controlarla suele acelerarla.</p><p>Las organizaciones que mejor navegan las crisis no son las que más controlan el mensaje. Son las que construyeron suficiente confianza antes de que la crisis llegara como para que la gente les dé el beneficio de la duda cuando algo sale mal.</p></div>
+  <p class="modal-remate">Las marcas que más controlan su imagen son las que menos la controlan.</p>
+  <div class="modal-footer">
+    <span class="modal-wai">Escrito con IA.</span>
+    <button class="modal-share" onclick="copyLink('la-ilusion-de-controlar-la-narrativa',this)">Copiar enlace &#8599;</button>
+  </div>
+</div>
+<div class="modal-note" id="modal-lo-que-el-cuerpo-sabe-antes-que-la-mente" style="display:none">
+  <p class="modal-tag">Cambio organizacional · Adopción tecnológica · La resistencia</p>
+  <h2 class="modal-title">Lo que el cuerpo sabe antes que la mente</h2>
+  <div class="modal-body"><p>Cuando una organización implementa una transformación y encuentra resistencia, la respuesta habitual es comunicar más, capacitar más, gestionar el cambio con más herramientas. La resistencia se trata como un problema a resolver.</p><p>Lo que rara vez se pregunta es qué está diciendo esa resistencia. Porque las personas que resisten un cambio muchas veces están percibiendo algo real — una inconsistencia en el discurso, un riesgo que nadie nombró, una consecuencia que los modelos no contemplaron.</p><p>La resistencia no es irracionalidad. Es inteligencia distribuida que no encontró el canal para expresarse de otra manera.</p></div>
+  <p class="modal-remate">La resistencia no es el problema. Es la información más honesta que tiene una organización.</p>
+  <div class="modal-footer">
+    <span class="modal-wai">Escrito con IA.</span>
+    <button class="modal-share" onclick="copyLink('lo-que-el-cuerpo-sabe-antes-que-la-mente',this)">Copiar enlace &#8599;</button>
+  </div>
+</div>
+<div class="modal-note" id="modal-romper-lo-que-funciono" style="display:none">
+  <p class="modal-tag">Rebranding y reinvención de marca · Disrupción tecnológica · La ruptura</p>
+  <h2 class="modal-title">Romper lo que funcionó</h2>
+  <div class="modal-body"><p>Las marcas más difíciles de reinventar no son las que fracasaron. Son las que tuvieron demasiado éxito durante demasiado tiempo. Porque cada año de éxito refuerza la convicción de que lo que funcionó va a seguir funcionando — y hace más costoso el momento en que hay que romperlo.</p><p>La disrupción tecnológica fuerza esa ruptura desde afuera cuando las marcas no la generan desde adentro. Kodak, Blockbuster, Nokia — no fracasaron por falta de talento ni de recursos. Fracasaron porque romper lo que los había hecho grandes era demasiado difícil de justificar mientras todavía funcionaba.</p><p>La ruptura no llega en el mejor momento. Llega cuando todavía duele — o cuando ya es tarde.</p></div>
+  <p class="modal-remate">Ninguna marca se reinventó sin primero romper algo que le costaba romper.</p>
+  <div class="modal-footer">
+    <span class="modal-wai">Escrito con IA.</span>
+    <button class="modal-share" onclick="copyLink('romper-lo-que-funciono',this)">Copiar enlace &#8599;</button>
+  </div>
+</div>
+  </div>
+</div>
+
+<div style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap">
+<article id="ventaja-competitiva-inesperada"><h2>Ventaja competitiva inesperada</h2><p>Producción de contenido · IA generativa · Aburrimiento</p><p>Nunca hubo tanto contenido. Nunca fue tan difícil recordar algo que viste ayer. La IA resolvió el problema de producir. No resolvió el problema de que algo te importe. Las marcas que ganan hoy no son las que publican más. Son las que todavía se hacen preguntas que nadie hizo. Eso requiere un estado mental que la IA no tiene: el aburrimiento. Ese momento incómodo donde no hay nada que consumir y la cabeza empieza a moverse sola. Aburrirte bien es estrategia.</p></article>
+<article id="lo-que-el-algoritmo-no-puede-comprarte"><h2>Lo que el algoritmo no puede comprarte</h2><p>Fidelización · IA y personalización · Enamorarse</p><p>Enamorarse requiere algo que los algoritmos no toleran: el riesgo de que el otro no te elija. La IA y la personalización resolvieron la incomodidad del descubrimiento. Ahora cada feed, cada recomendación, cada experiencia de marca está diseñada para que nunca veas algo que no te guste. Las marcas que solo muestran lo que el cliente quiere ver no se ganan su amor. Se ganan su comodidad. Y la comodidad no genera fans — genera usuarios que se van en cuanto aparece algo más cómodo todavía. Enamorar requiere el riesgo de mostrar algo que todavía no pediste.</p></article>
+<article id="el-paso-que-nadie-automatiza-primero"><h2>El paso que nadie automatiza primero</h2><p>Innovación de marca · Automatización / agentes de IA · Jugar</p><p>Cuando eras chico, jugar no tenía objetivo. El punto era el proceso, no el resultado. Nadie jugaba para ganar eficiencia. La automatización hace exactamente lo contrario: toma un proceso que funcionó y lo repite sin fricción, sin variación, sin error. Es brillante para escalar lo que ya sabés. Es terrible para descubrir lo que todavía no sabés. Las marcas que automatizan demasiado pronto se vuelven muy buenas en hacer lo mismo. El problema es que el mercado no para de cambiar. Optimizar una respuesta que ya quedó vieja es una trampa elegante. Primero jugá. Después optimizá. En ese orden.</p></article>
+<article id="el-numero-que-falta-en-tu-dashboard"><h2>El número que falta en tu dashboard</h2><p>Negocio · Métricas en tiempo real · Decepción</p><p>La decepción tiene mala prensa. Nadie la pone en el dashboard. Los dashboards en tiempo real cambiaron cómo las marcas toman decisiones: si el número sube, escalás. Si baja, cortás. El problema es que ese ciclo optimiza la promesa mucho más rápido de lo que optimiza la entrega. Una marca que nunca decepciona no existe. Existe una marca que todavía no tiene suficiente escala para decepcionar a alguien. El indicador que casi nadie mide es cuánta gente vuelve después de que algo salió mal. La decepción bien gestionada fideliza más que la promesa perfecta.</p></article>
+<article id="lo-que-la-marca-no-puede-darte"><h2>Lo que la marca no puede darte</h2><p>Comunidades de marca · Interfaces conversacionales · Soledad</p><p>Hay un momento en que abrís una app no porque necesitás algo sino porque no querés estar solo. Las marcas lo saben. Los algoritmos lo saben mejor. La IA conversacional llegó para quedarse en ese momento. Está disponible, es paciente, nunca se cansa. Es todo lo que un humano no puede ser a las dos de la mañana. El problema no es que sea artificial. El problema es que es demasiado cómoda. La soledad real — la que incomoda, la que empuja — es el estado donde más se aprende y donde más se necesita a otros de verdad. Las marcas que construyen comunidades reales no distraen de la soledad. La reconocen.</p></article>
+<article id="la-pregunta-que-nadie-hizo"><h2>La pregunta que nadie hizo</h2><p>Briefing · Computación cuántica · Hacer la pregunta correcta</p><p>La mayoría de los problemas de negocio mal resueltos no tenían mala solución. Tenían mala pregunta. La computación cuántica va a poder resolver en segundos problemas que hoy llevan años de cálculo. El cuello de botella no va a ser la capacidad de procesamiento. Va a ser la calidad de lo que le preguntemos. Es exactamente lo que pasa en una reunión de briefing. Podés tener el mejor equipo creativo del mundo sentado en esa sala. Si la pregunta está mal formulada, todo lo que viene después es brillante y equivocado. La tecnología más poderosa siempre amplifica la pregunta. No la reemplaza.</p></article>
+<article id="el-experto-que-olvido-no-saber"><h2>El experto que olvidó no saber</h2><p>Gestión del talento · Robótica y automatización · El aburrimiento del experto</p><p>Hay un momento en la carrera de cualquier persona muy buena en lo que hace en que deja de sorprenderse. Ya vio esto antes. Ya sabe cómo termina. El expertise se convierte en un filtro que bloquea lo nuevo antes de que llegue. Los robots y la automatización física están eliminando las tareas repetitivas de los entornos de trabajo. El efecto secundario, menos obvio, es que liberan al experto de lo rutinario — y lo dejan sin excusas frente a lo desconocido. El talento más valioso en un equipo no es el que más sabe. Es el que más sabe y todavía puede actuar como si no supiera nada. Desaprender es una habilidad. Muy pocos la entrenan.</p></article>
+<article id="el-que-espera"><h2>El que espera</h2><p>Estrategia de marca a largo plazo · Redes sociales y economía de la atención · La paciencia</p><p>Hace 20 años, construir una marca requería paciencia por defecto. No había otra forma. Los ciclos eran lentos, los medios eran caros, el feedback tardaba meses. Las redes sociales cambiaron eso. De golpe todo tenía métrica instantánea. Las marcas aprendieron a optimizar para el momento. El problema es que el momento y la marca van en direcciones opuestas. Lo que funciona hoy en el feed raramente construye algo que dure. La paciencia no es una virtud pasiva. Es una decisión estratégica activa en un entorno diseñado para que no puedas tomarla. Las marcas que van a importar en diez años ya están haciendo algo hoy que no tiene ningún sentido en el dashboard de esta semana.</p></article>
+<article id="lo-que-elegiste-no-mostrar"><h2>Lo que elegiste no mostrar</h2><p>Datos y privacidad del consumidor · Interfaces cerebro-máquina · El secreto</p><p>Las marcas siempre construyeron sobre lo que la gente desea pero no dice. Esa brecha entre el deseo declarado y el deseo real fue, durante décadas, el territorio más fértil del marketing. Las interfaces cerebro-máquina — hoy experimentales, mañana no tanto — amenazan con cerrar esa brecha para siempre. Si un dispositivo puede leer la intención antes de que se convierta en conducta, el secreto deja de existir como categoría. El problema no es solo de privacidad. Es de identidad. Una parte de quiénes somos vive en lo que elegimos no mostrar. El secreto no es un obstáculo para el marketing. Es el límite que lo hace humano.</p></article>
+<article id="quien-firma"><h2>Quién firma</h2><p>Propósito de marca · IA generativa y autoría · La autoría</p><p>Durante años, las marcas construyeron propósito como si tuvieran alma. Decían algo, lo sostenían en el tiempo, lo firmaban con su nombre. La autoría importaba porque implicaba responsabilidad. La IA generativa escribe, diseña, compone y crea. Lo hace bien y cada vez mejor. La pregunta real es quién firma — y qué significa firmar algo cuando no sabés exactamente cómo fue hecho. Las marcas que usan IA para producir contenido de propósito sin entender esto están firmando cheques en blanco. El consumidor no necesita saber cómo se hizo. Pero sí necesita creer que alguien se hizo responsable de lo que dice. Propósito sin autoría es decoración.</p></article>
+<article id="lo-que-no-se-dice-en-la-sala"><h2>Lo que no se dice en la sala</h2><p>Lanzamiento de producto · Neurociencia del riesgo · El miedo</p><p>Hay algo que pasa en cada reunión de lanzamiento que nadie nombra. Alguien en la sala sabe que el producto no está listo. O que el timing es malo. O que ya vieron esto antes y no funcionó. Y no lo dice. La neurociencia del riesgo explica por qué: el cerebro procesa la incertidumbre como amenaza física. Hablar cuando todos están entusiasmados activa el mismo sistema que esquivar un golpe. El cuerpo prefiere el silencio. El resultado es que los lanzamientos más costosos de la historia no fallaron por falta de presupuesto ni de talento. Fallaron porque nadie en la sala dijo lo que sabía. El miedo al juicio es el insight más caro del marketing. Y no aparece en ningún brief.</p></article>
+<article id="la-marca-que-te-recuerda-quien-eras"><h2>La marca que te recuerda quién eras</h2><p>Lealtad de marca · Epigenética · La nostalgia</p><p>La epigenética descubrió algo inquietante: las experiencias que tuviste antes de los diez años dejan marcas físicas en tu ADN que afectan cómo respondés al mundo de adulto. No como recuerdo. Como biología. Las marcas de consumo masivo lo intuían antes de que la ciencia lo confirmara. La gaseosa de tu infancia no compite con otras gaseosas. Compite con una versión de vos que ya no existe. Y gana casi siempre. La nostalgia no es sentimentalismo. Es uno de los mecanismos de lealtad más poderosos que existen — y uno de los menos comprendidos por quienes diseñan estrategias de retención basadas en puntos y descuentos. No fidelizás al consumidor que es hoy. Fidelizás al que fue.</p></article>
+<article id="las-dos-cosas-a-la-vez"><h2>Las dos cosas a la vez</h2><p>Estrategia creativa · Física cuántica · La duda</p><p>En física cuántica, una partícula puede estar en dos estados al mismo tiempo hasta que alguien la observa. En el momento en que la medís, colapsa en una sola cosa. Antes de eso, es las dos. Una gran idea creativa funciona igual. Antes de mostrársela al cliente, es simultáneamente la mejor idea del año y una catástrofe. La presentación es el momento en que colapsa. El problema es que la mayoría de los procesos creativos están diseñados para eliminar la duda lo antes posible. Testeos, validaciones, comités de aprobación. Todo orientado a que la idea colapse rápido, en algo predecible. La duda sostenida es incómoda. También es donde viven las mejores ideas.</p></article>
+<article id="el-segundo-antes-de-comprar"><h2>El segundo antes de comprar</h2><p>Marketing de performance · Psicología conductual · El deseo</p><p>Hay un segundo — literal, un segundo — entre que alguien decide comprar algo y que lo hace. Lo que encontró la psicología conductual es perturbador: la decisión ya estaba tomada antes de que la persona creyera haberla tomado. El deseo no es racional ni irracional. Es anterior a ambas cosas. Aparece antes del argumento, antes del precio, antes de la comparación. El marketing de performance trabaja sobre la superficie de ese momento sin tocar lo que hay debajo. Las marcas que entienden el deseo no convencen. Despiertan algo que ya estaba ahí. El trabajo no es crear el deseo. Es no apagarlo en el camino.</p></article>
+<article id="la-tribu-que-nadie-fundo"><h2>La tribu que nadie fundó</h2><p>Employer branding · Sociología de grupos · Pertenecer</p><p>La sociología tiene una observación incómoda para el mundo corporativo: las tribus reales no se fundan. Emergen. Nadie decide pertenecer a una tribu — lo siente, y después lo racionaliza. El employer branding suele hacer exactamente lo contrario. Diseña la pertenencia desde arriba — valores declarados, cultura documentada, beneficios comunicados. Todo correcto, todo inerte. Lo que hace que alguien sienta que pertenece a un equipo no es el manual de cultura. Es el momento en que alguien le cubrió las espaldas sin que se lo pidieran. El chiste interno que no tiene traducción. La crisis que atravesaron juntos. Pertenecer no se comunica. Se experimenta. Y esa diferencia le cuesta cara a casi todas las organizaciones.</p></article>
+<article id="lo-que-la-naturaleza-ya-resolvio"><h2>Lo que la naturaleza ya resolvió</h2><p>Innovación de producto · Biomímesis · La curiosidad</p><p>El Velcro lo inventó un ingeniero que se preguntó por qué los abrojos se pegaban a su ropa. El sonar de los submarinos lo inspiró el murciélago. La estructura del nido de termitas resolvió la ventilación de un edificio en Zimbabue sin aire acondicionado. La biomímesis lleva 3.800 millones de años de I+D acumulado. Gratis. Disponible para cualquiera que tenga curiosidad suficiente para mirar. El problema es que la curiosidad no escala bien en las organizaciones. Los procesos de innovación están diseñados para responder preguntas, no para hacerlas. Y la pregunta rara requiere un tipo de atención que los timelines no permiten. Las mejores innovaciones de producto no vinieron de estudiar el mercado. Vinieron de alguien que miró algo completamente distinto y no pudo evitar preguntarse por qué.</p></article>
+<article id="lo-que-todos-vieron-y-nadie-dijo"><h2>Lo que todos vieron y nadie dijo</h2><p>Crisis de marca · Teoría del caos · La vergüenza</p><p>La teoría del caos dice que una mariposa que bate las alas en Brasil puede desencadenar un tornado en Texas. Las crisis de marca funcionan igual: el momento que lo detonó todo raramente es el momento que importaba. Hay algo que la teoría del caos no explica y que aparece en casi todas las crisis de reputación: la vergüenza. No la del consumidor — la de la organización. Ese estado en que todos saben que algo estuvo mal y nadie lo dice en público. Las marcas que salen bien de una crisis no son las que mejor mienten. Son las que antes que nadie dicen lo que todos ya saben. La vergüenza gestionada a tiempo es credibilidad. La vergüenza negada es el principio del tornado.</p></article>
+<article id="la-hora-equivocada"><h2>La hora equivocada</h2><p>Experiencia de usuario · Cronobiología · El cansancio</p><p>La cronobiología descubrió que no somos la misma persona a las 9 de la mañana que a las 9 de la noche. El cerebro toma decisiones financieras más arriesgadas antes del almuerzo. La fatiga de decisión es real y acumulable — después de cierta cantidad de elecciones, el cerebro empieza a elegir lo más fácil, no lo mejor. El customer journey ignora casi siempre el momento biológico en que ocurre. Diseña pasos, pantallas y mensajes como si el usuario fuera el mismo a cualquier hora. El cansancio no es un problema del usuario. Es un dato de diseño. La experiencia que funciona a las 10am puede ser exactamente el obstáculo equivocado a las 10pm.</p></article>
+<article id="lo-que-queres-que-los-demas-no-tengan"><h2>Lo que querés que los demás no tengan</h2><p>Propuesta de valor · Economía conductual · Los celos</p><p>La economía conductual tiene un hallazgo que incomoda a los departamentos de marketing: una parte significativa de las decisiones de compra no está motivada por lo que el producto hace, sino por lo que hace sentir en relación a otros. No compramos el auto. Compramos la versión de nosotros mismos que maneja ese auto frente a alguien específico. No elegimos la cerveza. Elegimos lo que dice de nosotros en la mesa. Los celos son uno de los motores más honestos del consumo. Y uno de los menos nombrados en una estrategia de marca — porque nombrarlos en un brief es incómodo, aunque todos en la sala sepan que están ahí. La propuesta de valor que no entiende el deseo comparativo no entiende por qué la gente compra realmente.</p></article>
+<article id="antes-de-la-primera-palabra"><h2>Antes de la primera palabra</h2><p>Storytelling de marca · Antropología del fuego · El silencio</p><p>El fuego fue la primera tecnología que cambió el comportamiento humano. No porque diera calor o cocinara alimentos — eso vino después. Lo primero que hizo fue crear un centro. Un lugar donde sentarse juntos cuando ya no había nada que hacer. Los antropólogos calculan que el 80% de las conversaciones alrededor del fuego eran historias. No instrucciones, no datos, no estrategia. Historias. El storytelling no es una herramienta de marketing. Es la razón por la que el lenguaje existe. Las marcas que más hablan son a menudo las que menos dicen. El silencio antes de la historia — ese segundo donde todavía no pasó nada — es el momento más poderoso de cualquier pieza de comunicación. Nadie se sienta alrededor de un dashboard.</p></article>
+<article id="demasiadas-opciones-ninguna-direccion"><h2>Demasiadas opciones, ninguna dirección</h2><p>Estrategia de marca · Proliferación de plataformas · La confusión</p><p>Nunca hubo tantos canales, tantos formatos, tantas métricas, tantas herramientas. Cada año aparece una plataforma nueva que promete ser la siguiente gran cosa. Cada trimestre cambia el algoritmo. Cada mes hay un nuevo estudio que contradice el anterior. Las marcas respondieron a esa proliferación de dos maneras. Algunas intentaron estar en todos lados — y terminaron siendo invisibles en todos lados. Otras se paralizaron esperando claridad que nunca llegó. La confusión no es el enemigo de la estrategia. Es su punto de partida. Las marcas con criterio claro navegan la confusión mejor no porque tengan más información — sino porque saben qué ignorar. La claridad no llega antes de la confusión. Llega después.</p></article>
+<article id="lo-que-admiras-dice-mas-de-vos"><h2>Lo que admirás dice más de vos que de la otra persona</h2><p>Marca aspiracional · Realidad aumentada e identidades digitales · La admiración</p><p>Las identidades digitales cambiaron la naturaleza de la admiración. Ahora admirás una versión curada, filtrada y optimizada de otra persona — o de un personaje que no existe en absoluto. La realidad aumentada hace posible que una marca construya un ícono aspiracional que nunca envejece, nunca falla, nunca decepciona. El problema es que la admiración real no funciona así. No admirás a alguien porque sea perfecto. Lo admirás porque en algo que hace o dice reconocés algo que vos querés ser — y que todavía no sos. Eso requiere imperfección. Requiere que la distancia entre vos y esa persona sea real pero atravesable. Lo que admirás es un mapa de lo que querés ser. Las marcas que entienden eso no construyen ídolos. Construyen espejos.</p></article>
+<article id="la-ansiedad-como-senal"><h2>La ansiedad como señal</h2><p>Velocidad de producción · Algoritmos de urgencia · La ansiedad</p><p>La economía de la atención está construida sobre la ansiedad. Notificaciones diseñadas para interrumpir, métricas que se actualizan en tiempo real, feeds que nunca terminan. Las plataformas aprendieron que la ansiedad mantiene a la gente conectada — y la usaron. Las marcas absorbieron esa lógica. Publicar todos los días. Responder en minutos. Estar siempre presentes. La presión por producir a esa velocidad genera equipos creativos que trabajan con la adrenalina como combustible permanente. Pero la ansiedad también es información. Cuando algo te genera ansiedad es porque importa — porque hay algo en juego que valorás. El problema no es la ansiedad. Es no saber leerla. Si no te genera ansiedad, probablemente no importa lo suficiente.</p></article>
+<article id="las-marcas-que-eligen-bando"><h2>Las marcas que eligen bando</h2><p>Decisiones de marca que polarizan · Cancelación y amplificación · La valentía</p><p>Las redes sociales crearon una trampa perfecta para las marcas. Tomar posición sobre cualquier tema relevante genera riesgo de cancelación. No tomar posición genera acusaciones de indiferencia. El espacio neutral se achica cada año. Algunas marcas respondieron con silencio estratégico — comunicar solo lo seguro, evitar todo lo que pueda dividir. El resultado es comunicación perfectamente inofensiva que nadie recuerda. La valentía no es tomar partido en todo. Es saber con claridad en qué cosas la marca tiene algo real para decir — y decirlo aunque incomode. Eso requiere conocer los propios valores antes de que la situación obligue a mostrarlos. Las marcas valientes no evitan la controversia. Eligen cuál vale la pena.</p></article>
+<article id="el-placer-que-no-se-admite"><h2>El placer que no se admite</h2><p>Experiencia de usuario · Dopamina por diseño · El placer</p><p>Las apps más usadas del mundo están diseñadas para generar placer. Cada scroll, cada notificación, cada like activa el mismo circuito de recompensa que el juego o el azúcar. No es accidental — es ingeniería aplicada al comportamiento humano. Las marcas de consumo llevan décadas sabiendo que el placer vende. Lo que cambió es la precisión con la que ahora se puede diseñar. El color de un botón, el sonido de una notificación, la velocidad de una animación — todo calibrado para maximizar la respuesta dopaminérgica. Lo que ningún diseño puede fabricar es el placer que da vergüenza admitir. Ese que no contás pero que volvés a buscar. Ese es el que más fideliza — porque no depende de la experiencia diseñada. El placer que no se admite es el que más fideliza.</p></article>
+<article id="lo-que-sabes-sin-saber-que-lo-sabes"><h2>Lo que sabés sin saber que lo sabés</h2><p>Decisiones estratégicas bajo incertidumbre · IA como sistema de recomendación · La intuición</p><p>Los sistemas de recomendación de IA procesan millones de variables para sugerir la mejor decisión posible. Son más rápidos que cualquier humano, más consistentes, menos afectados por el estado de ánimo del día. En muchos contextos, son mejores tomando decisiones. Y sin embargo, los mejores estrategas tienen algo que ningún sistema puede replicar todavía: la capacidad de saber cuándo no seguir la recomendación. De sentir que algo está mal antes de poder explicar por qué. De actuar sobre una señal que todavía no es un dato. La intuición no es lo opuesto a los datos. Es datos acumulados durante años que el cerebro procesa más rápido de lo que la conciencia puede seguir. El problema no es confiar en la intuición. Es no saber cuándo confiar en ella y cuándo no.</p></article>
+<article id="la-marca-que-prometio-demasiado"><h2>La marca que prometió demasiado</h2><p>Posicionamiento de marca · Deepfakes y desinformación · La certeza</p><p>Vivimos en un momento donde verificar la verdad requiere esfuerzo activo. Los deepfakes son cada vez más convincentes. La desinformación se distribuye más rápido que la corrección. La desconfianza como postura por defecto es una respuesta racional a un entorno que la justifica. En ese contexto, las marcas que prometen certeza — 'el mejor', 'el único', 'garantizado' — suenan cada vez más vacías. No porque la gente no quiera certeza. Sino porque aprendió que quien la promete fácil generalmente no la puede cumplir. Las marcas que están construyendo autoridad real en este entorno no prometen certeza. Muestran proceso, admiten limitaciones, hablan de lo que no saben tanto como de lo que saben. Las marcas que prometen certeza mienten. Las que acompañan la incertidumbre, perduran.</p></article>
+<article id="la-ilusion-de-controlar-la-narrativa"><h2>La ilusión de controlar la narrativa</h2><p>Gestión de crisis y reputación · Viralidad y redes sociales · El control</p><p>Hubo una época en que las marcas controlaban la narrativa. Tres canales de televisión, algunos diarios, una agencia de relaciones públicas. El flujo de información era manejable. Un buen comunicado podía contener casi cualquier crisis. Eso terminó. Hoy cualquier empleado, cualquier cliente, cualquier persona que estuvo en el lugar equivocado en el momento equivocado puede cambiar la conversación en minutos. La viralidad no avisa. Y el intento de controlarla suele acelerarla. Las organizaciones que mejor navegan las crisis no son las que más controlan el mensaje. Son las que construyeron suficiente confianza antes de que la crisis llegara como para que la gente les dé el beneficio de la duda cuando algo sale mal. Las marcas que más controlan su imagen son las que menos la controlan.</p></article>
+<article id="lo-que-el-cuerpo-sabe-antes-que-la-mente"><h2>Lo que el cuerpo sabe antes que la mente</h2><p>Cambio organizacional · Adopción tecnológica · La resistencia</p><p>Cuando una organización implementa una transformación y encuentra resistencia, la respuesta habitual es comunicar más, capacitar más, gestionar el cambio con más herramientas. La resistencia se trata como un problema a resolver. Lo que rara vez se pregunta es qué está diciendo esa resistencia. Porque las personas que resisten un cambio muchas veces están percibiendo algo real — una inconsistencia en el discurso, un riesgo que nadie nombró, una consecuencia que los modelos no contemplaron. La resistencia no es irracionalidad. Es inteligencia distribuida que no encontró el canal para expresarse de otra manera. La resistencia no es el problema. Es la información más honesta que tiene una organización.</p></article>
+<article id="romper-lo-que-funciono"><h2>Romper lo que funcionó</h2><p>Rebranding y reinvención de marca · Disrupción tecnológica · La ruptura</p><p>Las marcas más difíciles de reinventar no son las que fracasaron. Son las que tuvieron demasiado éxito durante demasiado tiempo. Porque cada año de éxito refuerza la convicción de que lo que funcionó va a seguir funcionando — y hace más costoso el momento en que hay que romperlo. La disrupción tecnológica fuerza esa ruptura desde afuera cuando las marcas no la generan desde adentro. Kodak, Blockbuster, Nokia — no fracasaron por falta de talento ni de recursos. Fracasaron porque romper lo que los había hecho grandes era demasiado difícil de justificar mientras todavía funcionaba. La ruptura no llega en el mejor momento. Llega cuando todavía duele — o cuando ya es tarde. Ninguna marca se reinventó sin primero romper algo que le costaba romper.</p></article>
+</div>
+
+<footer>
+  <a href="index.html">&#8592; Volver</a>
+  <a href="https://www.linkedin.com/in/marianodefelipe/" target="_blank">LinkedIn</a>
+</footer>
+
+<script>
+var currentSlug = null;
+var slugs = {"1":"ventaja-competitiva-inesperada","2":"lo-que-el-algoritmo-no-puede-comprarte","3":"el-paso-que-nadie-automatiza-primero","4":"el-numero-que-falta-en-tu-dashboard","5":"lo-que-la-marca-no-puede-darte","6":"la-pregunta-que-nadie-hizo","7":"el-experto-que-olvido-no-saber","8":"el-que-espera","9":"lo-que-elegiste-no-mostrar","10":"quien-firma","11":"lo-que-no-se-dice-en-la-sala","12":"la-marca-que-te-recuerda-quien-eras","13":"las-dos-cosas-a-la-vez","14":"el-segundo-antes-de-comprar","15":"la-tribu-que-nadie-fundo","16":"lo-que-la-naturaleza-ya-resolvio","17":"lo-que-todos-vieron-y-nadie-dijo","18":"la-hora-equivocada","19":"lo-que-queres-que-los-demas-no-tengan","20":"antes-de-la-primera-palabra","21":"demasiadas-opciones-ninguna-direccion","22":"lo-que-admiras-dice-mas-de-vos","23":"la-ansiedad-como-senal","24":"las-marcas-que-eligen-bando","25":"el-placer-que-no-se-admite","26":"lo-que-sabes-sin-saber-que-lo-sabes","27":"la-marca-que-prometio-demasiado","28":"la-ilusion-de-controlar-la-narrativa","29":"lo-que-el-cuerpo-sabe-antes-que-la-mente","30":"romper-lo-que-funciono"};
+function openModal(slug) {
+  if (currentSlug) document.getElementById('modal-' + currentSlug).style.display = 'none';
+  currentSlug = slug;
+  document.getElementById('modal-' + slug).style.display = 'block';
+  document.getElementById('modal-overlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+  history.pushState(null, '', '#' + slug);
+}
+function closeModal() {
+  document.getElementById('modal-overlay').classList.remove('open');
+  if (currentSlug) document.getElementById('modal-' + currentSlug).style.display = 'none';
+  currentSlug = null;
+  document.body.style.overflow = '';
+  history.pushState(null, '', window.location.pathname);
+}
+function handleOverlayClick(e) {
+  if (e.target === document.getElementById('modal-overlay')) closeModal();
+}
+document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeModal(); });
+function copyLink(slug, btn) {
+  var url = 'https://marianodefelipe.com/human-prompting-es#' + slug;
+  navigator.clipboard.writeText(url).then(function() {
+    btn.classList.add('copied');
+    btn.textContent = '¡Copiado!';
+    setTimeout(function() {
+      btn.classList.remove('copied');
+      btn.textContent = 'Copiar enlace &#8599;';
+    }, 2000);
+  });
+}
+if (window.location.hash) {
+  var slug = window.location.hash.slice(1);
+  setTimeout(function() { openModal(slug); }, 100);
+}
+</script>
+</body>
+</html>

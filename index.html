@@ -629,7 +629,7 @@ footer a:hover{color:var(--ink)}
     <button class="hp-btn on" onclick="hpNext()"><span class="en">Next &#8594;</span><span class="es">Siguiente &#8594;</span></button>
   </div>
   <p class="hp-all sr d3">
-    <a href="human-prompting.html" class="hp-all-link" title="Human Prompting — 20 notes on business, technology and human behavior by Mariano Defelipe"><span class="en">Read all 30 notes &#8599;</span><span class="es">Leer las 30 notas &#8599;</span></a>
+    <a href="human-prompting.html" class="hp-all-link" id="hp-link" title="Human Prompting — 20 notes on business, technology and human behavior by Mariano Defelipe"><span class="en">Read all 30 notes &#8599;</span><span class="es">Leer las 30 notas &#8599;</span></a>
   </p>
 </section>
 
@@ -665,6 +665,13 @@ function togglePress() {
     btn.innerHTML = isEs ? '<span class="en">View all (11) &#8595;</span><span class="es">Ver todas (11) &#8595;</span>' : '<span class="en">View all (11) &#8595;</span><span class="es">Ver todas (11) &#8595;</span>';
   }
 }
+
+function updateHpLink(lang) {
+  var link = document.getElementById('hp-link');
+  if (link) {
+    link.href = lang === 'es' ? 'human-prompting-es.html' : 'human-prompting.html';
+  }
+}
 function setLang(l) {
   var isEs = l === 'es';
   document.querySelectorAll('.en').forEach(function(e) {
@@ -676,6 +683,7 @@ function setLang(l) {
   document.getElementById('btn-en').style.cssText = isEs ? '' : 'background:var(--ink);color:#f6f6f4;border-color:var(--ink)';
   document.getElementById('btn-es').style.cssText = isEs ? 'background:var(--ink);color:#f6f6f4;border-color:var(--ink)' : '';
   document.documentElement.lang = l;
+updateHpLink(l);
 }
 function sc(id, btn) {
   document.querySelectorAll('.pill').forEach(function(p) { p.classList.remove('on'); });
