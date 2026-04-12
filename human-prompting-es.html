@@ -19,10 +19,12 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Blog","name":"Human Prompting","description":"Claude y Mariano Defelipe exploran negocios, tecnología y comportamiento humano.","url":"https://marianodefelipe.com/human-prompting-es","author":{"@type":"Person","name":"Mariano Defelipe","url":"https://marianodefelipe.com"},"inLanguage":"es"}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:wght@300;400;500&display=swap">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"></noscript>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{--bg:#f6f6f4;--ink:#0d0d0c;--mu:#888884;--bo:rgba(13,13,12,.09);--ac:#d14e1e;--fd:'Syne',sans-serif;--fb:'DM Sans',sans-serif}
+:root{--bg:#f6f6f4;--ink:#0d0d0c;--mu:#666662;--bo:rgba(13,13,12,.09);--ac:#d14e1e;--fd:'Syne',sans-serif;--fb:'DM Sans',sans-serif}
 html{scroll-behavior:smooth}
 body{font-family:var(--fb);background:var(--bg);color:var(--ink);overflow-x:hidden;-webkit-font-smoothing:antialiased}
 .lang-switch{position:fixed;top:1.75rem;right:2rem;z-index:400;font-family:var(--fd);font-size:.6rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
@@ -105,7 +107,7 @@ footer a{color:inherit;text-decoration:none}footer a:hover{color:var(--ink)}
   </div>
 </header>
 
-<main class="grid">
+<main role="main" class="grid">
 <div class="hp-card" onclick="openModal('ventaja-competitiva-inesperada')">
   <div class="hp-num">01</div>
   <div class="hp-inner">
