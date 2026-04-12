@@ -45,7 +45,9 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:wght@300;400;500&display=swap&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:wght@300;400;500&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:wght@300;400;500&display=swap"></noscript>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{--bg:#f6f6f4;--ink:#0d0d0c;--mu:#666662;--bo:rgba(13,13,12,.09);--ac:#d14e1e;--fd:'Syne',sans-serif;--fb:'DM Sans',sans-serif}
@@ -219,7 +221,7 @@ footer a:hover{color:var(--ink)}
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
 <link rel="icon" type="image/png" href="/favicon.png">
 <link rel="shortcut icon" href="/favicon.ico">
-<link rel="preload" as="image" href="/hero-portrait.webp" media="(max-width: 768px)">
+<link rel="preload" as="image" href="/hero-portrait.webp" media="(max-width: 768px)" fetchpriority="high">
 <link rel="preload" as="image" href="/street-photo.webp" media="(min-width: 769px)">
 </head>
 <body>
