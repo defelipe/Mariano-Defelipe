@@ -1,6 +1,20 @@
 {
   "rewrites": [
-    { "source": "/human-prompting", "destination": "/human-prompting.html" },
-    { "source": "/human-prompting-es", "destination": "/human-prompting-es.html" }
+    {
+      "source": "/human-prompting",
+      "destination": "/human-prompting.html"
+    },
+    {
+      "source": "/human-prompting-es",
+      "destination": "/human-prompting-es.html"
+    },
+    {
+      "source": "/micro-fiction",
+      "destination": "/micro-fiction.html"
+    },
+    {
+      "source": "/micro-fiction-es",
+      "destination": "/micro-fiction-es.html"
+    }
   ]
 }

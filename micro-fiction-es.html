@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Micro Fiction — Mariano Defelipe</title>
+<meta name="description" content="Micro Fiction — Historias breves sobre negocios, personas y tecnología. Ficción: Mariano Defelipe · IA: Claude Sonnet 4.6">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://marianodefelipe.com/micro-fiction-es">
+<link rel="alternate" hreflang="es" href="https://marianodefelipe.com/micro-fiction-es">
+<link rel="alternate" hreflang="en" href="https://marianodefelipe.com/micro-fiction">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://marianodefelipe.com/micro-fiction-es">
+<meta property="og:title" content="Micro Fiction — Mariano Defelipe">
+<meta property="og:description" content="Micro Fiction — Historias breves sobre negocios, personas y tecnología. Ficción: Mariano Defelipe · IA: Claude Sonnet 4.6">
+<meta property="og:image" content="https://marianodefelipe.com/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://marianodefelipe.com/og-image.jpg">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#f6f6f4;--ink:#0d0d0c;--mu:#666662;--bo:rgba(246,246,244,.06);--ac:#d14e1e;--fd:'Syne',sans-serif;--fb:'DM Sans',sans-serif}
+html{scroll-behavior:smooth}
+body{font-family:var(--fb);background:var(--ink);color:#f6f6f4;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+.lang{position:fixed;top:1.75rem;right:2rem;z-index:400;font-family:var(--fd);font-size:.6rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+.lang a{padding:.32rem .6rem;border:1px solid rgba(246,246,244,.2);background:transparent;color:rgba(246,246,244,.5);text-decoration:none;transition:all .15s}
+.lang a.on{background:#f6f6f4;color:var(--ink);border-color:#f6f6f4}
+.hero{background:var(--ink);padding:6rem 5vw 5rem;position:relative;overflow:hidden}
+.hero-bar{position:absolute;left:0;top:0;width:7px;height:100%;background:var(--ac)}
+.hero-bg{position:absolute;right:-10px;top:-30px;font-family:var(--fd);font-size:clamp(200px,28vw,320px);font-weight:800;color:rgba(246,246,244,.025);line-height:1;letter-spacing:-.05em;pointer-events:none;user-select:none}
+.hero-label{font-family:var(--fd);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--ac);margin-bottom:1.5rem;position:relative}
+.hero-title{font-family:var(--fd);font-size:clamp(3.5rem,9vw,6rem);font-weight:800;line-height:.88;letter-spacing:-.04em;text-transform:uppercase;color:#f6f6f4;margin-bottom:2rem;position:relative}
+.hero-title .sl{color:var(--ac)}
+.hero-rule{width:100%;height:1px;background:rgba(246,246,244,.08);margin-bottom:2rem;position:relative}
+.hero-intro{font-size:.95rem;font-weight:300;line-height:1.78;color:rgba(246,246,244,.5);max-width:580px;position:relative}
+.hero-intro strong{color:rgba(246,246,244,.8);font-weight:400}
+.hero-intro em{font-style:italic;color:rgba(246,246,244,.35);font-size:.85rem}
+.hero-meta{display:flex;align-items:flex-end;gap:3rem;margin-top:2.5rem;flex-wrap:wrap;position:relative}
+.hero-stat{display:flex;flex-direction:column;gap:.2rem}
+.hero-stat-num{font-family:var(--fd);font-size:clamp(1.8rem,3vw,2.5rem);font-weight:800;color:#f6f6f4;line-height:1;letter-spacing:-.03em}
+.hero-stat-label{font-family:var(--fd);font-size:.55rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(246,246,244,.25)}
+.hero-back{font-family:var(--fd);font-size:.55rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:rgba(246,246,244,.3);text-decoration:none;border:1px solid rgba(246,246,244,.1);padding:.45rem 1rem;transition:all .15s;margin-left:auto;align-self:flex-end}
+.hero-back:hover{color:rgba(246,246,244,.7);border-color:rgba(246,246,244,.3)}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(246,246,244,.06)}
+.mf-card{background:var(--ink);padding:2.25rem;position:relative;overflow:hidden;cursor:pointer;transition:background .18s}
+.mf-card:hover{background:#141412}
+.mf-num{position:absolute;right:-6px;top:-12px;font-family:var(--fd);font-size:clamp(70px,9vw,105px);font-weight:800;color:rgba(246,246,244,.03);line-height:1;letter-spacing:-.04em;pointer-events:none;user-select:none;transition:color .18s}
+.mf-card:hover .mf-num{color:rgba(209,78,30,.05)}
+.mf-inner{position:relative}
+.mf-title{font-family:var(--fd);font-size:clamp(.95rem,1.4vw,1.1rem);font-weight:800;text-transform:uppercase;letter-spacing:-.02em;line-height:1.03;margin-bottom:.45rem;color:#f6f6f4}
+.mf-tag{font-family:var(--fd);font-size:.52rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ac);margin-bottom:.75rem}
+.mf-text{font-size:.88rem;font-weight:300;line-height:1.5;color:rgba(246,246,244,.8);margin-bottom:.85rem}
+.mf-text p{margin-bottom:.12rem}
+.mf-footer{display:flex;align-items:center;justify-content:space-between;padding-top:.7rem;border-top:1px solid rgba(246,246,244,.06)}
+.mf-wai{font-size:.68rem;font-style:italic;color:rgba(246,246,244,.2)}
+.mf-share{font-family:var(--fd);font-size:.5rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(246,246,244,.25);background:none;border:0.5px solid rgba(246,246,244,.1);padding:.28rem .6rem;cursor:pointer;transition:all .15s}
+.mf-share:hover{color:var(--ac);border-color:var(--ac)}
+.modal-overlay{position:fixed;inset:0;background:rgba(13,13,12,.85);z-index:500;display:none;align-items:center;justify-content:center;padding:2rem}
+.modal-overlay.open{display:flex}
+.modal-box{background:var(--ink);border:0.5px solid rgba(246,246,244,.1);max-width:580px;width:100%;max-height:90vh;overflow-y:auto;position:relative;padding:3rem}
+.modal-close{position:absolute;top:1.25rem;right:1.25rem;font-family:var(--fd);font-size:.6rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:rgba(246,246,244,.3);background:none;border:1px solid rgba(246,246,244,.1);padding:.35rem .75rem;cursor:pointer;transition:all .15s}
+.modal-close:hover{color:#f6f6f4;border-color:rgba(246,246,244,.4)}
+.modal-tag{font-family:var(--fd);font-size:.52rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ac);margin-bottom:.65rem}
+.modal-title{font-family:var(--fd);font-size:clamp(1.6rem,3vw,2.2rem);font-weight:800;text-transform:uppercase;letter-spacing:-.03em;line-height:1;margin-bottom:2rem;color:#f6f6f4}
+.modal-body{font-size:1.1rem;font-weight:300;line-height:1.7;color:rgba(246,246,244,.8)}
+.modal-body p{margin-bottom:.5rem}
+.modal-footer{display:flex;align-items:center;justify-content:space-between;margin-top:2rem;padding-top:1rem;border-top:1px solid rgba(246,246,244,.08)}
+.modal-wai{font-size:.72rem;font-style:italic;color:rgba(246,246,244,.25)}
+.modal-share{font-family:var(--fd);font-size:.52rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(246,246,244,.3);background:none;border:1px solid rgba(246,246,244,.1);padding:.3rem .65rem;cursor:pointer;transition:all .15s}
+.modal-share:hover{color:var(--ac);border-color:var(--ac)}
+.modal-share.copied{color:var(--ac);border-color:var(--ac)}
+footer{padding:1.5rem 5vw;display:flex;justify-content:space-between;align-items:center;font-family:var(--fd);font-size:.58rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(246,246,244,.2);border-top:1px solid rgba(246,246,244,.06)}
+footer a{color:inherit;text-decoration:none}footer a:hover{color:rgba(246,246,244,.6)}
+@media(max-width:700px){
+  .grid{grid-template-columns:1fr}
+  .hero{padding:5rem 5vw 4rem}
+  .hero-meta{gap:1.5rem}
+  .hero-back{margin-left:0;margin-top:.5rem}
+  .modal-box{padding:2rem 1.5rem;max-height:95vh}
+  footer{flex-direction:column;gap:.4rem;text-align:center}
+}
+</style>
+<!-- Google Analytics — deferred -->
+<script>
+  window.addEventListener('load', function() {
+    var s = document.createElement('script');
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=G-F9765ZTCWP';
+    s.async = true;
+    document.head.appendChild(s);
+    s.onload = function() {
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-F9765ZTCWP', {'send_page_view': true});
+    };
+  });
+</script>
+</head>
+<body>
+
+<div class="lang">
+  <a href="micro-fiction.html">EN</a>
+  <a href="#" class="on">ES</a>
+</div>
+
+<header class="hero">
+  <div class="hero-bar"></div>
+  <div class="hero-bg">MF</div>
+  <p class="hero-label">Mariano Defelipe</p>
+  <h1 class="hero-title">Micro<br><span class="sl">/</span>Fiction.</h1>
+  <div class="hero-rule"></div>
+  <p class="hero-intro"><strong>Historias breves sobre negocios, personas y tecnolog&iacute;a.</strong><br><br><em>Ficci&oacute;n: Mariano Defelipe &middot; IA: Claude Sonnet 4.6</em></p>
+  <div class="hero-meta">
+    <div class="hero-stat"><span class="hero-stat-num">30</span><span class="hero-stat-label">Historias</span></div>
+    <div class="hero-stat"><span class="hero-stat-num">3</span><span class="hero-stat-label">Oraciones</span></div>
+    <div class="hero-stat"><span class="hero-stat-num" style="color:var(--ac)">&#8734;</span><span class="hero-stat-label">Interpretaciones</span></div>
+    <a href="index.html" class="hero-back">&#8592; marianodefelipe.com</a>
+  </div>
+</header>
+
+<main class="grid" role="main">
+<div class="mf-card" onclick="openModal('el-timing')">
+  <div class="mf-num">01</div>
+  <div class="mf-inner">
+    <h2 class="mf-title">El timing</h2>
+    <p class="mf-tag">Decisiones · Lanzamiento · Miedo</p>
+    <div class="mf-text"><p>Le preguntaron qué había frenado el lanzamiento.</p><p>Dijo "el timing".</p><p>Era miedo, pero el timing sonaba mejor en el reporte.</p></div>
+    <div class="mf-footer"><span class="mf-wai">Ficción: Mariano Defelipe · IA: Claude Sonnet 4.6</span><span class="mf-share">Copiar ↗</span></div>
+  </div>
+</div>
+<div class="mf-card" onclick="openModal('la-llamada')">
+  <div class="mf-num">02</div>
+  <div class="mf-inner">
+    <h2 class="mf-title">La llamada</h2>
+    <p class="mf-tag">Plataformas · Personalización · Nostalgia</p>
+    <div class="mf-text"><p>La aplicación sabía exactamente qué música ponerle cuando estaba triste.</p><p>Él nunca se lo había dicho a nadie.</p><p>Cerró el teléfono y llamó a su madre.</p></div>
+    <div class="mf-footer"><span class="mf-wai">Ficción: Mariano Defelipe · IA: Claude Sonnet 4.6</span><span class="mf-share">Copiar ↗</span></div>
+  </div>
+</div>
+<div class="mf-card" onclick="openModal('el-premio')">
+  <div class="mf-num">03</div>
+  <div class="mf-inner">
+    <h2 class="mf-title">El premio</h2>
+    <p class="mf-tag">Briefing · Proceso · Absurdo</p>
+    <div class="mf-text"><p>El equipo pasó dos horas respondiendo el brief.</p><p>Nadie preguntó para qué servía el producto.</p><p>La campaña ganó un premio.</p></div>
+    <div class="mf-footer"><span class="mf-wai">Ficción: Mariano Defelipe · IA: Claude Sonnet 4.6</span><span class="mf-share">Copiar ↗</span></div>
+  </div>
+</div>
+<div class="mf-card" onclick="openModal('el-recuerdo')">
+  <div class="mf-num">04</div>
+  <div class="mf-inner">
+    <h2 class="mf-title">El recuerdo</h2>
+    <p class="mf-tag">Lealtad de marca · Identidad · Nostalgia</p>
+    <div class="mf-text"><p>La marca cambió el logo, el packaging y el slogan.</p><p>Las ventas bajaron.</p><p>Nadie había comprado el producto — habían comprado un recuerdo.</p></div>
+    <div class="mf-footer"><span class="mf-wai">Ficción: Mariano Defelipe · IA: Claude Sonnet 4.6</span><span class="mf-share">Copiar ↗</span></div>
+  </div>
+</div>
+<div class="mf-card" onclick="openModal('la-gondola')">
+  <div class="mf-num">05</div>
+  <div class="mf-inner">
+    <h2 class="mf-title">La góndola</h2>
+    <p class="mf-tag">Performance · Deseo · Lo no planeado</p>
+    <div class="mf-text"><p>El equipo optimizó cada paso del funnel durante seis meses.</p><p>El producto más vendido ese año lo descubrió alguien por accidente en una góndola.</p><p>El deseo no había leído el brief.</p></div>
+    <div class="mf-footer"><span class="mf-wai">Ficción: Mariano Defelipe · IA: Claude Sonnet 4.6</span><span class="mf-share">Copiar ↗</span></div>
+  </div>
+</div>
+<div class="mf-card" onclick="openModal('los-tres-millones')">
+  <div class="mf-num">06</div>
+  <div class="mf-inner">
+    <h2 class="mf-title">Los tres millones</h2>
+    <p class="mf-tag">Influencer · Admiración · La ilusión</p>
+    <div class="mf-text"><p>Construyeron al influencer perfecto — sin errores, sin escándalos, sin edad.</p><p>Tenía tres millones de seguidores.</p><p>Nadie lo admiraba.</p></div>
+    <div class="mf-footer"><span class="mf-wai">Ficción: Mariano Defelipe · IA: Claude Sonnet 4.6</span><span class="mf-share">Copiar ↗</span></div>
+  </div>
+</div>
+<div class="mf-card" onclick="openModal('el-no')">
+  <div class="mf-num">07</div>
+  <div class="mf-inner">
+    <h2 class="mf-title">El no</h2>
+    <p class="mf-tag">Datos · Intuición · Decisión</p>
+    <div class="mf-text"><p>Los datos decían que sí.</p><p>El equipo decía que sí.</p><p>Él dijo que no, y nunca supo explicar por qué tenía razón.</p></div>
+    <div class="mf-footer"><span class="mf-wai">Ficción: Mariano Defelipe · IA: Claude Sonnet 4.6</span><span class="mf-share">Copiar ↗</span></div>
+  </div>
+</div>
+<div class="mf-card" onclick="openModal('tres-segundos')">
+  <div class="mf-num">08</div>
+  <div class="mf-inner">
+    <h2 class="mf-title">Tres segundos</h2>
+    <p class="mf-tag">Automatización · Talento · Aprendizaje</p>
+    <div class="mf-text"><p>Llevaba veinte años haciendo lo mismo y haciéndolo bien.</p><p>La herramienta nueva tardaba tres segundos en hacer lo que él tardaba tres días.</p><p>Esa tarde pidió que le enseñaran a usarla.</p></div>
+    <div class="mf-footer"><span class="mf-wai">Ficción: Mariano Defelipe · IA: Claude Sonnet 4.6</span><span class="mf-share">Copiar ↗</span></div>
+  </div>
+</div>
+<div class="mf-card" onclick="openModal('diez-segundos')">
+  <div class="mf-num">09</div>
+  <div class="mf-inner">
+    <h2 class="mf-title">Diez segundos</h2>
+    <p class="mf-tag">Atención · Storytelling · Silencio</p>
+    <div class="mf-text"><p>El presentador entró a la sala y no dijo nada durante diez segundos.</p><p>Todos dejaron el teléfono.</p><p>Recién entonces empezó.</p></div>
+    <div class="mf-footer"><span class="mf-wai">Ficción: Mariano Defelipe · IA: Claude Sonnet 4.6</span><span class="mf-share">Copiar ↗</span></div>
+  </div>
+</div>
+<div class="mf-card" onclick="openModal('la-espera')">
+  <div class="mf-num">10</div>
+  <div class="mf-inner">
+    <h2 class="mf-title">La espera</h2>
+    <p class="mf-tag">Crisis · Reputación · Tiempo</p>
+    <div class="mf-text"><p>El error era pequeño.</p><p>La respuesta tardó cuarenta y ocho horas.</p><p>Para entonces ya no era el error — era la espera.</p></div>
+    <div class="mf-footer"><span class="mf-wai">Ficción: Mariano Defelipe · IA: Claude Sonnet 4.6</span><span class="mf-share">Copiar ↗</span></div>
+  </div>
+</div>
+<div class="mf-card" onclick="openModal('la-busqueda')">
+  <div class="mf-num">11</div>
+  <div class="mf-inner">
+    <h2 class="mf-title">La búsqueda</h2>
+    <p class="mf-tag">Atención · Dopamina · Memoria</p>
+    <div class="mf-text"><p>Abrió la aplicación para ver una cosa.</p><p>Cuarenta minutos después cerró el teléfono.</p><p>No recordaba qué había ido a buscar, pero había visto todo.</p></div>
+    <div class="mf-footer"><span class="mf-wai">Ficción: Mariano Defelipe · IA: Claude Sonnet 4.6</span><span class="mf-share">Copiar ↗</span></div>
+  </div>
+</div>
+<div class="mf-card" onclick="openModal('el-documento')">
+  <div class="mf-num">12</div>
+  <div class="mf-inner">
+    <h2 class="mf-title">El documento</h2>
+    <p class="mf-tag">IA · Autoría · Responsabilidad</p>
+    <div class="mf-text"><p>Nadie en la sala sabía quién había escrito el documento.</p><p>Todos lo habían leído.</p><p>Todos lo habían aprobado.</p></div>
+    <div class="mf-footer"><span class="mf-wai">Ficción: Mariano Defelipe · IA: Claude Sonnet 4.6</span><span class="mf-share">Copiar ↗</span></div>
+  </div>
+</div>
+<div class="mf-card" onclick="openModal('el-paseo')">
+  <div class="mf-num">13</div>
+  <div class="mf-inner">
+    <h2 class="mf-title">El paseo</h2>
+    <p class="mf-tag">IA · Aprendizaje · Lo humano</p>
+    <div class="mf-text"><p>La IA resolvió en segundos lo que él había tardado años en aprender.</p><p>Se quedó mirando la pantalla un momento.</p><p>Después cerró la computadora y salió a caminar.</p></div>
+    <div class="mf-footer"><span class="mf-wai">Ficción: Mariano Defelipe · IA: Claude Sonnet 4.6</span><span class="mf-share">Copiar ↗</span></div>
+  </div>
+</div>
+<div class="mf-card" onclick="openModal('el-algoritmo')">
+  <div class="mf-num">14</div>
+  <div class="mf-inner">
+    <h2 class="mf-title">El algoritmo</h2>
+    <p class="mf-tag">Datos · Privacidad · Deseo</p>
+    <div class="mf-text"><p>Sabía exactamente qué quería — lo había buscado miles de veces.</p><p>Nunca se lo había dicho a nadie en voz alta.</p><p>El algoritmo ya lo sabía hace tres años.</p></div>
+    <div class="mf-footer"><span class="mf-wai">Ficción: Mariano Defelipe · IA: Claude Sonnet 4.6</span><span class="mf-share">Copiar ↗</span></div>
+  </div>
+</div>
+<div class="mf-card" onclick="openModal('la-cita')">
+  <div class="mf-num">15</div>
+  <div class="mf-inner">
+    <h2 class="mf-title">La cita</h2>
+    <p class="mf-tag">Pertenencia · Identidad · Reconocimiento</p>
+    <div class="mf-text"><p>Pasó años buscando dónde encajaba.</p><p>Un día alguien lo citó sin conocerlo.</p><p>Ahí supo.</p></div>
+    <div class="mf-footer"><span class="mf-wai">Ficción: Mariano Defelipe · IA: Claude Sonnet 4.6</span><span class="mf-share">Copiar ↗</span></div>
+  </div>
+</div>
+<div class="mf-card" onclick="openModal('la-pregunta')">
+  <div class="mf-num">16</div>
+  <div class="mf-inner">
+    <h2 class="mf-title">La pregunta</h2>
+    <p class="mf-tag">IA · Curiosidad · Lo humano</p>
+    <div class="mf-text"><p>Le preguntó a la IA algo que nunca le había preguntado a nadie.</p><p>La IA respondió.</p><p>Él lloró — no por la respuesta, sino porque por fin había hecho la pregunta.</p></div>
+    <div class="mf-footer"><span class="mf-wai">Ficción: Mariano Defelipe · IA: Claude Sonnet 4.6</span><span class="mf-share">Copiar ↗</span></div>
+  </div>
+</div>
+<div class="mf-card" onclick="openModal('la-noche')">
+  <div class="mf-num">17</div>
+  <div class="mf-inner">
+    <h2 class="mf-title">La noche</h2>
+    <p class="mf-tag">Autenticidad · Vulnerabilidad · Conexión</p>
+    <div class="mf-text"><p>Durante años habló de lo que sabía.</p><p>Una noche habló de lo que no sabía.</p><p>Fue la primera vez que alguien lo escuchó de verdad.</p></div>
+    <div class="mf-footer"><span class="mf-wai">Ficción: Mariano Defelipe · IA: Claude Sonnet 4.6</span><span class="mf-share">Copiar ↗</span></div>
+  </div>
+</div>
+<div class="mf-card" onclick="openModal('las-notificaciones')">
+  <div class="mf-num">18</div>
+  <div class="mf-inner">
+    <h2 class="mf-title">Las notificaciones</h2>
+    <p class="mf-tag">Atención · Economía digital · Memoria</p>
+    <div class="mf-text"><p>Tenía cuarenta y siete notificaciones sin leer.</p><p>Las miró todas.</p><p>No recordaba ninguna.</p></div>
+    <div class="mf-footer"><span class="mf-wai">Ficción: Mariano Defelipe · IA: Claude Sonnet 4.6</span><span class="mf-share">Copiar ↗</span></div>
+  </div>
+</div>
+<div class="mf-card" onclick="openModal('el-auto')">
+  <div class="mf-num">19</div>
+  <div class="mf-inner">
+    <h2 class="mf-title">El auto</h2>
+    <p class="mf-tag">Consumo · Celos · Deseo</p>
+    <div class="mf-text"><p>No quería el auto.</p><p>Quería que los demás no lo tuvieran.</p><p>Cuando todos lo tuvieron, lo vendió.</p></div>
+    <div class="mf-footer"><span class="mf-wai">Ficción: Mariano Defelipe · IA: Claude Sonnet 4.6</span><span class="mf-share">Copiar ↗</span></div>
+  </div>
+</div>
+<div class="mf-card" onclick="openModal('la-cena')">
+  <div class="mf-num">20</div>
+  <div class="mf-inner">
+    <h2 class="mf-title">La cena</h2>
+    <p class="mf-tag">Redes sociales · Soledad · Conexión</p>
+    <div class="mf-text"><p>Tenía cuatro mil seguidores y ninguno sabía su apellido.</p><p>Esa noche cenó solo.</p><p>Puso el teléfono boca abajo.</p></div>
+    <div class="mf-footer"><span class="mf-wai">Ficción: Mariano Defelipe · IA: Claude Sonnet 4.6</span><span class="mf-share">Copiar ↗</span></div>
+  </div>
+</div>
+<div class="mf-card" onclick="openModal('la-innovacion')">
+  <div class="mf-num">21</div>
+  <div class="mf-inner">
+    <h2 class="mf-title">La innovación</h2>
+    <p class="mf-tag">Estrategia · Reuniones · Absurdo</p>
+    <div class="mf-text"><p>Contó las veces que alguien dijo "innovación" en la reunión.</p><p>Llegó a diecisiete.</p><p>Nadie propuso nada nuevo.</p></div>
+    <div class="mf-footer"><span class="mf-wai">Ficción: Mariano Defelipe · IA: Claude Sonnet 4.6</span><span class="mf-share">Copiar ↗</span></div>
+  </div>
+</div>
+<div class="mf-card" onclick="openModal('los-comentarios')">
+  <div class="mf-num">22</div>
+  <div class="mf-inner">
+    <h2 class="mf-title">Los comentarios</h2>
+    <p class="mf-tag">Comunidad · Conexión · Tiempo</p>
+    <div class="mf-text"><p>Se conocieron discutiendo en los comentarios.</p><p>Ninguno tenía razón.</p><p>Diez años después seguían hablando.</p></div>
+    <div class="mf-footer"><span class="mf-wai">Ficción: Mariano Defelipe · IA: Claude Sonnet 4.6</span><span class="mf-share">Copiar ↗</span></div>
+  </div>
+</div>
+<div class="mf-card" onclick="openModal('las-tres-de-la-manana')">
+  <div class="mf-num">23</div>
+  <div class="mf-inner">
+    <h2 class="mf-title">Las tres de la mañana</h2>
+    <p class="mf-tag">Liderazgo · Gratitud · Memoria</p>
+    <div class="mf-text"><p>Le escribió a las tres de la mañana para agradecerle.</p><p>Él no recordaba qué había hecho.</p><p>Ella sí.</p></div>
+    <div class="mf-footer"><span class="mf-wai">Ficción: Mariano Defelipe · IA: Claude Sonnet 4.6</span><span class="mf-share">Copiar ↗</span></div>
+  </div>
+</div>
+<div class="mf-card" onclick="openModal('el-deck')">
+  <div class="mf-num">24</div>
+  <div class="mf-inner">
+    <h2 class="mf-title">El deck</h2>
+    <p class="mf-tag">Startups · Hype · Realidad</p>
+    <div class="mf-text"><p>La startup levantó veinte millones hablando del futuro.</p><p>Dos años después nadie recordaba qué hacían.</p><p>El deck de inversión seguía siendo impecable.</p></div>
+    <div class="mf-footer"><span class="mf-wai">Ficción: Mariano Defelipe · IA: Claude Sonnet 4.6</span><span class="mf-share">Copiar ↗</span></div>
+  </div>
+</div>
+<div class="mf-card" onclick="openModal('la-compra')">
+  <div class="mf-num">25</div>
+  <div class="mf-inner">
+    <h2 class="mf-title">La compra</h2>
+    <p class="mf-tag">Comportamiento del consumidor · Deseo · Lo no planeado</p>
+    <div class="mf-text"><p>Entró a comprar algo que necesitaba.</p><p>Salió con algo que quería.</p><p>Nunca supo cuándo había cambiado de idea.</p></div>
+    <div class="mf-footer"><span class="mf-wai">Ficción: Mariano Defelipe · IA: Claude Sonnet 4.6</span><span class="mf-share">Copiar ↗</span></div>
+  </div>
+</div>
+<div class="mf-card" onclick="openModal('la-campana')">
+  <div class="mf-num">26</div>
+  <div class="mf-inner">
+    <h2 class="mf-title">La campaña</h2>
+    <p class="mf-tag">Creatividad · Proceso · Lo inexplicable</p>
+    <div class="mf-text"><p>Nadie en el equipo había dormido bien esa semana.</p><p>El cliente tampoco.</p><p>La campaña salió perfecta igual — nadie supo explicar cómo.</p></div>
+    <div class="mf-footer"><span class="mf-wai">Ficción: Mariano Defelipe · IA: Claude Sonnet 4.6</span><span class="mf-share">Copiar ↗</span></div>
+  </div>
+</div>
+<div class="mf-card" onclick="openModal('el-proposito')">
+  <div class="mf-num">27</div>
+  <div class="mf-inner">
+    <h2 class="mf-title">El propósito</h2>
+    <p class="mf-tag">Propósito de marca · Autenticidad · Verdad</p>
+    <div class="mf-text"><p>Tenían un propósito de marca hermoso, bien redactado, bien diseñado.</p><p>Un empleado lo leyó por primera vez en su último día.</p><p>Era bueno.</p></div>
+    <div class="mf-footer"><span class="mf-wai">Ficción: Mariano Defelipe · IA: Claude Sonnet 4.6</span><span class="mf-share">Copiar ↗</span></div>
+  </div>
+</div>
+<div class="mf-card" onclick="openModal('la-actualizacion')">
+  <div class="mf-num">28</div>
+  <div class="mf-inner">
+    <h2 class="mf-title">La actualización</h2>
+    <p class="mf-tag">UX · Nostalgia · Cambio</p>
+    <div class="mf-text"><p>Actualizaron la app completamente — nueva interfaz, nuevas funciones, nuevo diseño.</p><p>Los usuarios se quejaron durante semanas.</p><p>Extrañaban algo que no podían describir.</p></div>
+    <div class="mf-footer"><span class="mf-wai">Ficción: Mariano Defelipe · IA: Claude Sonnet 4.6</span><span class="mf-share">Copiar ↗</span></div>
+  </div>
+</div>
+<div class="mf-card" onclick="openModal('el-packaging')">
+  <div class="mf-num">29</div>
+  <div class="mf-inner">
+    <h2 class="mf-title">El packaging</h2>
+    <p class="mf-tag">Branding · Comportamiento del consumidor · Nostalgia</p>
+    <div class="mf-text"><p>Rediseñaron el packaging para hacerlo más moderno.</p><p>Los de cuarenta años dejaron de comprarlo.</p><p>Las ventas no cambiaron.</p></div>
+    <div class="mf-footer"><span class="mf-wai">Ficción: Mariano Defelipe · IA: Claude Sonnet 4.6</span><span class="mf-share">Copiar ↗</span></div>
+  </div>
+</div>
+<div class="mf-card" onclick="openModal('el-nombre')">
+  <div class="mf-num">30</div>
+  <div class="mf-inner">
+    <h2 class="mf-title">El nombre</h2>
+    <p class="mf-tag">Proceso · Identidad · Absurdo</p>
+    <div class="mf-text"><p>Pasaron seis meses definiendo el nombre del proyecto.</p><p>Cuando lo lanzaron, todos lo llamaban por otro nombre.</p><p>Adoptaron ese.</p></div>
+    <div class="mf-footer"><span class="mf-wai">Ficción: Mariano Defelipe · IA: Claude Sonnet 4.6</span><span class="mf-share">Copiar ↗</span></div>
+  </div>
+</div>
+</main>
+
+<div class="modal-overlay" id="modal-overlay" onclick="handleOverlayClick(event)">
+  <div class="modal-box" id="modal-box">
+    <button class="modal-close" onclick="closeModal()">Cerrar</button>
+    <div class="modal-note" id="modal-el-timing" style="display:none">
+  <p class="modal-tag">Decisiones · Lanzamiento · Miedo</p>
+  <h2 class="modal-title">El timing</h2>
+  <div class="modal-body"><p>Le preguntaron qué había frenado el lanzamiento.</p><p>Dijo "el timing".</p><p>Era miedo, pero el timing sonaba mejor en el reporte.</p></div>
+  <div class="modal-footer">
+    <span class="modal-wai">Ficción: Mariano Defelipe · IA: Claude Sonnet 4.6</span>
+    <button class="modal-share" onclick="copyLink('el-timing',this)">Copiar enlace ↗</button>
+  </div>
+</div>
+<div class="modal-note" id="modal-la-llamada" style="display:none">
+  <p class="modal-tag">Plataformas · Personalización · Nostalgia</p>
+  <h2 class="modal-title">La llamada</h2>
+  <div class="modal-body"><p>La aplicación sabía exactamente qué música ponerle cuando estaba triste.</p><p>Él nunca se lo había dicho a nadie.</p><p>Cerró el teléfono y llamó a su madre.</p></div>
+  <div class="modal-footer">
+    <span class="modal-wai">Ficción: Mariano Defelipe · IA: Claude Sonnet 4.6</span>
+    <button class="modal-share" onclick="copyLink('la-llamada',this)">Copiar enlace ↗</button>
+  </div>
+</div>
+<div class="modal-note" id="modal-el-premio" style="display:none">
+  <p class="modal-tag">Briefing · Proceso · Absurdo</p>
+  <h2 class="modal-title">El premio</h2>
+  <div class="modal-body"><p>El equipo pasó dos horas respondiendo el brief.</p><p>Nadie preguntó para qué servía el producto.</p><p>La campaña ganó un premio.</p></div>
+  <div class="modal-footer">
+    <span class="modal-wai">Ficción: Mariano Defelipe · IA: Claude Sonnet 4.6</span>
+    <button class="modal-share" onclick="copyLink('el-premio',this)">Copiar enlace ↗</button>
+  </div>
+</div>
+<div class="modal-note" id="modal-el-recuerdo" style="display:none">
+  <p class="modal-tag">Lealtad de marca · Identidad · Nostalgia</p>
+  <h2 class="modal-title">El recuerdo</h2>
+  <div class="modal-body"><p>La marca cambió el logo, el packaging y el slogan.</p><p>Las ventas bajaron.</p><p>Nadie había comprado el producto — habían comprado un recuerdo.</p></div>
+  <div class="modal-footer">
+    <span class="modal-wai">Ficción: Mariano Defelipe · IA: Claude Sonnet 4.6</span>
+    <button class="modal-share" onclick="copyLink('el-recuerdo',this)">Copiar enlace ↗</button>
+  </div>
+</div>
+<div class="modal-note" id="modal-la-gondola" style="display:none">
+  <p class="modal-tag">Performance · Deseo · Lo no planeado</p>
+  <h2 class="modal-title">La góndola</h2>
+  <div class="modal-body"><p>El equipo optimizó cada paso del funnel durante seis meses.</p><p>El producto más vendido ese año lo descubrió alguien por accidente en una góndola.</p><p>El deseo no había leído el brief.</p></div>
+  <div class="modal-footer">
+    <span class="modal-wai">Ficción: Mariano Defelipe · IA: Claude Sonnet 4.6</span>
+    <button class="modal-share" onclick="copyLink('la-gondola',this)">Copiar enlace ↗</button>
+  </div>
+</div>
+<div class="modal-note" id="modal-los-tres-millones" style="display:none">
+  <p class="modal-tag">Influencer · Admiración · La ilusión</p>
+  <h2 class="modal-title">Los tres millones</h2>
+  <div class="modal-body"><p>Construyeron al influencer perfecto — sin errores, sin escándalos, sin edad.</p><p>Tenía tres millones de seguidores.</p><p>Nadie lo admiraba.</p></div>
+  <div class="modal-footer">
+    <span class="modal-wai">Ficción: Mariano Defelipe · IA: Claude Sonnet 4.6</span>
+    <button class="modal-share" onclick="copyLink('los-tres-millones',this)">Copiar enlace ↗</button>
+  </div>
+</div>
+<div class="modal-note" id="modal-el-no" style="display:none">
+  <p class="modal-tag">Datos · Intuición · Decisión</p>
+  <h2 class="modal-title">El no</h2>
+  <div class="modal-body"><p>Los datos decían que sí.</p><p>El equipo decía que sí.</p><p>Él dijo que no, y nunca supo explicar por qué tenía razón.</p></div>
+  <div class="modal-footer">
+    <span class="modal-wai">Ficción: Mariano Defelipe · IA: Claude Sonnet 4.6</span>
+    <button class="modal-share" onclick="copyLink('el-no',this)">Copiar enlace ↗</button>
+  </div>
+</div>
+<div class="modal-note" id="modal-tres-segundos" style="display:none">
+  <p class="modal-tag">Automatización · Talento · Aprendizaje</p>
+  <h2 class="modal-title">Tres segundos</h2>
+  <div class="modal-body"><p>Llevaba veinte años haciendo lo mismo y haciéndolo bien.</p><p>La herramienta nueva tardaba tres segundos en hacer lo que él tardaba tres días.</p><p>Esa tarde pidió que le enseñaran a usarla.</p></div>
+  <div class="modal-footer">
+    <span class="modal-wai">Ficción: Mariano Defelipe · IA: Claude Sonnet 4.6</span>
+    <button class="modal-share" onclick="copyLink('tres-segundos',this)">Copiar enlace ↗</button>
+  </div>
+</div>
+<div class="modal-note" id="modal-diez-segundos" style="display:none">
+  <p class="modal-tag">Atención · Storytelling · Silencio</p>
+  <h2 class="modal-title">Diez segundos</h2>
+  <div class="modal-body"><p>El presentador entró a la sala y no dijo nada durante diez segundos.</p><p>Todos dejaron el teléfono.</p><p>Recién entonces empezó.</p></div>
+  <div class="modal-footer">
+    <span class="modal-wai">Ficción: Mariano Defelipe · IA: Claude Sonnet 4.6</span>
+    <button class="modal-share" onclick="copyLink('diez-segundos',this)">Copiar enlace ↗</button>
+  </div>
+</div>
+<div class="modal-note" id="modal-la-espera" style="display:none">
+  <p class="modal-tag">Crisis · Reputación · Tiempo</p>
+  <h2 class="modal-title">La espera</h2>
+  <div class="modal-body"><p>El error era pequeño.</p><p>La respuesta tardó cuarenta y ocho horas.</p><p>Para entonces ya no era el error — era la espera.</p></div>
+  <div class="modal-footer">
+    <span class="modal-wai">Ficción: Mariano Defelipe · IA: Claude Sonnet 4.6</span>
+    <button class="modal-share" onclick="copyLink('la-espera',this)">Copiar enlace ↗</button>
+  </div>
+</div>
+<div class="modal-note" id="modal-la-busqueda" style="display:none">
+  <p class="modal-tag">Atención · Dopamina · Memoria</p>
+  <h2 class="modal-title">La búsqueda</h2>
+  <div class="modal-body"><p>Abrió la aplicación para ver una cosa.</p><p>Cuarenta minutos después cerró el teléfono.</p><p>No recordaba qué había ido a buscar, pero había visto todo.</p></div>
+  <div class="modal-footer">
+    <span class="modal-wai">Ficción: Mariano Defelipe · IA: Claude Sonnet 4.6</span>
+    <button class="modal-share" onclick="copyLink('la-busqueda',this)">Copiar enlace ↗</button>
+  </div>
+</div>
+<div class="modal-note" id="modal-el-documento" style="display:none">
+  <p class="modal-tag">IA · Autoría · Responsabilidad</p>
+  <h2 class="modal-title">El documento</h2>
+  <div class="modal-body"><p>Nadie en la sala sabía quién había escrito el documento.</p><p>Todos lo habían leído.</p><p>Todos lo habían aprobado.</p></div>
+  <div class="modal-footer">
+    <span class="modal-wai">Ficción: Mariano Defelipe · IA: Claude Sonnet 4.6</span>
+    <button class="modal-share" onclick="copyLink('el-documento',this)">Copiar enlace ↗</button>
+  </div>
+</div>
+<div class="modal-note" id="modal-el-paseo" style="display:none">
+  <p class="modal-tag">IA · Aprendizaje · Lo humano</p>
+  <h2 class="modal-title">El paseo</h2>
+  <div class="modal-body"><p>La IA resolvió en segundos lo que él había tardado años en aprender.</p><p>Se quedó mirando la pantalla un momento.</p><p>Después cerró la computadora y salió a caminar.</p></div>
+  <div class="modal-footer">
+    <span class="modal-wai">Ficción: Mariano Defelipe · IA: Claude Sonnet 4.6</span>
+    <button class="modal-share" onclick="copyLink('el-paseo',this)">Copiar enlace ↗</button>
+  </div>
+</div>
+<div class="modal-note" id="modal-el-algoritmo" style="display:none">
+  <p class="modal-tag">Datos · Privacidad · Deseo</p>
+  <h2 class="modal-title">El algoritmo</h2>
+  <div class="modal-body"><p>Sabía exactamente qué quería — lo había buscado miles de veces.</p><p>Nunca se lo había dicho a nadie en voz alta.</p><p>El algoritmo ya lo sabía hace tres años.</p></div>
+  <div class="modal-footer">
+    <span class="modal-wai">Ficción: Mariano Defelipe · IA: Claude Sonnet 4.6</span>
+    <button class="modal-share" onclick="copyLink('el-algoritmo',this)">Copiar enlace ↗</button>
+  </div>
+</div>
+<div class="modal-note" id="modal-la-cita" style="display:none">
+  <p class="modal-tag">Pertenencia · Identidad · Reconocimiento</p>
+  <h2 class="modal-title">La cita</h2>
+  <div class="modal-body"><p>Pasó años buscando dónde encajaba.</p><p>Un día alguien lo citó sin conocerlo.</p><p>Ahí supo.</p></div>
+  <div class="modal-footer">
+    <span class="modal-wai">Ficción: Mariano Defelipe · IA: Claude Sonnet 4.6</span>
+    <button class="modal-share" onclick="copyLink('la-cita',this)">Copiar enlace ↗</button>
+  </div>
+</div>
+<div class="modal-note" id="modal-la-pregunta" style="display:none">
+  <p class="modal-tag">IA · Curiosidad · Lo humano</p>
+  <h2 class="modal-title">La pregunta</h2>
+  <div class="modal-body"><p>Le preguntó a la IA algo que nunca le había preguntado a nadie.</p><p>La IA respondió.</p><p>Él lloró — no por la respuesta, sino porque por fin había hecho la pregunta.</p></div>
+  <div class="modal-footer">
+    <span class="modal-wai">Ficción: Mariano Defelipe · IA: Claude Sonnet 4.6</span>
+    <button class="modal-share" onclick="copyLink('la-pregunta',this)">Copiar enlace ↗</button>
+  </div>
+</div>
+<div class="modal-note" id="modal-la-noche" style="display:none">
+  <p class="modal-tag">Autenticidad · Vulnerabilidad · Conexión</p>
+  <h2 class="modal-title">La noche</h2>
+  <div class="modal-body"><p>Durante años habló de lo que sabía.</p><p>Una noche habló de lo que no sabía.</p><p>Fue la primera vez que alguien lo escuchó de verdad.</p></div>
+  <div class="modal-footer">
+    <span class="modal-wai">Ficción: Mariano Defelipe · IA: Claude Sonnet 4.6</span>
+    <button class="modal-share" onclick="copyLink('la-noche',this)">Copiar enlace ↗</button>
+  </div>
+</div>
+<div class="modal-note" id="modal-las-notificaciones" style="display:none">
+  <p class="modal-tag">Atención · Economía digital · Memoria</p>
+  <h2 class="modal-title">Las notificaciones</h2>
+  <div class="modal-body"><p>Tenía cuarenta y siete notificaciones sin leer.</p><p>Las miró todas.</p><p>No recordaba ninguna.</p></div>
+  <div class="modal-footer">
+    <span class="modal-wai">Ficción: Mariano Defelipe · IA: Claude Sonnet 4.6</span>
+    <button class="modal-share" onclick="copyLink('las-notificaciones',this)">Copiar enlace ↗</button>
+  </div>
+</div>
+<div class="modal-note" id="modal-el-auto" style="display:none">
+  <p class="modal-tag">Consumo · Celos · Deseo</p>
+  <h2 class="modal-title">El auto</h2>
+  <div class="modal-body"><p>No quería el auto.</p><p>Quería que los demás no lo tuvieran.</p><p>Cuando todos lo tuvieron, lo vendió.</p></div>
+  <div class="modal-footer">
+    <span class="modal-wai">Ficción: Mariano Defelipe · IA: Claude Sonnet 4.6</span>
+    <button class="modal-share" onclick="copyLink('el-auto',this)">Copiar enlace ↗</button>
+  </div>
+</div>
+<div class="modal-note" id="modal-la-cena" style="display:none">
+  <p class="modal-tag">Redes sociales · Soledad · Conexión</p>
+  <h2 class="modal-title">La cena</h2>
+  <div class="modal-body"><p>Tenía cuatro mil seguidores y ninguno sabía su apellido.</p><p>Esa noche cenó solo.</p><p>Puso el teléfono boca abajo.</p></div>
+  <div class="modal-footer">
+    <span class="modal-wai">Ficción: Mariano Defelipe · IA: Claude Sonnet 4.6</span>
+    <button class="modal-share" onclick="copyLink('la-cena',this)">Copiar enlace ↗</button>
+  </div>
+</div>
+<div class="modal-note" id="modal-la-innovacion" style="display:none">
+  <p class="modal-tag">Estrategia · Reuniones · Absurdo</p>
+  <h2 class="modal-title">La innovación</h2>
+  <div class="modal-body"><p>Contó las veces que alguien dijo "innovación" en la reunión.</p><p>Llegó a diecisiete.</p><p>Nadie propuso nada nuevo.</p></div>
+  <div class="modal-footer">
+    <span class="modal-wai">Ficción: Mariano Defelipe · IA: Claude Sonnet 4.6</span>
+    <button class="modal-share" onclick="copyLink('la-innovacion',this)">Copiar enlace ↗</button>
+  </div>
+</div>
+<div class="modal-note" id="modal-los-comentarios" style="display:none">
+  <p class="modal-tag">Comunidad · Conexión · Tiempo</p>
+  <h2 class="modal-title">Los comentarios</h2>
+  <div class="modal-body"><p>Se conocieron discutiendo en los comentarios.</p><p>Ninguno tenía razón.</p><p>Diez años después seguían hablando.</p></div>
+  <div class="modal-footer">
+    <span class="modal-wai">Ficción: Mariano Defelipe · IA: Claude Sonnet 4.6</span>
+    <button class="modal-share" onclick="copyLink('los-comentarios',this)">Copiar enlace ↗</button>
+  </div>
+</div>
+<div class="modal-note" id="modal-las-tres-de-la-manana" style="display:none">
+  <p class="modal-tag">Liderazgo · Gratitud · Memoria</p>
+  <h2 class="modal-title">Las tres de la mañana</h2>
+  <div class="modal-body"><p>Le escribió a las tres de la mañana para agradecerle.</p><p>Él no recordaba qué había hecho.</p><p>Ella sí.</p></div>
+  <div class="modal-footer">
+    <span class="modal-wai">Ficción: Mariano Defelipe · IA: Claude Sonnet 4.6</span>
+    <button class="modal-share" onclick="copyLink('las-tres-de-la-manana',this)">Copiar enlace ↗</button>
+  </div>
+</div>
+<div class="modal-note" id="modal-el-deck" style="display:none">
+  <p class="modal-tag">Startups · Hype · Realidad</p>
+  <h2 class="modal-title">El deck</h2>
+  <div class="modal-body"><p>La startup levantó veinte millones hablando del futuro.</p><p>Dos años después nadie recordaba qué hacían.</p><p>El deck de inversión seguía siendo impecable.</p></div>
+  <div class="modal-footer">
+    <span class="modal-wai">Ficción: Mariano Defelipe · IA: Claude Sonnet 4.6</span>
+    <button class="modal-share" onclick="copyLink('el-deck',this)">Copiar enlace ↗</button>
+  </div>
+</div>
+<div class="modal-note" id="modal-la-compra" style="display:none">
+  <p class="modal-tag">Comportamiento del consumidor · Deseo · Lo no planeado</p>
+  <h2 class="modal-title">La compra</h2>
+  <div class="modal-body"><p>Entró a comprar algo que necesitaba.</p><p>Salió con algo que quería.</p><p>Nunca supo cuándo había cambiado de idea.</p></div>
+  <div class="modal-footer">
+    <span class="modal-wai">Ficción: Mariano Defelipe · IA: Claude Sonnet 4.6</span>
+    <button class="modal-share" onclick="copyLink('la-compra',this)">Copiar enlace ↗</button>
+  </div>
+</div>
+<div class="modal-note" id="modal-la-campana" style="display:none">
+  <p class="modal-tag">Creatividad · Proceso · Lo inexplicable</p>
+  <h2 class="modal-title">La campaña</h2>
+  <div class="modal-body"><p>Nadie en el equipo había dormido bien esa semana.</p><p>El cliente tampoco.</p><p>La campaña salió perfecta igual — nadie supo explicar cómo.</p></div>
+  <div class="modal-footer">
+    <span class="modal-wai">Ficción: Mariano Defelipe · IA: Claude Sonnet 4.6</span>
+    <button class="modal-share" onclick="copyLink('la-campana',this)">Copiar enlace ↗</button>
+  </div>
+</div>
+<div class="modal-note" id="modal-el-proposito" style="display:none">
+  <p class="modal-tag">Propósito de marca · Autenticidad · Verdad</p>
+  <h2 class="modal-title">El propósito</h2>
+  <div class="modal-body"><p>Tenían un propósito de marca hermoso, bien redactado, bien diseñado.</p><p>Un empleado lo leyó por primera vez en su último día.</p><p>Era bueno.</p></div>
+  <div class="modal-footer">
+    <span class="modal-wai">Ficción: Mariano Defelipe · IA: Claude Sonnet 4.6</span>
+    <button class="modal-share" onclick="copyLink('el-proposito',this)">Copiar enlace ↗</button>
+  </div>
+</div>
+<div class="modal-note" id="modal-la-actualizacion" style="display:none">
+  <p class="modal-tag">UX · Nostalgia · Cambio</p>
+  <h2 class="modal-title">La actualización</h2>
+  <div class="modal-body"><p>Actualizaron la app completamente — nueva interfaz, nuevas funciones, nuevo diseño.</p><p>Los usuarios se quejaron durante semanas.</p><p>Extrañaban algo que no podían describir.</p></div>
+  <div class="modal-footer">
+    <span class="modal-wai">Ficción: Mariano Defelipe · IA: Claude Sonnet 4.6</span>
+    <button class="modal-share" onclick="copyLink('la-actualizacion',this)">Copiar enlace ↗</button>
+  </div>
+</div>
+<div class="modal-note" id="modal-el-packaging" style="display:none">
+  <p class="modal-tag">Branding · Comportamiento del consumidor · Nostalgia</p>
+  <h2 class="modal-title">El packaging</h2>
+  <div class="modal-body"><p>Rediseñaron el packaging para hacerlo más moderno.</p><p>Los de cuarenta años dejaron de comprarlo.</p><p>Las ventas no cambiaron.</p></div>
+  <div class="modal-footer">
+    <span class="modal-wai">Ficción: Mariano Defelipe · IA: Claude Sonnet 4.6</span>
+    <button class="modal-share" onclick="copyLink('el-packaging',this)">Copiar enlace ↗</button>
+  </div>
+</div>
+<div class="modal-note" id="modal-el-nombre" style="display:none">
+  <p class="modal-tag">Proceso · Identidad · Absurdo</p>
+  <h2 class="modal-title">El nombre</h2>
+  <div class="modal-body"><p>Pasaron seis meses definiendo el nombre del proyecto.</p><p>Cuando lo lanzaron, todos lo llamaban por otro nombre.</p><p>Adoptaron ese.</p></div>
+  <div class="modal-footer">
+    <span class="modal-wai">Ficción: Mariano Defelipe · IA: Claude Sonnet 4.6</span>
+    <button class="modal-share" onclick="copyLink('el-nombre',this)">Copiar enlace ↗</button>
+  </div>
+</div>
+  </div>
+</div>
+
+<div style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap">
+<article id="el-timing"><h2>El timing</h2><p>Decisiones · Lanzamiento · Miedo</p><p>Le preguntaron qué había frenado el lanzamiento. Dijo "el timing". Era miedo, pero el timing sonaba mejor en el reporte.</p></article>
+<article id="la-llamada"><h2>La llamada</h2><p>Plataformas · Personalización · Nostalgia</p><p>La aplicación sabía exactamente qué música ponerle cuando estaba triste. Él nunca se lo había dicho a nadie. Cerró el teléfono y llamó a su madre.</p></article>
+<article id="el-premio"><h2>El premio</h2><p>Briefing · Proceso · Absurdo</p><p>El equipo pasó dos horas respondiendo el brief. Nadie preguntó para qué servía el producto. La campaña ganó un premio.</p></article>
+<article id="el-recuerdo"><h2>El recuerdo</h2><p>Lealtad de marca · Identidad · Nostalgia</p><p>La marca cambió el logo, el packaging y el slogan. Las ventas bajaron. Nadie había comprado el producto — habían comprado un recuerdo.</p></article>
+<article id="la-gondola"><h2>La góndola</h2><p>Performance · Deseo · Lo no planeado</p><p>El equipo optimizó cada paso del funnel durante seis meses. El producto más vendido ese año lo descubrió alguien por accidente en una góndola. El deseo no había leído el brief.</p></article>
+<article id="los-tres-millones"><h2>Los tres millones</h2><p>Influencer · Admiración · La ilusión</p><p>Construyeron al influencer perfecto — sin errores, sin escándalos, sin edad. Tenía tres millones de seguidores. Nadie lo admiraba.</p></article>
+<article id="el-no"><h2>El no</h2><p>Datos · Intuición · Decisión</p><p>Los datos decían que sí. El equipo decía que sí. Él dijo que no, y nunca supo explicar por qué tenía razón.</p></article>
+<article id="tres-segundos"><h2>Tres segundos</h2><p>Automatización · Talento · Aprendizaje</p><p>Llevaba veinte años haciendo lo mismo y haciéndolo bien. La herramienta nueva tardaba tres segundos en hacer lo que él tardaba tres días. Esa tarde pidió que le enseñaran a usarla.</p></article>
+<article id="diez-segundos"><h2>Diez segundos</h2><p>Atención · Storytelling · Silencio</p><p>El presentador entró a la sala y no dijo nada durante diez segundos. Todos dejaron el teléfono. Recién entonces empezó.</p></article>
+<article id="la-espera"><h2>La espera</h2><p>Crisis · Reputación · Tiempo</p><p>El error era pequeño. La respuesta tardó cuarenta y ocho horas. Para entonces ya no era el error — era la espera.</p></article>
+<article id="la-busqueda"><h2>La búsqueda</h2><p>Atención · Dopamina · Memoria</p><p>Abrió la aplicación para ver una cosa. Cuarenta minutos después cerró el teléfono. No recordaba qué había ido a buscar, pero había visto todo.</p></article>
+<article id="el-documento"><h2>El documento</h2><p>IA · Autoría · Responsabilidad</p><p>Nadie en la sala sabía quién había escrito el documento. Todos lo habían leído. Todos lo habían aprobado.</p></article>
+<article id="el-paseo"><h2>El paseo</h2><p>IA · Aprendizaje · Lo humano</p><p>La IA resolvió en segundos lo que él había tardado años en aprender. Se quedó mirando la pantalla un momento. Después cerró la computadora y salió a caminar.</p></article>
+<article id="el-algoritmo"><h2>El algoritmo</h2><p>Datos · Privacidad · Deseo</p><p>Sabía exactamente qué quería — lo había buscado miles de veces. Nunca se lo había dicho a nadie en voz alta. El algoritmo ya lo sabía hace tres años.</p></article>
+<article id="la-cita"><h2>La cita</h2><p>Pertenencia · Identidad · Reconocimiento</p><p>Pasó años buscando dónde encajaba. Un día alguien lo citó sin conocerlo. Ahí supo.</p></article>
+<article id="la-pregunta"><h2>La pregunta</h2><p>IA · Curiosidad · Lo humano</p><p>Le preguntó a la IA algo que nunca le había preguntado a nadie. La IA respondió. Él lloró — no por la respuesta, sino porque por fin había hecho la pregunta.</p></article>
+<article id="la-noche"><h2>La noche</h2><p>Autenticidad · Vulnerabilidad · Conexión</p><p>Durante años habló de lo que sabía. Una noche habló de lo que no sabía. Fue la primera vez que alguien lo escuchó de verdad.</p></article>
+<article id="las-notificaciones"><h2>Las notificaciones</h2><p>Atención · Economía digital · Memoria</p><p>Tenía cuarenta y siete notificaciones sin leer. Las miró todas. No recordaba ninguna.</p></article>
+<article id="el-auto"><h2>El auto</h2><p>Consumo · Celos · Deseo</p><p>No quería el auto. Quería que los demás no lo tuvieran. Cuando todos lo tuvieron, lo vendió.</p></article>
+<article id="la-cena"><h2>La cena</h2><p>Redes sociales · Soledad · Conexión</p><p>Tenía cuatro mil seguidores y ninguno sabía su apellido. Esa noche cenó solo. Puso el teléfono boca abajo.</p></article>
+<article id="la-innovacion"><h2>La innovación</h2><p>Estrategia · Reuniones · Absurdo</p><p>Contó las veces que alguien dijo "innovación" en la reunión. Llegó a diecisiete. Nadie propuso nada nuevo.</p></article>
+<article id="los-comentarios"><h2>Los comentarios</h2><p>Comunidad · Conexión · Tiempo</p><p>Se conocieron discutiendo en los comentarios. Ninguno tenía razón. Diez años después seguían hablando.</p></article>
+<article id="las-tres-de-la-manana"><h2>Las tres de la mañana</h2><p>Liderazgo · Gratitud · Memoria</p><p>Le escribió a las tres de la mañana para agradecerle. Él no recordaba qué había hecho. Ella sí.</p></article>
+<article id="el-deck"><h2>El deck</h2><p>Startups · Hype · Realidad</p><p>La startup levantó veinte millones hablando del futuro. Dos años después nadie recordaba qué hacían. El deck de inversión seguía siendo impecable.</p></article>
+<article id="la-compra"><h2>La compra</h2><p>Comportamiento del consumidor · Deseo · Lo no planeado</p><p>Entró a comprar algo que necesitaba. Salió con algo que quería. Nunca supo cuándo había cambiado de idea.</p></article>
+<article id="la-campana"><h2>La campaña</h2><p>Creatividad · Proceso · Lo inexplicable</p><p>Nadie en el equipo había dormido bien esa semana. El cliente tampoco. La campaña salió perfecta igual — nadie supo explicar cómo.</p></article>
+<article id="el-proposito"><h2>El propósito</h2><p>Propósito de marca · Autenticidad · Verdad</p><p>Tenían un propósito de marca hermoso, bien redactado, bien diseñado. Un empleado lo leyó por primera vez en su último día. Era bueno.</p></article>
+<article id="la-actualizacion"><h2>La actualización</h2><p>UX · Nostalgia · Cambio</p><p>Actualizaron la app completamente — nueva interfaz, nuevas funciones, nuevo diseño. Los usuarios se quejaron durante semanas. Extrañaban algo que no podían describir.</p></article>
+<article id="el-packaging"><h2>El packaging</h2><p>Branding · Comportamiento del consumidor · Nostalgia</p><p>Rediseñaron el packaging para hacerlo más moderno. Los de cuarenta años dejaron de comprarlo. Las ventas no cambiaron.</p></article>
+<article id="el-nombre"><h2>El nombre</h2><p>Proceso · Identidad · Absurdo</p><p>Pasaron seis meses definiendo el nombre del proyecto. Cuando lo lanzaron, todos lo llamaban por otro nombre. Adoptaron ese.</p></article>
+</div>
+
+<footer>
+  <a href="index.html">&#8592; marianodefelipe.com</a>
+  <a href="https://www.linkedin.com/in/marianodefelipe/" target="_blank">LinkedIn</a>
+</footer>
+
+<script>
+var currentSlug = null;
+var slugs = {"01":"el-timing","02":"la-llamada","03":"el-premio","04":"el-recuerdo","05":"la-gondola","06":"los-tres-millones","07":"el-no","08":"tres-segundos","09":"diez-segundos","10":"la-espera","11":"la-busqueda","12":"el-documento","13":"el-paseo","14":"el-algoritmo","15":"la-cita","16":"la-pregunta","17":"la-noche","18":"las-notificaciones","19":"el-auto","20":"la-cena","21":"la-innovacion","22":"los-comentarios","23":"las-tres-de-la-manana","24":"el-deck","25":"la-compra","26":"la-campana","27":"el-proposito","28":"la-actualizacion","29":"el-packaging","30":"el-nombre"};
+function openModal(slug) {
+  if (currentSlug) document.getElementById('modal-' + currentSlug).style.display = 'none';
+  currentSlug = slug;
+  document.getElementById('modal-' + slug).style.display = 'block';
+  document.getElementById('modal-overlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+  history.pushState(null, '', '#' + slug);
+}
+function closeModal() {
+  document.getElementById('modal-overlay').classList.remove('open');
+  if (currentSlug) document.getElementById('modal-' + currentSlug).style.display = 'none';
+  currentSlug = null;
+  document.body.style.overflow = '';
+  history.pushState(null, '', window.location.pathname);
+}
+function handleOverlayClick(e) {
+  if (e.target === document.getElementById('modal-overlay')) closeModal();
+}
+document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeModal(); });
+function copyLink(slug, btn) {
+  var base = 'https://marianodefelipe.com/micro-fiction-es';
+  var url = base + '#' + slug;
+  navigator.clipboard.writeText(url).then(function() {
+    btn.classList.add('copied');
+    btn.textContent = '¡Copiado!';
+    setTimeout(function() {
+      btn.classList.remove('copied');
+      btn.textContent = 'Copiar enlace ↗';
+    }, 2000);
+  });
+}
+if (window.location.hash) {
+  var slug = window.location.hash.slice(1);
+  setTimeout(function() { openModal(slug); }, 100);
+}
+</script>
+</body>
+</html>

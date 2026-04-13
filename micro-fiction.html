@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Micro Fiction by Mariano Defelipe</title>
+<meta name="description" content="Micro Fiction — Short stories about business, people and technology. Fiction: Mariano Defelipe · AI: Claude Sonnet 4.6">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://marianodefelipe.com/micro-fiction">
+<link rel="alternate" hreflang="en" href="https://marianodefelipe.com/micro-fiction">
+<link rel="alternate" hreflang="es" href="https://marianodefelipe.com/micro-fiction-es">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://marianodefelipe.com/micro-fiction">
+<meta property="og:title" content="Micro Fiction by Mariano Defelipe">
+<meta property="og:description" content="Micro Fiction — Short stories about business, people and technology. Fiction: Mariano Defelipe · AI: Claude Sonnet 4.6">
+<meta property="og:image" content="https://marianodefelipe.com/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://marianodefelipe.com/og-image.jpg">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#f6f6f4;--ink:#0d0d0c;--mu:#666662;--bo:rgba(246,246,244,.06);--ac:#d14e1e;--fd:'Syne',sans-serif;--fb:'DM Sans',sans-serif}
+html{scroll-behavior:smooth}
+body{font-family:var(--fb);background:var(--ink);color:#f6f6f4;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+.lang{position:fixed;top:1.75rem;right:2rem;z-index:400;font-family:var(--fd);font-size:.6rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+.lang a{padding:.32rem .6rem;border:1px solid rgba(246,246,244,.2);background:transparent;color:rgba(246,246,244,.5);text-decoration:none;transition:all .15s}
+.lang a.on{background:#f6f6f4;color:var(--ink);border-color:#f6f6f4}
+.hero{background:var(--ink);padding:6rem 5vw 5rem;position:relative;overflow:hidden}
+.hero-bar{position:absolute;left:0;top:0;width:7px;height:100%;background:var(--ac)}
+.hero-bg{position:absolute;right:-10px;top:-30px;font-family:var(--fd);font-size:clamp(200px,28vw,320px);font-weight:800;color:rgba(246,246,244,.025);line-height:1;letter-spacing:-.05em;pointer-events:none;user-select:none}
+.hero-label{font-family:var(--fd);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--ac);margin-bottom:1.5rem;position:relative}
+.hero-title{font-family:var(--fd);font-size:clamp(3.5rem,9vw,6rem);font-weight:800;line-height:.88;letter-spacing:-.04em;text-transform:uppercase;color:#f6f6f4;margin-bottom:2rem;position:relative}
+.hero-title .sl{color:var(--ac)}
+.hero-rule{width:100%;height:1px;background:rgba(246,246,244,.08);margin-bottom:2rem;position:relative}
+.hero-intro{font-size:.95rem;font-weight:300;line-height:1.78;color:rgba(246,246,244,.5);max-width:580px;position:relative}
+.hero-intro strong{color:rgba(246,246,244,.8);font-weight:400}
+.hero-intro em{font-style:italic;color:rgba(246,246,244,.35);font-size:.85rem}
+.hero-meta{display:flex;align-items:flex-end;gap:3rem;margin-top:2.5rem;flex-wrap:wrap;position:relative}
+.hero-stat{display:flex;flex-direction:column;gap:.2rem}
+.hero-stat-num{font-family:var(--fd);font-size:clamp(1.8rem,3vw,2.5rem);font-weight:800;color:#f6f6f4;line-height:1;letter-spacing:-.03em}
+.hero-stat-label{font-family:var(--fd);font-size:.55rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(246,246,244,.25)}
+.hero-back{font-family:var(--fd);font-size:.55rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:rgba(246,246,244,.3);text-decoration:none;border:1px solid rgba(246,246,244,.1);padding:.45rem 1rem;transition:all .15s;margin-left:auto;align-self:flex-end}
+.hero-back:hover{color:rgba(246,246,244,.7);border-color:rgba(246,246,244,.3)}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(246,246,244,.06)}
+.mf-card{background:var(--ink);padding:2.25rem;position:relative;overflow:hidden;cursor:pointer;transition:background .18s}
+.mf-card:hover{background:#141412}
+.mf-num{position:absolute;right:-6px;top:-12px;font-family:var(--fd);font-size:clamp(70px,9vw,105px);font-weight:800;color:rgba(246,246,244,.03);line-height:1;letter-spacing:-.04em;pointer-events:none;user-select:none;transition:color .18s}
+.mf-card:hover .mf-num{color:rgba(209,78,30,.05)}
+.mf-inner{position:relative}
+.mf-title{font-family:var(--fd);font-size:clamp(.95rem,1.4vw,1.1rem);font-weight:800;text-transform:uppercase;letter-spacing:-.02em;line-height:1.03;margin-bottom:.45rem;color:#f6f6f4}
+.mf-tag{font-family:var(--fd);font-size:.52rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ac);margin-bottom:.75rem}
+.mf-text{font-size:.88rem;font-weight:300;line-height:1.5;color:rgba(246,246,244,.8);margin-bottom:.85rem}
+.mf-text p{margin-bottom:.12rem}
+.mf-footer{display:flex;align-items:center;justify-content:space-between;padding-top:.7rem;border-top:1px solid rgba(246,246,244,.06)}
+.mf-wai{font-size:.68rem;font-style:italic;color:rgba(246,246,244,.2)}
+.mf-share{font-family:var(--fd);font-size:.5rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(246,246,244,.25);background:none;border:0.5px solid rgba(246,246,244,.1);padding:.28rem .6rem;cursor:pointer;transition:all .15s}
+.mf-share:hover{color:var(--ac);border-color:var(--ac)}
+.modal-overlay{position:fixed;inset:0;background:rgba(13,13,12,.85);z-index:500;display:none;align-items:center;justify-content:center;padding:2rem}
+.modal-overlay.open{display:flex}
+.modal-box{background:var(--ink);border:0.5px solid rgba(246,246,244,.1);max-width:580px;width:100%;max-height:90vh;overflow-y:auto;position:relative;padding:3rem}
+.modal-close{position:absolute;top:1.25rem;right:1.25rem;font-family:var(--fd);font-size:.6rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:rgba(246,246,244,.3);background:none;border:1px solid rgba(246,246,244,.1);padding:.35rem .75rem;cursor:pointer;transition:all .15s}
+.modal-close:hover{color:#f6f6f4;border-color:rgba(246,246,244,.4)}
+.modal-tag{font-family:var(--fd);font-size:.52rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ac);margin-bottom:.65rem}
+.modal-title{font-family:var(--fd);font-size:clamp(1.6rem,3vw,2.2rem);font-weight:800;text-transform:uppercase;letter-spacing:-.03em;line-height:1;margin-bottom:2rem;color:#f6f6f4}
+.modal-body{font-size:1.1rem;font-weight:300;line-height:1.7;color:rgba(246,246,244,.8)}
+.modal-body p{margin-bottom:.5rem}
+.modal-footer{display:flex;align-items:center;justify-content:space-between;margin-top:2rem;padding-top:1rem;border-top:1px solid rgba(246,246,244,.08)}
+.modal-wai{font-size:.72rem;font-style:italic;color:rgba(246,246,244,.25)}
+.modal-share{font-family:var(--fd);font-size:.52rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(246,246,244,.3);background:none;border:1px solid rgba(246,246,244,.1);padding:.3rem .65rem;cursor:pointer;transition:all .15s}
+.modal-share:hover{color:var(--ac);border-color:var(--ac)}
+.modal-share.copied{color:var(--ac);border-color:var(--ac)}
+footer{padding:1.5rem 5vw;display:flex;justify-content:space-between;align-items:center;font-family:var(--fd);font-size:.58rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(246,246,244,.2);border-top:1px solid rgba(246,246,244,.06)}
+footer a{color:inherit;text-decoration:none}footer a:hover{color:rgba(246,246,244,.6)}
+@media(max-width:700px){
+  .grid{grid-template-columns:1fr}
+  .hero{padding:5rem 5vw 4rem}
+  .hero-meta{gap:1.5rem}
+  .hero-back{margin-left:0;margin-top:.5rem}
+  .modal-box{padding:2rem 1.5rem;max-height:95vh}
+  footer{flex-direction:column;gap:.4rem;text-align:center}
+}
+</style>
+<!-- Google Analytics — deferred -->
+<script>
+  window.addEventListener('load', function() {
+    var s = document.createElement('script');
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=G-F9765ZTCWP';
+    s.async = true;
+    document.head.appendChild(s);
+    s.onload = function() {
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-F9765ZTCWP', {'send_page_view': true});
+    };
+  });
+</script>
+</head>
+<body>
+
+<div class="lang">
+  <a href="micro-fiction-es.html">ES</a>
+  <a href="#" class="on">EN</a>
+</div>
+
+<header class="hero">
+  <div class="hero-bar"></div>
+  <div class="hero-bg">MF</div>
+  <p class="hero-label">Mariano Defelipe</p>
+  <h1 class="hero-title">Micro<br><span class="sl">/</span>Fiction.</h1>
+  <div class="hero-rule"></div>
+  <p class="hero-intro"><strong>Short stories about business, people and technology.</strong><br><br><em>Fiction: Mariano Defelipe &middot; AI: Claude Sonnet 4.6</em></p>
+  <div class="hero-meta">
+    <div class="hero-stat"><span class="hero-stat-num">30</span><span class="hero-stat-label">Stories</span></div>
+    <div class="hero-stat"><span class="hero-stat-num">3</span><span class="hero-stat-label">Sentences</span></div>
+    <div class="hero-stat"><span class="hero-stat-num" style="color:var(--ac)">&#8734;</span><span class="hero-stat-label">Interpretations</span></div>
+    <a href="index.html" class="hero-back">&#8592; marianodefelipe.com</a>
+  </div>
+</header>
+
+<main class="grid" role="main">
+<div class="mf-card" onclick="openModal('the-timing')">
+  <div class="mf-num">01</div>
+  <div class="mf-inner">
+    <h2 class="mf-title">The Timing</h2>
+    <p class="mf-tag">Decisions · Launch · Fear</p>
+    <div class="mf-text"><p>They asked what had held back the launch.</p><p>He said "timing".</p><p>It was fear, but timing sounded better in the report.</p></div>
+    <div class="mf-footer"><span class="mf-wai">Fiction: Mariano Defelipe · AI: Claude Sonnet 4.6</span><span class="mf-share">Copy ↗</span></div>
+  </div>
+</div>
+<div class="mf-card" onclick="openModal('the-call')">
+  <div class="mf-num">02</div>
+  <div class="mf-inner">
+    <h2 class="mf-title">The Call</h2>
+    <p class="mf-tag">Platforms · Personalization · Nostalgia</p>
+    <div class="mf-text"><p>The app knew exactly what music to play when he was sad.</p><p>He had never told anyone.</p><p>He closed his phone and called his mother.</p></div>
+    <div class="mf-footer"><span class="mf-wai">Fiction: Mariano Defelipe · AI: Claude Sonnet 4.6</span><span class="mf-share">Copy ↗</span></div>
+  </div>
+</div>
+<div class="mf-card" onclick="openModal('the-award')">
+  <div class="mf-num">03</div>
+  <div class="mf-inner">
+    <h2 class="mf-title">The Award</h2>
+    <p class="mf-tag">Briefing · Process · Absurd</p>
+    <div class="mf-text"><p>The team spent two hours answering the brief.</p><p>Nobody asked what the product was for.</p><p>The campaign won an award.</p></div>
+    <div class="mf-footer"><span class="mf-wai">Fiction: Mariano Defelipe · AI: Claude Sonnet 4.6</span><span class="mf-share">Copy ↗</span></div>
+  </div>
+</div>
+<div class="mf-card" onclick="openModal('the-memory')">
+  <div class="mf-num">04</div>
+  <div class="mf-inner">
+    <h2 class="mf-title">The Memory</h2>
+    <p class="mf-tag">Brand loyalty · Identity · Nostalgia</p>
+    <div class="mf-text"><p>The brand changed its logo, packaging and slogan.</p><p>Sales dropped.</p><p>Nobody had been buying the product — they had been buying a memory.</p></div>
+    <div class="mf-footer"><span class="mf-wai">Fiction: Mariano Defelipe · AI: Claude Sonnet 4.6</span><span class="mf-share">Copy ↗</span></div>
+  </div>
+</div>
+<div class="mf-card" onclick="openModal('the-shelf')">
+  <div class="mf-num">05</div>
+  <div class="mf-inner">
+    <h2 class="mf-title">The Shelf</h2>
+    <p class="mf-tag">Performance · Desire · The unplanned</p>
+    <div class="mf-text"><p>The team optimized every step of the funnel for six months.</p><p>The best-selling product that year was discovered by accident on a shelf.</p><p>Desire hadn't read the brief.</p></div>
+    <div class="mf-footer"><span class="mf-wai">Fiction: Mariano Defelipe · AI: Claude Sonnet 4.6</span><span class="mf-share">Copy ↗</span></div>
+  </div>
+</div>
+<div class="mf-card" onclick="openModal('three-million')">
+  <div class="mf-num">06</div>
+  <div class="mf-inner">
+    <h2 class="mf-title">Three Million</h2>
+    <p class="mf-tag">Influencer · Admiration · The illusion</p>
+    <div class="mf-text"><p>They built the perfect influencer — no mistakes, no scandals, no age.</p><p>Three million followers.</p><p>Nobody admired them.</p></div>
+    <div class="mf-footer"><span class="mf-wai">Fiction: Mariano Defelipe · AI: Claude Sonnet 4.6</span><span class="mf-share">Copy ↗</span></div>
+  </div>
+</div>
+<div class="mf-card" onclick="openModal('the-no')">
+  <div class="mf-num">07</div>
+  <div class="mf-inner">
+    <h2 class="mf-title">The No</h2>
+    <p class="mf-tag">Data · Intuition · Decision</p>
+    <div class="mf-text"><p>The data said yes.</p><p>The team said yes.</p><p>He said no, and never knew how to explain why he was right.</p></div>
+    <div class="mf-footer"><span class="mf-wai">Fiction: Mariano Defelipe · AI: Claude Sonnet 4.6</span><span class="mf-share">Copy ↗</span></div>
+  </div>
+</div>
+<div class="mf-card" onclick="openModal('three-seconds')">
+  <div class="mf-num">08</div>
+  <div class="mf-inner">
+    <h2 class="mf-title">Three Seconds</h2>
+    <p class="mf-tag">Automation · Talent · Learning</p>
+    <div class="mf-text"><p>He had been doing the same thing for twenty years and doing it well.</p><p>The new tool did in three seconds what took him three days.</p><p>That afternoon he asked someone to teach him how to use it.</p></div>
+    <div class="mf-footer"><span class="mf-wai">Fiction: Mariano Defelipe · AI: Claude Sonnet 4.6</span><span class="mf-share">Copy ↗</span></div>
+  </div>
+</div>
+<div class="mf-card" onclick="openModal('ten-seconds')">
+  <div class="mf-num">09</div>
+  <div class="mf-inner">
+    <h2 class="mf-title">Ten Seconds</h2>
+    <p class="mf-tag">Attention · Storytelling · Silence</p>
+    <div class="mf-text"><p>The presenter walked into the room and said nothing for ten seconds.</p><p>Everyone put their phone down.</p><p>Only then did he begin.</p></div>
+    <div class="mf-footer"><span class="mf-wai">Fiction: Mariano Defelipe · AI: Claude Sonnet 4.6</span><span class="mf-share">Copy ↗</span></div>
+  </div>
+</div>
+<div class="mf-card" onclick="openModal('the-wait')">
+  <div class="mf-num">10</div>
+  <div class="mf-inner">
+    <h2 class="mf-title">The Wait</h2>
+    <p class="mf-tag">Crisis · Reputation · Time</p>
+    <div class="mf-text"><p>The mistake was small.</p><p>The response took forty-eight hours.</p><p>By then it wasn't the mistake anymore — it was the wait.</p></div>
+    <div class="mf-footer"><span class="mf-wai">Fiction: Mariano Defelipe · AI: Claude Sonnet 4.6</span><span class="mf-share">Copy ↗</span></div>
+  </div>
+</div>
+<div class="mf-card" onclick="openModal('the-search')">
+  <div class="mf-num">11</div>
+  <div class="mf-inner">
+    <h2 class="mf-title">The Search</h2>
+    <p class="mf-tag">Attention · Dopamine · Memory</p>
+    <div class="mf-text"><p>She opened the app to check one thing.</p><p>Forty minutes later she put the phone down.</p><p>She didn't remember what she had gone to look for, but she had seen everything.</p></div>
+    <div class="mf-footer"><span class="mf-wai">Fiction: Mariano Defelipe · AI: Claude Sonnet 4.6</span><span class="mf-share">Copy ↗</span></div>
+  </div>
+</div>
+<div class="mf-card" onclick="openModal('the-document')">
+  <div class="mf-num">12</div>
+  <div class="mf-inner">
+    <h2 class="mf-title">The Document</h2>
+    <p class="mf-tag">AI · Authorship · Responsibility</p>
+    <div class="mf-text"><p>Nobody in the room knew who had written the document.</p><p>Everyone had read it.</p><p>Everyone had approved it.</p></div>
+    <div class="mf-footer"><span class="mf-wai">Fiction: Mariano Defelipe · AI: Claude Sonnet 4.6</span><span class="mf-share">Copy ↗</span></div>
+  </div>
+</div>
+<div class="mf-card" onclick="openModal('the-walk')">
+  <div class="mf-num">13</div>
+  <div class="mf-inner">
+    <h2 class="mf-title">The Walk</h2>
+    <p class="mf-tag">AI · Learning · The human</p>
+    <div class="mf-text"><p>The AI solved in seconds what had taken him years to learn.</p><p>He stared at the screen for a moment.</p><p>Then he closed the laptop and went for a walk.</p></div>
+    <div class="mf-footer"><span class="mf-wai">Fiction: Mariano Defelipe · AI: Claude Sonnet 4.6</span><span class="mf-share">Copy ↗</span></div>
+  </div>
+</div>
+<div class="mf-card" onclick="openModal('the-algorithm')">
+  <div class="mf-num">14</div>
+  <div class="mf-inner">
+    <h2 class="mf-title">The Algorithm</h2>
+    <p class="mf-tag">Data · Privacy · Desire</p>
+    <div class="mf-text"><p>She knew exactly what she wanted — she had searched for it thousands of times.</p><p>She had never said it out loud to anyone.</p><p>The algorithm had known for three years.</p></div>
+    <div class="mf-footer"><span class="mf-wai">Fiction: Mariano Defelipe · AI: Claude Sonnet 4.6</span><span class="mf-share">Copy ↗</span></div>
+  </div>
+</div>
+<div class="mf-card" onclick="openModal('the-citation')">
+  <div class="mf-num">15</div>
+  <div class="mf-inner">
+    <h2 class="mf-title">The Citation</h2>
+    <p class="mf-tag">Belonging · Identity · Recognition</p>
+    <div class="mf-text"><p>He spent years looking for where he fit in.</p><p>One day someone quoted him without knowing him.</p><p>That was when he knew.</p></div>
+    <div class="mf-footer"><span class="mf-wai">Fiction: Mariano Defelipe · AI: Claude Sonnet 4.6</span><span class="mf-share">Copy ↗</span></div>
+  </div>
+</div>
+<div class="mf-card" onclick="openModal('the-question')">
+  <div class="mf-num">16</div>
+  <div class="mf-inner">
+    <h2 class="mf-title">The Question</h2>
+    <p class="mf-tag">AI · Curiosity · The human</p>
+    <div class="mf-text"><p>She asked the AI something she had never asked anyone.</p><p>The AI answered.</p><p>She cried — not because of the answer, but because she had finally asked the question.</p></div>
+    <div class="mf-footer"><span class="mf-wai">Fiction: Mariano Defelipe · AI: Claude Sonnet 4.6</span><span class="mf-share">Copy ↗</span></div>
+  </div>
+</div>
+<div class="mf-card" onclick="openModal('the-night')">
+  <div class="mf-num">17</div>
+  <div class="mf-inner">
+    <h2 class="mf-title">The Night</h2>
+    <p class="mf-tag">Authenticity · Vulnerability · Connection</p>
+    <div class="mf-text"><p>For years he talked about what he knew.</p><p>One night he talked about what he didn't know.</p><p>It was the first time anyone really listened.</p></div>
+    <div class="mf-footer"><span class="mf-wai">Fiction: Mariano Defelipe · AI: Claude Sonnet 4.6</span><span class="mf-share">Copy ↗</span></div>
+  </div>
+</div>
+<div class="mf-card" onclick="openModal('the-notifications')">
+  <div class="mf-num">18</div>
+  <div class="mf-inner">
+    <h2 class="mf-title">The Notifications</h2>
+    <p class="mf-tag">Attention · Digital economy · Memory</p>
+    <div class="mf-text"><p>She had forty-seven unread notifications.</p><p>She read them all.</p><p>She didn't remember any of them.</p></div>
+    <div class="mf-footer"><span class="mf-wai">Fiction: Mariano Defelipe · AI: Claude Sonnet 4.6</span><span class="mf-share">Copy ↗</span></div>
+  </div>
+</div>
+<div class="mf-card" onclick="openModal('the-car')">
+  <div class="mf-num">19</div>
+  <div class="mf-inner">
+    <h2 class="mf-title">The Car</h2>
+    <p class="mf-tag">Consumption · Envy · Desire</p>
+    <div class="mf-text"><p>He didn't want the car.</p><p>He wanted others not to have it.</p><p>When everyone got one, he sold his.</p></div>
+    <div class="mf-footer"><span class="mf-wai">Fiction: Mariano Defelipe · AI: Claude Sonnet 4.6</span><span class="mf-share">Copy ↗</span></div>
+  </div>
+</div>
+<div class="mf-card" onclick="openModal('the-dinner')">
+  <div class="mf-num">20</div>
+  <div class="mf-inner">
+    <h2 class="mf-title">The Dinner</h2>
+    <p class="mf-tag">Social media · Loneliness · Connection</p>
+    <div class="mf-text"><p>She had four thousand followers and none of them knew her last name.</p><p>That night she had dinner alone.</p><p>She put her phone face down.</p></div>
+    <div class="mf-footer"><span class="mf-wai">Fiction: Mariano Defelipe · AI: Claude Sonnet 4.6</span><span class="mf-share">Copy ↗</span></div>
+  </div>
+</div>
+<div class="mf-card" onclick="openModal('innovation')">
+  <div class="mf-num">21</div>
+  <div class="mf-inner">
+    <h2 class="mf-title">Innovation</h2>
+    <p class="mf-tag">Strategy · Meetings · Absurd</p>
+    <div class="mf-text"><p>He counted how many times someone said "innovation" in the meeting.</p><p>He got to seventeen.</p><p>Nobody proposed anything new.</p></div>
+    <div class="mf-footer"><span class="mf-wai">Fiction: Mariano Defelipe · AI: Claude Sonnet 4.6</span><span class="mf-share">Copy ↗</span></div>
+  </div>
+</div>
+<div class="mf-card" onclick="openModal('the-comments')">
+  <div class="mf-num">22</div>
+  <div class="mf-inner">
+    <h2 class="mf-title">The Comments</h2>
+    <p class="mf-tag">Community · Connection · Time</p>
+    <div class="mf-text"><p>They met arguing in the comments.</p><p>Neither of them was right.</p><p>Ten years later they were still talking.</p></div>
+    <div class="mf-footer"><span class="mf-wai">Fiction: Mariano Defelipe · AI: Claude Sonnet 4.6</span><span class="mf-share">Copy ↗</span></div>
+  </div>
+</div>
+<div class="mf-card" onclick="openModal('three-am')">
+  <div class="mf-num">23</div>
+  <div class="mf-inner">
+    <h2 class="mf-title">Three AM</h2>
+    <p class="mf-tag">Leadership · Gratitude · Memory</p>
+    <div class="mf-text"><p>She wrote to him at three in the morning to thank him.</p><p>He didn't remember what he had done.</p><p>She did.</p></div>
+    <div class="mf-footer"><span class="mf-wai">Fiction: Mariano Defelipe · AI: Claude Sonnet 4.6</span><span class="mf-share">Copy ↗</span></div>
+  </div>
+</div>
+<div class="mf-card" onclick="openModal('the-deck')">
+  <div class="mf-num">24</div>
+  <div class="mf-inner">
+    <h2 class="mf-title">The Deck</h2>
+    <p class="mf-tag">Startups · Hype · Reality</p>
+    <div class="mf-text"><p>The startup raised twenty million talking about the future.</p><p>Two years later nobody remembered what they did.</p><p>The investment deck was still flawless.</p></div>
+    <div class="mf-footer"><span class="mf-wai">Fiction: Mariano Defelipe · AI: Claude Sonnet 4.6</span><span class="mf-share">Copy ↗</span></div>
+  </div>
+</div>
+<div class="mf-card" onclick="openModal('the-purchase')">
+  <div class="mf-num">25</div>
+  <div class="mf-inner">
+    <h2 class="mf-title">The Purchase</h2>
+    <p class="mf-tag">Consumer behavior · Desire · The unplanned</p>
+    <div class="mf-text"><p>She went in to buy something she needed.</p><p>She left with something she wanted.</p><p>She never knew when she had changed her mind.</p></div>
+    <div class="mf-footer"><span class="mf-wai">Fiction: Mariano Defelipe · AI: Claude Sonnet 4.6</span><span class="mf-share">Copy ↗</span></div>
+  </div>
+</div>
+<div class="mf-card" onclick="openModal('the-campaign')">
+  <div class="mf-num">26</div>
+  <div class="mf-inner">
+    <h2 class="mf-title">The Campaign</h2>
+    <p class="mf-tag">Creativity · Process · The inexplicable</p>
+    <div class="mf-text"><p>Nobody on the team had slept well that week.</p><p>Neither had the client.</p><p>The campaign came out perfect anyway — nobody could explain how.</p></div>
+    <div class="mf-footer"><span class="mf-wai">Fiction: Mariano Defelipe · AI: Claude Sonnet 4.6</span><span class="mf-share">Copy ↗</span></div>
+  </div>
+</div>
+<div class="mf-card" onclick="openModal('the-purpose')">
+  <div class="mf-num">27</div>
+  <div class="mf-inner">
+    <h2 class="mf-title">The Purpose</h2>
+    <p class="mf-tag">Brand purpose · Authenticity · Truth</p>
+    <div class="mf-text"><p>They had a beautiful brand purpose — well written, well designed.</p><p>An employee read it for the first time on his last day.</p><p>It was good.</p></div>
+    <div class="mf-footer"><span class="mf-wai">Fiction: Mariano Defelipe · AI: Claude Sonnet 4.6</span><span class="mf-share">Copy ↗</span></div>
+  </div>
+</div>
+<div class="mf-card" onclick="openModal('the-update')">
+  <div class="mf-num">28</div>
+  <div class="mf-inner">
+    <h2 class="mf-title">The Update</h2>
+    <p class="mf-tag">UX · Nostalgia · Change</p>
+    <div class="mf-text"><p>They updated the app completely — new interface, new features, new design.</p><p>Users complained for weeks.</p><p>They missed something they couldn't describe.</p></div>
+    <div class="mf-footer"><span class="mf-wai">Fiction: Mariano Defelipe · AI: Claude Sonnet 4.6</span><span class="mf-share">Copy ↗</span></div>
+  </div>
+</div>
+<div class="mf-card" onclick="openModal('the-packaging')">
+  <div class="mf-num">29</div>
+  <div class="mf-inner">
+    <h2 class="mf-title">The Packaging</h2>
+    <p class="mf-tag">Branding · Consumer behavior · Nostalgia</p>
+    <div class="mf-text"><p>They redesigned the packaging to make it more modern.</p><p>People over forty stopped buying it.</p><p>Sales didn't change.</p></div>
+    <div class="mf-footer"><span class="mf-wai">Fiction: Mariano Defelipe · AI: Claude Sonnet 4.6</span><span class="mf-share">Copy ↗</span></div>
+  </div>
+</div>
+<div class="mf-card" onclick="openModal('the-name')">
+  <div class="mf-num">30</div>
+  <div class="mf-inner">
+    <h2 class="mf-title">The Name</h2>
+    <p class="mf-tag">Process · Identity · Absurd</p>
+    <div class="mf-text"><p>They spent six months defining the project name.</p><p>When they launched, everyone called it something else.</p><p>They adopted that.</p></div>
+    <div class="mf-footer"><span class="mf-wai">Fiction: Mariano Defelipe · AI: Claude Sonnet 4.6</span><span class="mf-share">Copy ↗</span></div>
+  </div>
+</div>
+</main>
+
+<div class="modal-overlay" id="modal-overlay" onclick="handleOverlayClick(event)">
+  <div class="modal-box" id="modal-box">
+    <button class="modal-close" onclick="closeModal()">Close</button>
+    <div class="modal-note" id="modal-the-timing" style="display:none">
+  <p class="modal-tag">Decisions · Launch · Fear</p>
+  <h2 class="modal-title">The Timing</h2>
+  <div class="modal-body"><p>They asked what had held back the launch.</p><p>He said "timing".</p><p>It was fear, but timing sounded better in the report.</p></div>
+  <div class="modal-footer">
+    <span class="modal-wai">Fiction: Mariano Defelipe · AI: Claude Sonnet 4.6</span>
+    <button class="modal-share" onclick="copyLink('the-timing',this)">Copy link ↗</button>
+  </div>
+</div>
+<div class="modal-note" id="modal-the-call" style="display:none">
+  <p class="modal-tag">Platforms · Personalization · Nostalgia</p>
+  <h2 class="modal-title">The Call</h2>
+  <div class="modal-body"><p>The app knew exactly what music to play when he was sad.</p><p>He had never told anyone.</p><p>He closed his phone and called his mother.</p></div>
+  <div class="modal-footer">
+    <span class="modal-wai">Fiction: Mariano Defelipe · AI: Claude Sonnet 4.6</span>
+    <button class="modal-share" onclick="copyLink('the-call',this)">Copy link ↗</button>
+  </div>
+</div>
+<div class="modal-note" id="modal-the-award" style="display:none">
+  <p class="modal-tag">Briefing · Process · Absurd</p>
+  <h2 class="modal-title">The Award</h2>
+  <div class="modal-body"><p>The team spent two hours answering the brief.</p><p>Nobody asked what the product was for.</p><p>The campaign won an award.</p></div>
+  <div class="modal-footer">
+    <span class="modal-wai">Fiction: Mariano Defelipe · AI: Claude Sonnet 4.6</span>
+    <button class="modal-share" onclick="copyLink('the-award',this)">Copy link ↗</button>
+  </div>
+</div>
+<div class="modal-note" id="modal-the-memory" style="display:none">
+  <p class="modal-tag">Brand loyalty · Identity · Nostalgia</p>
+  <h2 class="modal-title">The Memory</h2>
+  <div class="modal-body"><p>The brand changed its logo, packaging and slogan.</p><p>Sales dropped.</p><p>Nobody had been buying the product — they had been buying a memory.</p></div>
+  <div class="modal-footer">
+    <span class="modal-wai">Fiction: Mariano Defelipe · AI: Claude Sonnet 4.6</span>
+    <button class="modal-share" onclick="copyLink('the-memory',this)">Copy link ↗</button>
+  </div>
+</div>
+<div class="modal-note" id="modal-the-shelf" style="display:none">
+  <p class="modal-tag">Performance · Desire · The unplanned</p>
+  <h2 class="modal-title">The Shelf</h2>
+  <div class="modal-body"><p>The team optimized every step of the funnel for six months.</p><p>The best-selling product that year was discovered by accident on a shelf.</p><p>Desire hadn't read the brief.</p></div>
+  <div class="modal-footer">
+    <span class="modal-wai">Fiction: Mariano Defelipe · AI: Claude Sonnet 4.6</span>
+    <button class="modal-share" onclick="copyLink('the-shelf',this)">Copy link ↗</button>
+  </div>
+</div>
+<div class="modal-note" id="modal-three-million" style="display:none">
+  <p class="modal-tag">Influencer · Admiration · The illusion</p>
+  <h2 class="modal-title">Three Million</h2>
+  <div class="modal-body"><p>They built the perfect influencer — no mistakes, no scandals, no age.</p><p>Three million followers.</p><p>Nobody admired them.</p></div>
+  <div class="modal-footer">
+    <span class="modal-wai">Fiction: Mariano Defelipe · AI: Claude Sonnet 4.6</span>
+    <button class="modal-share" onclick="copyLink('three-million',this)">Copy link ↗</button>
+  </div>
+</div>
+<div class="modal-note" id="modal-the-no" style="display:none">
+  <p class="modal-tag">Data · Intuition · Decision</p>
+  <h2 class="modal-title">The No</h2>
+  <div class="modal-body"><p>The data said yes.</p><p>The team said yes.</p><p>He said no, and never knew how to explain why he was right.</p></div>
+  <div class="modal-footer">
+    <span class="modal-wai">Fiction: Mariano Defelipe · AI: Claude Sonnet 4.6</span>
+    <button class="modal-share" onclick="copyLink('the-no',this)">Copy link ↗</button>
+  </div>
+</div>
+<div class="modal-note" id="modal-three-seconds" style="display:none">
+  <p class="modal-tag">Automation · Talent · Learning</p>
+  <h2 class="modal-title">Three Seconds</h2>
+  <div class="modal-body"><p>He had been doing the same thing for twenty years and doing it well.</p><p>The new tool did in three seconds what took him three days.</p><p>That afternoon he asked someone to teach him how to use it.</p></div>
+  <div class="modal-footer">
+    <span class="modal-wai">Fiction: Mariano Defelipe · AI: Claude Sonnet 4.6</span>
+    <button class="modal-share" onclick="copyLink('three-seconds',this)">Copy link ↗</button>
+  </div>
+</div>
+<div class="modal-note" id="modal-ten-seconds" style="display:none">
+  <p class="modal-tag">Attention · Storytelling · Silence</p>
+  <h2 class="modal-title">Ten Seconds</h2>
+  <div class="modal-body"><p>The presenter walked into the room and said nothing for ten seconds.</p><p>Everyone put their phone down.</p><p>Only then did he begin.</p></div>
+  <div class="modal-footer">
+    <span class="modal-wai">Fiction: Mariano Defelipe · AI: Claude Sonnet 4.6</span>
+    <button class="modal-share" onclick="copyLink('ten-seconds',this)">Copy link ↗</button>
+  </div>
+</div>
+<div class="modal-note" id="modal-the-wait" style="display:none">
+  <p class="modal-tag">Crisis · Reputation · Time</p>
+  <h2 class="modal-title">The Wait</h2>
+  <div class="modal-body"><p>The mistake was small.</p><p>The response took forty-eight hours.</p><p>By then it wasn't the mistake anymore — it was the wait.</p></div>
+  <div class="modal-footer">
+    <span class="modal-wai">Fiction: Mariano Defelipe · AI: Claude Sonnet 4.6</span>
+    <button class="modal-share" onclick="copyLink('the-wait',this)">Copy link ↗</button>
+  </div>
+</div>
+<div class="modal-note" id="modal-the-search" style="display:none">
+  <p class="modal-tag">Attention · Dopamine · Memory</p>
+  <h2 class="modal-title">The Search</h2>
+  <div class="modal-body"><p>She opened the app to check one thing.</p><p>Forty minutes later she put the phone down.</p><p>She didn't remember what she had gone to look for, but she had seen everything.</p></div>
+  <div class="modal-footer">
+    <span class="modal-wai">Fiction: Mariano Defelipe · AI: Claude Sonnet 4.6</span>
+    <button class="modal-share" onclick="copyLink('the-search',this)">Copy link ↗</button>
+  </div>
+</div>
+<div class="modal-note" id="modal-the-document" style="display:none">
+  <p class="modal-tag">AI · Authorship · Responsibility</p>
+  <h2 class="modal-title">The Document</h2>
+  <div class="modal-body"><p>Nobody in the room knew who had written the document.</p><p>Everyone had read it.</p><p>Everyone had approved it.</p></div>
+  <div class="modal-footer">
+    <span class="modal-wai">Fiction: Mariano Defelipe · AI: Claude Sonnet 4.6</span>
+    <button class="modal-share" onclick="copyLink('the-document',this)">Copy link ↗</button>
+  </div>
+</div>
+<div class="modal-note" id="modal-the-walk" style="display:none">
+  <p class="modal-tag">AI · Learning · The human</p>
+  <h2 class="modal-title">The Walk</h2>
+  <div class="modal-body"><p>The AI solved in seconds what had taken him years to learn.</p><p>He stared at the screen for a moment.</p><p>Then he closed the laptop and went for a walk.</p></div>
+  <div class="modal-footer">
+    <span class="modal-wai">Fiction: Mariano Defelipe · AI: Claude Sonnet 4.6</span>
+    <button class="modal-share" onclick="copyLink('the-walk',this)">Copy link ↗</button>
+  </div>
+</div>
+<div class="modal-note" id="modal-the-algorithm" style="display:none">
+  <p class="modal-tag">Data · Privacy · Desire</p>
+  <h2 class="modal-title">The Algorithm</h2>
+  <div class="modal-body"><p>She knew exactly what she wanted — she had searched for it thousands of times.</p><p>She had never said it out loud to anyone.</p><p>The algorithm had known for three years.</p></div>
+  <div class="modal-footer">
+    <span class="modal-wai">Fiction: Mariano Defelipe · AI: Claude Sonnet 4.6</span>
+    <button class="modal-share" onclick="copyLink('the-algorithm',this)">Copy link ↗</button>
+  </div>
+</div>
+<div class="modal-note" id="modal-the-citation" style="display:none">
+  <p class="modal-tag">Belonging · Identity · Recognition</p>
+  <h2 class="modal-title">The Citation</h2>
+  <div class="modal-body"><p>He spent years looking for where he fit in.</p><p>One day someone quoted him without knowing him.</p><p>That was when he knew.</p></div>
+  <div class="modal-footer">
+    <span class="modal-wai">Fiction: Mariano Defelipe · AI: Claude Sonnet 4.6</span>
+    <button class="modal-share" onclick="copyLink('the-citation',this)">Copy link ↗</button>
+  </div>
+</div>
+<div class="modal-note" id="modal-the-question" style="display:none">
+  <p class="modal-tag">AI · Curiosity · The human</p>
+  <h2 class="modal-title">The Question</h2>
+  <div class="modal-body"><p>She asked the AI something she had never asked anyone.</p><p>The AI answered.</p><p>She cried — not because of the answer, but because she had finally asked the question.</p></div>
+  <div class="modal-footer">
+    <span class="modal-wai">Fiction: Mariano Defelipe · AI: Claude Sonnet 4.6</span>
+    <button class="modal-share" onclick="copyLink('the-question',this)">Copy link ↗</button>
+  </div>
+</div>
+<div class="modal-note" id="modal-the-night" style="display:none">
+  <p class="modal-tag">Authenticity · Vulnerability · Connection</p>
+  <h2 class="modal-title">The Night</h2>
+  <div class="modal-body"><p>For years he talked about what he knew.</p><p>One night he talked about what he didn't know.</p><p>It was the first time anyone really listened.</p></div>
+  <div class="modal-footer">
+    <span class="modal-wai">Fiction: Mariano Defelipe · AI: Claude Sonnet 4.6</span>
+    <button class="modal-share" onclick="copyLink('the-night',this)">Copy link ↗</button>
+  </div>
+</div>
+<div class="modal-note" id="modal-the-notifications" style="display:none">
+  <p class="modal-tag">Attention · Digital economy · Memory</p>
+  <h2 class="modal-title">The Notifications</h2>
+  <div class="modal-body"><p>She had forty-seven unread notifications.</p><p>She read them all.</p><p>She didn't remember any of them.</p></div>
+  <div class="modal-footer">
+    <span class="modal-wai">Fiction: Mariano Defelipe · AI: Claude Sonnet 4.6</span>
+    <button class="modal-share" onclick="copyLink('the-notifications',this)">Copy link ↗</button>
+  </div>
+</div>
+<div class="modal-note" id="modal-the-car" style="display:none">
+  <p class="modal-tag">Consumption · Envy · Desire</p>
+  <h2 class="modal-title">The Car</h2>
+  <div class="modal-body"><p>He didn't want the car.</p><p>He wanted others not to have it.</p><p>When everyone got one, he sold his.</p></div>
+  <div class="modal-footer">
+    <span class="modal-wai">Fiction: Mariano Defelipe · AI: Claude Sonnet 4.6</span>
+    <button class="modal-share" onclick="copyLink('the-car',this)">Copy link ↗</button>
+  </div>
+</div>
+<div class="modal-note" id="modal-the-dinner" style="display:none">
+  <p class="modal-tag">Social media · Loneliness · Connection</p>
+  <h2 class="modal-title">The Dinner</h2>
+  <div class="modal-body"><p>She had four thousand followers and none of them knew her last name.</p><p>That night she had dinner alone.</p><p>She put her phone face down.</p></div>
+  <div class="modal-footer">
+    <span class="modal-wai">Fiction: Mariano Defelipe · AI: Claude Sonnet 4.6</span>
+    <button class="modal-share" onclick="copyLink('the-dinner',this)">Copy link ↗</button>
+  </div>
+</div>
+<div class="modal-note" id="modal-innovation" style="display:none">
+  <p class="modal-tag">Strategy · Meetings · Absurd</p>
+  <h2 class="modal-title">Innovation</h2>
+  <div class="modal-body"><p>He counted how many times someone said "innovation" in the meeting.</p><p>He got to seventeen.</p><p>Nobody proposed anything new.</p></div>
+  <div class="modal-footer">
+    <span class="modal-wai">Fiction: Mariano Defelipe · AI: Claude Sonnet 4.6</span>
+    <button class="modal-share" onclick="copyLink('innovation',this)">Copy link ↗</button>
+  </div>
+</div>
+<div class="modal-note" id="modal-the-comments" style="display:none">
+  <p class="modal-tag">Community · Connection · Time</p>
+  <h2 class="modal-title">The Comments</h2>
+  <div class="modal-body"><p>They met arguing in the comments.</p><p>Neither of them was right.</p><p>Ten years later they were still talking.</p></div>
+  <div class="modal-footer">
+    <span class="modal-wai">Fiction: Mariano Defelipe · AI: Claude Sonnet 4.6</span>
+    <button class="modal-share" onclick="copyLink('the-comments',this)">Copy link ↗</button>
+  </div>
+</div>
+<div class="modal-note" id="modal-three-am" style="display:none">
+  <p class="modal-tag">Leadership · Gratitude · Memory</p>
+  <h2 class="modal-title">Three AM</h2>
+  <div class="modal-body"><p>She wrote to him at three in the morning to thank him.</p><p>He didn't remember what he had done.</p><p>She did.</p></div>
+  <div class="modal-footer">
+    <span class="modal-wai">Fiction: Mariano Defelipe · AI: Claude Sonnet 4.6</span>
+    <button class="modal-share" onclick="copyLink('three-am',this)">Copy link ↗</button>
+  </div>
+</div>
+<div class="modal-note" id="modal-the-deck" style="display:none">
+  <p class="modal-tag">Startups · Hype · Reality</p>
+  <h2 class="modal-title">The Deck</h2>
+  <div class="modal-body"><p>The startup raised twenty million talking about the future.</p><p>Two years later nobody remembered what they did.</p><p>The investment deck was still flawless.</p></div>
+  <div class="modal-footer">
+    <span class="modal-wai">Fiction: Mariano Defelipe · AI: Claude Sonnet 4.6</span>
+    <button class="modal-share" onclick="copyLink('the-deck',this)">Copy link ↗</button>
+  </div>
+</div>
+<div class="modal-note" id="modal-the-purchase" style="display:none">
+  <p class="modal-tag">Consumer behavior · Desire · The unplanned</p>
+  <h2 class="modal-title">The Purchase</h2>
+  <div class="modal-body"><p>She went in to buy something she needed.</p><p>She left with something she wanted.</p><p>She never knew when she had changed her mind.</p></div>
+  <div class="modal-footer">
+    <span class="modal-wai">Fiction: Mariano Defelipe · AI: Claude Sonnet 4.6</span>
+    <button class="modal-share" onclick="copyLink('the-purchase',this)">Copy link ↗</button>
+  </div>
+</div>
+<div class="modal-note" id="modal-the-campaign" style="display:none">
+  <p class="modal-tag">Creativity · Process · The inexplicable</p>
+  <h2 class="modal-title">The Campaign</h2>
+  <div class="modal-body"><p>Nobody on the team had slept well that week.</p><p>Neither had the client.</p><p>The campaign came out perfect anyway — nobody could explain how.</p></div>
+  <div class="modal-footer">
+    <span class="modal-wai">Fiction: Mariano Defelipe · AI: Claude Sonnet 4.6</span>
+    <button class="modal-share" onclick="copyLink('the-campaign',this)">Copy link ↗</button>
+  </div>
+</div>
+<div class="modal-note" id="modal-the-purpose" style="display:none">
+  <p class="modal-tag">Brand purpose · Authenticity · Truth</p>
+  <h2 class="modal-title">The Purpose</h2>
+  <div class="modal-body"><p>They had a beautiful brand purpose — well written, well designed.</p><p>An employee read it for the first time on his last day.</p><p>It was good.</p></div>
+  <div class="modal-footer">
+    <span class="modal-wai">Fiction: Mariano Defelipe · AI: Claude Sonnet 4.6</span>
+    <button class="modal-share" onclick="copyLink('the-purpose',this)">Copy link ↗</button>
+  </div>
+</div>
+<div class="modal-note" id="modal-the-update" style="display:none">
+  <p class="modal-tag">UX · Nostalgia · Change</p>
+  <h2 class="modal-title">The Update</h2>
+  <div class="modal-body"><p>They updated the app completely — new interface, new features, new design.</p><p>Users complained for weeks.</p><p>They missed something they couldn't describe.</p></div>
+  <div class="modal-footer">
+    <span class="modal-wai">Fiction: Mariano Defelipe · AI: Claude Sonnet 4.6</span>
+    <button class="modal-share" onclick="copyLink('the-update',this)">Copy link ↗</button>
+  </div>
+</div>
+<div class="modal-note" id="modal-the-packaging" style="display:none">
+  <p class="modal-tag">Branding · Consumer behavior · Nostalgia</p>
+  <h2 class="modal-title">The Packaging</h2>
+  <div class="modal-body"><p>They redesigned the packaging to make it more modern.</p><p>People over forty stopped buying it.</p><p>Sales didn't change.</p></div>
+  <div class="modal-footer">
+    <span class="modal-wai">Fiction: Mariano Defelipe · AI: Claude Sonnet 4.6</span>
+    <button class="modal-share" onclick="copyLink('the-packaging',this)">Copy link ↗</button>
+  </div>
+</div>
+<div class="modal-note" id="modal-the-name" style="display:none">
+  <p class="modal-tag">Process · Identity · Absurd</p>
+  <h2 class="modal-title">The Name</h2>
+  <div class="modal-body"><p>They spent six months defining the project name.</p><p>When they launched, everyone called it something else.</p><p>They adopted that.</p></div>
+  <div class="modal-footer">
+    <span class="modal-wai">Fiction: Mariano Defelipe · AI: Claude Sonnet 4.6</span>
+    <button class="modal-share" onclick="copyLink('the-name',this)">Copy link ↗</button>
+  </div>
+</div>
+  </div>
+</div>
+
+<div style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap">
+<article id="the-timing"><h2>The Timing</h2><p>Decisions · Launch · Fear</p><p>They asked what had held back the launch. He said "timing". It was fear, but timing sounded better in the report.</p></article>
+<article id="the-call"><h2>The Call</h2><p>Platforms · Personalization · Nostalgia</p><p>The app knew exactly what music to play when he was sad. He had never told anyone. He closed his phone and called his mother.</p></article>
+<article id="the-award"><h2>The Award</h2><p>Briefing · Process · Absurd</p><p>The team spent two hours answering the brief. Nobody asked what the product was for. The campaign won an award.</p></article>
+<article id="the-memory"><h2>The Memory</h2><p>Brand loyalty · Identity · Nostalgia</p><p>The brand changed its logo, packaging and slogan. Sales dropped. Nobody had been buying the product — they had been buying a memory.</p></article>
+<article id="the-shelf"><h2>The Shelf</h2><p>Performance · Desire · The unplanned</p><p>The team optimized every step of the funnel for six months. The best-selling product that year was discovered by accident on a shelf. Desire hadn't read the brief.</p></article>
+<article id="three-million"><h2>Three Million</h2><p>Influencer · Admiration · The illusion</p><p>They built the perfect influencer — no mistakes, no scandals, no age. Three million followers. Nobody admired them.</p></article>
+<article id="the-no"><h2>The No</h2><p>Data · Intuition · Decision</p><p>The data said yes. The team said yes. He said no, and never knew how to explain why he was right.</p></article>
+<article id="three-seconds"><h2>Three Seconds</h2><p>Automation · Talent · Learning</p><p>He had been doing the same thing for twenty years and doing it well. The new tool did in three seconds what took him three days. That afternoon he asked someone to teach him how to use it.</p></article>
+<article id="ten-seconds"><h2>Ten Seconds</h2><p>Attention · Storytelling · Silence</p><p>The presenter walked into the room and said nothing for ten seconds. Everyone put their phone down. Only then did he begin.</p></article>
+<article id="the-wait"><h2>The Wait</h2><p>Crisis · Reputation · Time</p><p>The mistake was small. The response took forty-eight hours. By then it wasn't the mistake anymore — it was the wait.</p></article>
+<article id="the-search"><h2>The Search</h2><p>Attention · Dopamine · Memory</p><p>She opened the app to check one thing. Forty minutes later she put the phone down. She didn't remember what she had gone to look for, but she had seen everything.</p></article>
+<article id="the-document"><h2>The Document</h2><p>AI · Authorship · Responsibility</p><p>Nobody in the room knew who had written the document. Everyone had read it. Everyone had approved it.</p></article>
+<article id="the-walk"><h2>The Walk</h2><p>AI · Learning · The human</p><p>The AI solved in seconds what had taken him years to learn. He stared at the screen for a moment. Then he closed the laptop and went for a walk.</p></article>
+<article id="the-algorithm"><h2>The Algorithm</h2><p>Data · Privacy · Desire</p><p>She knew exactly what she wanted — she had searched for it thousands of times. She had never said it out loud to anyone. The algorithm had known for three years.</p></article>
+<article id="the-citation"><h2>The Citation</h2><p>Belonging · Identity · Recognition</p><p>He spent years looking for where he fit in. One day someone quoted him without knowing him. That was when he knew.</p></article>
+<article id="the-question"><h2>The Question</h2><p>AI · Curiosity · The human</p><p>She asked the AI something she had never asked anyone. The AI answered. She cried — not because of the answer, but because she had finally asked the question.</p></article>
+<article id="the-night"><h2>The Night</h2><p>Authenticity · Vulnerability · Connection</p><p>For years he talked about what he knew. One night he talked about what he didn't know. It was the first time anyone really listened.</p></article>
+<article id="the-notifications"><h2>The Notifications</h2><p>Attention · Digital economy · Memory</p><p>She had forty-seven unread notifications. She read them all. She didn't remember any of them.</p></article>
+<article id="the-car"><h2>The Car</h2><p>Consumption · Envy · Desire</p><p>He didn't want the car. He wanted others not to have it. When everyone got one, he sold his.</p></article>
+<article id="the-dinner"><h2>The Dinner</h2><p>Social media · Loneliness · Connection</p><p>She had four thousand followers and none of them knew her last name. That night she had dinner alone. She put her phone face down.</p></article>
+<article id="innovation"><h2>Innovation</h2><p>Strategy · Meetings · Absurd</p><p>He counted how many times someone said "innovation" in the meeting. He got to seventeen. Nobody proposed anything new.</p></article>
+<article id="the-comments"><h2>The Comments</h2><p>Community · Connection · Time</p><p>They met arguing in the comments. Neither of them was right. Ten years later they were still talking.</p></article>
+<article id="three-am"><h2>Three AM</h2><p>Leadership · Gratitude · Memory</p><p>She wrote to him at three in the morning to thank him. He didn't remember what he had done. She did.</p></article>
+<article id="the-deck"><h2>The Deck</h2><p>Startups · Hype · Reality</p><p>The startup raised twenty million talking about the future. Two years later nobody remembered what they did. The investment deck was still flawless.</p></article>
+<article id="the-purchase"><h2>The Purchase</h2><p>Consumer behavior · Desire · The unplanned</p><p>She went in to buy something she needed. She left with something she wanted. She never knew when she had changed her mind.</p></article>
+<article id="the-campaign"><h2>The Campaign</h2><p>Creativity · Process · The inexplicable</p><p>Nobody on the team had slept well that week. Neither had the client. The campaign came out perfect anyway — nobody could explain how.</p></article>
+<article id="the-purpose"><h2>The Purpose</h2><p>Brand purpose · Authenticity · Truth</p><p>They had a beautiful brand purpose — well written, well designed. An employee read it for the first time on his last day. It was good.</p></article>
+<article id="the-update"><h2>The Update</h2><p>UX · Nostalgia · Change</p><p>They updated the app completely — new interface, new features, new design. Users complained for weeks. They missed something they couldn't describe.</p></article>
+<article id="the-packaging"><h2>The Packaging</h2><p>Branding · Consumer behavior · Nostalgia</p><p>They redesigned the packaging to make it more modern. People over forty stopped buying it. Sales didn't change.</p></article>
+<article id="the-name"><h2>The Name</h2><p>Process · Identity · Absurd</p><p>They spent six months defining the project name. When they launched, everyone called it something else. They adopted that.</p></article>
+</div>
+
+<footer>
+  <a href="index.html">&#8592; marianodefelipe.com</a>
+  <a href="https://www.linkedin.com/in/marianodefelipe/" target="_blank">LinkedIn</a>
+</footer>
+
+<script>
+var currentSlug = null;
+var slugs = {"01":"the-timing","02":"the-call","03":"the-award","04":"the-memory","05":"the-shelf","06":"three-million","07":"the-no","08":"three-seconds","09":"ten-seconds","10":"the-wait","11":"the-search","12":"the-document","13":"the-walk","14":"the-algorithm","15":"the-citation","16":"the-question","17":"the-night","18":"the-notifications","19":"the-car","20":"the-dinner","21":"innovation","22":"the-comments","23":"three-am","24":"the-deck","25":"the-purchase","26":"the-campaign","27":"the-purpose","28":"the-update","29":"the-packaging","30":"the-name"};
+function openModal(slug) {
+  if (currentSlug) document.getElementById('modal-' + currentSlug).style.display = 'none';
+  currentSlug = slug;
+  document.getElementById('modal-' + slug).style.display = 'block';
+  document.getElementById('modal-overlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+  history.pushState(null, '', '#' + slug);
+}
+function closeModal() {
+  document.getElementById('modal-overlay').classList.remove('open');
+  if (currentSlug) document.getElementById('modal-' + currentSlug).style.display = 'none';
+  currentSlug = null;
+  document.body.style.overflow = '';
+  history.pushState(null, '', window.location.pathname);
+}
+function handleOverlayClick(e) {
+  if (e.target === document.getElementById('modal-overlay')) closeModal();
+}
+document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeModal(); });
+function copyLink(slug, btn) {
+  var base = 'https://marianodefelipe.com/micro-fiction';
+  var url = base + '#' + slug;
+  navigator.clipboard.writeText(url).then(function() {
+    btn.classList.add('copied');
+    btn.textContent = 'Copied!';
+    setTimeout(function() {
+      btn.classList.remove('copied');
+      btn.textContent = 'Copy link ↗';
+    }, 2000);
+  });
+}
+if (window.location.hash) {
+  var slug = window.location.hash.slice(1);
+  setTimeout(function() { openModal(slug); }, 100);
+}
+</script>
+</body>
+</html>
